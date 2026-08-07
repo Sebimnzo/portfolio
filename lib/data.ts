@@ -1,0 +1,73 @@
+export const site = {
+  name: "Sebastián Manzolillo",
+  role: "Editor de Video & Motion Graphics Designer",
+  tagline:
+    "Cuento historias con edición y motion graphics: spots, contenido de redes, video institucional y piezas animadas.",
+  email: "sebastian15manzo@gmail.com",
+  whatsapp: "5493794232631",
+  location: "Argentina",
+  socials: [
+    { label: "Instagram", href: "https://instagram.com/tuusuario" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/sebastian-manzolillo/" },
+  ],
+};
+
+export type Project = {
+  slug: string;
+  title: string;
+  category: string;
+  description: string;
+  youtubeId: string; // ID del video de YouTube (lo que va después de v= en la URL)
+  orientation: "vertical" | "horizontal";
+};
+
+export const projects: Project[] = [
+  {
+    slug: "mateo-garcia-fitness-coach",
+    title: "Mateo García — Fitness Coach",
+    category: "Reel",
+    description: "Reel de contenido para redes para el fitness coach Mateo García.",
+    youtubeId: "Lch9cMHdCFw",
+    orientation: "vertical",
+  },
+  {
+    slug: "maraldi-appliance-company",
+    title: "Maraldi — Appliance Company",
+    category: "Reel",
+    description: "Reel de contenido para redes para la marca de electrodomésticos Maraldi.",
+    youtubeId: "WkjQes4pADQ",
+    orientation: "vertical",
+  },
+  {
+    slug: "matias-lago-fitness-coach",
+    title: "Matías Lago — Fitness Coach",
+    category: "Reel",
+    description: "Reel de contenido para redes para el fitness coach Matías Lago.",
+    youtubeId: "cYxz3lPuhCI",
+    orientation: "vertical",
+  },
+  {
+    slug: "berry-investing-financial-startup",
+    title: "Berry Investing — Financial Startup",
+    category: "Reel",
+    description: "Reel de contenido para redes para la startup financiera Berry Investing.",
+    youtubeId: "aTii8hzeAYw",
+    orientation: "vertical",
+  },
+  {
+    slug: "hoken-industrial-mockup",
+    title: "Höken — Industrial Mock-up",
+    category: "Reel",
+    description: "Reel de mock-up industrial para la marca Höken.",
+    youtubeId: "inV9Wjm1xhw",
+    orientation: "vertical",
+  },
+  {
+    slug: "german-grisotto-investing-coach",
+    title: "Germán Grisotto — Investing Coach",
+    category: "Longform",
+    description: "Video longform para el investing coach Germán Grisotto.",
+    youtubeId: "7OYRLXfeYv8",
+    orientation: "horizontal",
+  },
+];
