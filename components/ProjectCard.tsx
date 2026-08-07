@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, type MouseEvent } from "react";
+import Image from "next/image";
 import type { Project } from "@/lib/data";
 
 const MAX_TILT_DEG = 8;
@@ -8,6 +9,7 @@ const MAX_TILT_DEG = 8;
 export default function ProjectCard({ project }: { project: Project }) {
   const ref = useRef<HTMLElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [isPlaying, setIsPlaying] = useState(false);
 
   function handleMouseMove(e: MouseEvent<HTMLElement>) {
     const rect = ref.current?.getBoundingClientRect();
@@ -40,15 +42,39 @@ export default function ProjectCard({ project }: { project: Project }) {
       }}
       className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 will-change-transform hover:border-white/20"
     >
-      <div className={frameClasses}>
-        <iframe
-          className="h-full w-full"
-          src={`https://www.youtube.com/embed/${project.youtubeId}`}
-          title={project.title}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+      <div className={`${frameClasses} relative`}>
+        {isPlaying ? (
+          <iframe
+            className="h-full w-full"
+            src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1`}
+            title={project.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <button
+            type="button"
+            onClick={() => setIsPlaying(true)}
+            aria-label={`Reproducir ${project.title}`}
+            className="group/play relative block h-full w-full cursor-pointer"
+          >
+            <Image
+              src={`https://i.ytimg.com/vi/${project.youtubeId}/hqdefault.jpg`}
+              alt={project.title}
+              fill
+              loading="lazy"
+              sizes={isVertical ? "256px" : "(min-width: 768px) 50vw, 100vw"}
+              className="object-cover"
+            />
+            <span className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover/play:bg-black/35">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 transition-transform group-hover/play:scale-110">
+                <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6 fill-black">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </span>
+            </span>
+          </button>
+        )}
       </div>
       <div className="p-5">
         <p className="text-xs font-medium uppercase tracking-wider text-white/50">
