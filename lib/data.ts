@@ -2,12 +2,11 @@ export const site = {
   name: "Sebastián Manzolillo",
   role: "Editor de Video & Motion Graphics Designer",
   tagline:
-    "Cuento historias con edición y motion graphics: spots, contenido de redes, video institucional y piezas animadas.",
+    "Cuento historias con edición y motion graphics: spots, contenido de redes, videos institucionales y piezas animadas.",
   email: "sebastian15manzo@gmail.com",
   whatsapp: "5493794232631",
   location: "Argentina",
   socials: [
-    { label: "Instagram", href: "https://instagram.com/tuusuario" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/sebastian-manzolillo/" },
   ],
 };

@@ -1,4 +1,5 @@
 import { site } from "@/lib/data";
+import MagneticButton from "./MagneticButton";
 
 export default function Contact() {
   return (
@@ -8,18 +9,18 @@ export default function Contact() {
         ¿Tenés un proyecto en mente? Escribime y lo charlamos.
       </p>
       <div className="mt-8 flex flex-wrap items-center gap-4">
-        <a
+        <MagneticButton
           href={`mailto:${site.email}`}
-          className="inline-block rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+          className="rounded-full bg-white px-8 py-4 text-sm font-semibold text-black hover:opacity-90"
         >
           {site.email}
-        </a>
-        <a
+        </MagneticButton>
+        <MagneticButton
           href={`https://wa.me/${site.whatsapp}`}
           target="_blank"
           rel="noreferrer"
           aria-label="Escribime por WhatsApp"
-          className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-4 text-sm font-semibold text-white transition-colors hover:border-white/40"
+          className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-4 text-sm font-semibold text-white hover:border-white/40"
         >
           <svg
             viewBox="0 0 24 24"
@@ -30,7 +31,7 @@ export default function Contact() {
             <path d="M12.004 2c-5.514 0-9.997 4.478-9.997 9.997 0 1.762.462 3.484 1.34 5.002L2 22l5.13-1.345a9.96 9.96 0 0 0 4.874 1.243h.004c5.514 0 9.997-4.478 9.997-9.998C21.998 6.478 17.518 2 12.004 2zm0 18.163h-.003a8.153 8.153 0 0 1-4.157-1.14l-.298-.177-3.045.799.813-2.968-.194-.305a8.15 8.15 0 0 1-1.253-4.375c0-4.508 3.669-8.176 8.18-8.176 2.186 0 4.24.852 5.785 2.398a8.13 8.13 0 0 1 2.394 5.785c0 4.508-3.67 8.16-8.222 8.16z" />
           </svg>
           WhatsApp
-        </a>
+        </MagneticButton>
       </div>
       <ul className="mt-8 flex flex-wrap gap-6 text-sm text-white/60">
         {site.socials.map((social) => (

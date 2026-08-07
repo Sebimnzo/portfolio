@@ -1,16 +1,24 @@
 import Image from "next/image";
 import { site } from "@/lib/data";
+import MagneticButton from "./MagneticButton";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-24">
+    <section className="relative flex items-center overflow-hidden px-6 pb-16 pt-28 sm:min-h-screen sm:pb-6 sm:pt-24">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
-          background:
-            "radial-gradient(60% 50% at 50% 20%, rgba(124,58,237,0.25), transparent 70%)," +
-            "radial-gradient(40% 40% at 80% 70%, rgba(6,182,212,0.15), transparent 70%)",
+          backgroundImage:
+            "radial-gradient(60% 50% at 50% 15%, rgba(124,58,237,0.32), transparent 70%)," +
+            "radial-gradient(45% 45% at 88% 78%, rgba(6,182,212,0.20), transparent 70%)," +
+            "radial-gradient(35% 35% at 6% 88%, rgba(236,72,153,0.16), transparent 70%)," +
+            "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)," +
+            "linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
+          backgroundSize: "100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px",
+          WebkitMaskImage:
+            "radial-gradient(80% 70% at 50% 30%, black 40%, transparent 100%)",
+          maskImage: "radial-gradient(80% 70% at 50% 30%, black 40%, transparent 100%)",
         }}
       />
       <div className="mx-auto max-w-6xl">
@@ -32,18 +40,18 @@ export default function Hero() {
         </div>
         <p className="mt-6 max-w-xl text-lg text-white/70">{site.tagline}</p>
         <div className="mt-10 flex flex-wrap gap-4">
-          <a
+          <MagneticButton
             href="#trabajos"
-            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:opacity-90"
           >
             Ver trabajos
-          </a>
-          <a
+          </MagneticButton>
+          <MagneticButton
             href="#contacto"
-            className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/40"
+            className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:border-white/40"
           >
             Contactarme
-          </a>
+          </MagneticButton>
         </div>
       </div>
     </section>
