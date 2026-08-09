@@ -72,7 +72,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div
         className={`${frameClasses} relative overflow-hidden rounded-2xl transition-transform duration-300 ease-out ${
           isPlaying
-            ? "hover:z-30 hover:scale-[1.06] hover:shadow-2xl hover:shadow-black/60"
+            ? "lg:hover:z-30 lg:hover:scale-150 lg:hover:shadow-2xl lg:hover:shadow-black/60"
             : ""
         }`}
       >
