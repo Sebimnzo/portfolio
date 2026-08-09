@@ -34,7 +34,7 @@ export const projects: Project[] = [
     title: "Maraldi — Appliance Company",
     category: "Reel",
     description: "Reel de contenido para redes para la marca de electrodomésticos Maraldi.",
-    youtubeId: "WkjQes4pADQ",
+    youtubeId: "3VxtUCGPRF8",
     orientation: "vertical",
   },
   {
