@@ -1,15 +1,42 @@
 "use client";
 
-import { useRef, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import Image from "next/image";
 import type { Project } from "@/lib/data";
+import { loadYouTubeApi, type YouTubePlayer } from "@/lib/youtube";
 
 const MAX_TILT_DEG = 8;
 
 export default function ProjectCard({ project }: { project: Project }) {
   const ref = useRef<HTMLElement>(null);
+  const playerContainerRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (!isPlaying || !playerContainerRef.current) return;
+    let player: YouTubePlayer | undefined;
+    let cancelled = false;
+
+    loadYouTubeApi().then((YT) => {
+      if (cancelled || !playerContainerRef.current) return;
+      player = new YT.Player(playerContainerRef.current, {
+        videoId: project.youtubeId,
+        playerVars: { autoplay: 1, playsinline: 1 },
+        events: {
+          onReady: (event) => {
+            event.target.setPlaybackQuality("hd1080");
+            event.target.playVideo();
+          },
+        },
+      });
+    });
+
+    return () => {
+      cancelled = true;
+      player?.destroy();
+    };
+  }, [isPlaying, project.youtubeId]);
 
   function handleMouseMove(e: MouseEvent<HTMLElement>) {
     const rect = ref.current?.getBoundingClientRect();
@@ -44,13 +71,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     >
       <div className={`${frameClasses} relative`}>
         {isPlaying ? (
-          <iframe
-            className="h-full w-full"
-            src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1`}
-            title={project.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          <div ref={playerContainerRef} className="h-full w-full" />
         ) : (
           <button
             type="button"
