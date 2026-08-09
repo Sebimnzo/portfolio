@@ -12,6 +12,9 @@ export default function ProjectCard({ project }: { project: Project }) {
   const playerContainerRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [isPlaying, setIsPlaying] = useState(false);
+  const [thumbnailSrc, setThumbnailSrc] = useState(
+    `https://i.ytimg.com/vi/${project.youtubeId}/maxresdefault.jpg`
+  );
 
   useEffect(() => {
     if (!isPlaying || !playerContainerRef.current) return;
@@ -22,7 +25,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       if (cancelled || !playerContainerRef.current) return;
       player = new YT.Player(playerContainerRef.current, {
         videoId: project.youtubeId,
-        playerVars: { autoplay: 1, playsinline: 1 },
+        playerVars: { autoplay: 1, playsinline: 1, cc_load_policy: 0 },
         events: {
           onReady: (event) => {
             event.target.setPlaybackQuality("hd1080");
@@ -69,39 +72,42 @@ export default function ProjectCard({ project }: { project: Project }) {
       }}
       className="group overflow-visible rounded-2xl border border-white/10 bg-white/5 will-change-transform hover:border-white/20"
     >
-      <div
-        className={`${frameClasses} relative overflow-hidden rounded-2xl transition-transform duration-300 ease-out ${
-          isPlaying
-            ? "lg:hover:z-30 lg:hover:scale-150 lg:hover:shadow-2xl lg:hover:shadow-black/60"
-            : ""
-        }`}
-      >
-        {isPlaying ? (
-          <div ref={playerContainerRef} className="h-full w-full" />
-        ) : (
-          <button
-            type="button"
-            onClick={() => setIsPlaying(true)}
-            aria-label={`Reproducir ${project.title}`}
-            className="group/play relative block h-full w-full cursor-pointer"
-          >
-            <Image
-              src={`https://i.ytimg.com/vi/${project.youtubeId}/hqdefault.jpg`}
-              alt={project.title}
-              fill
-              loading="lazy"
-              sizes={isVertical ? "256px" : "(min-width: 768px) 50vw, 100vw"}
-              className="object-cover"
-            />
-            <span className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover/play:bg-black/35">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 transition-transform group-hover/play:scale-110">
-                <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6 fill-black">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
+      <div className={`${frameClasses} relative`}>
+        <div
+          className="absolute inset-0 overflow-hidden rounded-2xl bg-black transition-[inset,box-shadow] duration-300 ease-out lg:hover:z-30 lg:hover:inset-[-37.5%] lg:hover:shadow-2xl lg:hover:shadow-black/60"
+        >
+          {isPlaying ? (
+            <div ref={playerContainerRef} className="h-full w-full" />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setIsPlaying(true)}
+              aria-label={`Reproducir ${project.title}`}
+              className="group/play relative block h-full w-full cursor-pointer"
+            >
+              <Image
+                src={thumbnailSrc}
+                onError={() =>
+                  setThumbnailSrc(
+                    `https://i.ytimg.com/vi/${project.youtubeId}/hqdefault.jpg`
+                  )
+                }
+                alt={project.title}
+                fill
+                loading="lazy"
+                sizes={isVertical ? "384px" : "(min-width: 768px) 75vw, 100vw"}
+                className="object-cover"
+              />
+              <span className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover/play:bg-black/35">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 transition-transform group-hover/play:scale-110">
+                  <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6 fill-black">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
               </span>
-            </span>
-          </button>
-        )}
+            </button>
+          )}
+        </div>
       </div>
       <div className="p-5">
         <p className="text-xs font-medium uppercase tracking-wider text-white/50">
