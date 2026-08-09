@@ -12,8 +12,6 @@ export default function ProjectCard({ project }: { project: Project }) {
   const playerContainerRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isPlayerHovered, setIsPlayerHovered] = useState(false);
-  const isZoomed = isPlaying && isPlayerHovered;
 
   useEffect(() => {
     if (!isPlaying || !playerContainerRef.current) return;
@@ -57,8 +55,8 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   const isVertical = project.orientation === "vertical";
   const frameClasses = isVertical
-    ? "aspect-[9/16] mx-auto w-full max-w-64 overflow-hidden bg-black"
-    : "aspect-video w-full overflow-hidden bg-black";
+    ? "aspect-[9/16] mx-auto w-full max-w-64 bg-black"
+    : "aspect-video w-full bg-black";
 
   return (
     <article
@@ -69,20 +67,14 @@ export default function ProjectCard({ project }: { project: Project }) {
         transform: `perspective(800px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
         transition: "transform 0.2s ease-out, border-color 0.2s ease-out",
       }}
-      className={`group rounded-2xl border border-white/10 bg-white/5 will-change-transform hover:border-white/20 ${
-        isZoomed ? "overflow-visible" : "overflow-hidden"
-      }`}
+      className="group overflow-visible rounded-2xl border border-white/10 bg-white/5 will-change-transform hover:border-white/20"
     >
       <div
-        onMouseEnter={() => setIsPlayerHovered(true)}
-        onMouseLeave={() => setIsPlayerHovered(false)}
-        style={{
-          transform: isZoomed ? "scale(1.06)" : "scale(1)",
-          transition: "transform 0.25s ease-out, box-shadow 0.25s ease-out",
-          boxShadow: isZoomed ? "0 20px 40px -8px rgba(0,0,0,0.6)" : "none",
-          zIndex: isZoomed ? 30 : "auto",
-        }}
-        className={`${frameClasses} relative`}
+        className={`${frameClasses} relative overflow-hidden rounded-2xl transition-transform duration-300 ease-out ${
+          isPlaying
+            ? "hover:z-30 hover:scale-[1.06] hover:shadow-2xl hover:shadow-black/60"
+            : ""
+        }`}
       >
         {isPlaying ? (
           <div ref={playerContainerRef} className="h-full w-full" />
