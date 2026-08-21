@@ -2,9 +2,9 @@ import Link from "next/link";
 import { site } from "@/lib/data";
 
 const links = [
-  { href: "#trabajos", label: "Trabajos" },
-  { href: "#sobre-mi", label: "Sobre mí" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "#trabajos", label: "Trabajos", index: "01" },
+  { href: "#sobre-mi", label: "Sobre mí", index: "02" },
+  { href: "#contacto", label: "Contacto", index: "03" },
 ];
 
 export default function Header() {
@@ -25,7 +25,11 @@ export default function Header() {
         <ul className="flex items-center gap-2 text-xs font-semibold uppercase text-ink/70 sm:gap-6 sm:text-sm sm:tracking-wide">
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="whitespace-nowrap transition-colors hover:text-rust">
+              <a
+                href={link.href}
+                className="inline-flex items-baseline gap-1 whitespace-nowrap transition-colors hover:text-rust"
+              >
+                <span className="text-rust/70">{link.index}</span>
                 {link.label}
               </a>
             </li>

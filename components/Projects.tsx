@@ -1,5 +1,5 @@
 import { projects } from "@/lib/data";
-import ProjectCard from "./ProjectCard";
+import ProjectsGrid from "./ProjectsGrid";
 
 export default function Projects() {
   return (
@@ -37,17 +37,16 @@ export default function Projects() {
         />
       </svg>
       <div className="relative mx-auto max-w-6xl">
-        <h2 className="text-3xl font-extrabold uppercase tracking-tight text-cream sm:text-4xl">
-          Trabajos Seleccionados
-        </h2>
+        <div className="flex items-baseline gap-3 border-t-2 border-cream/40 pt-4">
+          <span className="text-sm font-bold text-cream/50">01</span>
+          <h2 className="text-3xl font-extrabold uppercase tracking-tight text-cream sm:text-4xl">
+            Trabajos Seleccionados
+          </h2>
+        </div>
         <p className="mt-3 max-w-xl text-cream/80">
           Selección de proyectos de edición de video y motion graphics.
         </p>
-        <div className="mt-16 grid grid-cols-1 gap-16 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
+        <ProjectsGrid projects={projects} />
       </div>
     </section>
   );

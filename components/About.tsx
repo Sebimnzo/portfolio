@@ -35,11 +35,14 @@ export default function About() {
         <circle cx="50" cy="50" r="14" fill="none" stroke="var(--color-ink)" strokeWidth="4" opacity="0.5" />
       </svg>
       <div className="relative mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+        <div className="flex items-baseline gap-3 border-t-2 border-ink/30 pt-4">
+          <span className="text-sm font-bold text-ink/50">02</span>
+          <h2 className="text-3xl font-extrabold uppercase tracking-tight text-ink sm:text-4xl">
+            Sobre mí
+          </h2>
+        </div>
+        <div className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-extrabold uppercase tracking-tight text-ink sm:text-4xl">
-              Sobre mí
-            </h2>
             <p className="mt-6 text-ink/80">
               Soy {site.name}, {site.role.toLowerCase()} con base en {site.location}.
               Trabajo en la edición y el motion graphics de piezas para marcas,

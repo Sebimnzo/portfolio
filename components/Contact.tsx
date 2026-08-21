@@ -32,9 +32,12 @@ export default function Contact() {
         <polygon points="50,5 61,38 96,38 68,59 79,92 50,71 21,92 32,59 4,38 39,38" fill="var(--color-mustard)" opacity="0.8" />
       </svg>
       <div className="relative mx-auto max-w-6xl">
-        <h2 className="text-3xl font-extrabold uppercase tracking-tight text-cream sm:text-4xl">
-          Contacto
-        </h2>
+        <div className="flex items-baseline gap-3 border-t-2 border-cream/30 pt-4">
+          <span className="text-sm font-bold text-cream/50">03</span>
+          <h2 className="text-3xl font-extrabold uppercase tracking-tight text-cream sm:text-4xl">
+            Contacto
+          </h2>
+        </div>
         <p className="mt-4 max-w-xl text-cream/80">
           ¿Tenés un proyecto en mente? Escribime y lo charlamos.
         </p>
