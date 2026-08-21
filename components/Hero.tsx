@@ -11,10 +11,31 @@ export default function Hero() {
         preserveAspectRatio="xMidYMid slice"
         viewBox="0 0 1000 1000"
       >
-        <circle cx="860" cy="150" r="220" fill="var(--color-mustard)" />
+        {/* concentric sunburst / target, top right */}
+        <circle cx="860" cy="150" r="240" fill="var(--color-mustard)" />
+        <circle cx="860" cy="150" r="190" fill="none" stroke="var(--color-cream)" strokeWidth="14" />
+        <circle cx="860" cy="150" r="140" fill="var(--color-rust)" />
+        <circle cx="860" cy="150" r="90" fill="none" stroke="var(--color-cream)" strokeWidth="12" />
+        <circle cx="860" cy="150" r="45" fill="var(--color-teal)" />
+
         <polygon points="1000,1000 1000,650 700,1000" fill="var(--color-teal)" />
-        <circle cx="90" cy="880" r="140" fill="none" stroke="var(--color-rust)" strokeWidth="18" />
+
+        {/* spiral, bottom left */}
+        <path
+          d="M90 880 m0,-150 a150,150 0 1 1 -1,0 m-30,0 a120,120 0 1 0 1,0 m-25,0 a95,95 0 1 1 -1,0 m-20,0 a75,75 0 1 0 1,0"
+          fill="none"
+          stroke="var(--color-rust)"
+          strokeWidth="14"
+          strokeLinecap="round"
+        />
+
         <rect x="-60" y="380" width="180" height="180" fill="var(--color-brick)" transform="rotate(15 30 470)" />
+
+        {/* scattered dots for texture */}
+        <circle cx="520" cy="80" r="16" fill="var(--color-rust)" opacity="0.8" />
+        <circle cx="590" cy="40" r="9" fill="var(--color-teal)" opacity="0.8" />
+        <circle cx="470" cy="900" r="22" fill="var(--color-teal)" opacity="0.6" />
+        <circle cx="560" cy="950" r="12" fill="var(--color-mustard)" opacity="0.9" />
       </svg>
       <div className="relative mx-auto max-w-6xl">
         <p className="text-sm font-bold uppercase tracking-[0.25em] text-rust">

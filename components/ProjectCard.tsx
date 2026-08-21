@@ -74,7 +74,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     >
       <div className={`${frameClasses} relative`}>
         <div
-          className="absolute inset-0 overflow-hidden bg-black transition-[inset,box-shadow] duration-300 ease-out lg:hover:z-30 lg:hover:inset-[-37.5%] lg:hover:shadow-2xl lg:hover:shadow-black/60"
+          className="absolute inset-0 overflow-hidden bg-black transition-[inset,box-shadow] duration-300 ease-out lg:hover:z-30 lg:hover:inset-[-40px] lg:hover:shadow-2xl lg:hover:shadow-black/60"
         >
           {isPlaying ? (
             <div ref={playerContainerRef} className="h-full w-full" />

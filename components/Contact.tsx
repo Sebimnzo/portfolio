@@ -13,6 +13,23 @@ export default function Contact() {
         viewBox="0 0 200 200"
       >
         <circle cx="100" cy="100" r="100" fill="none" stroke="var(--color-cream)" strokeWidth="16" opacity="0.6" />
+        <circle cx="100" cy="100" r="65" fill="none" stroke="var(--color-mustard)" strokeWidth="12" opacity="0.7" />
+      </svg>
+      <svg
+        aria-hidden
+        className="pointer-events-none absolute -bottom-16 -left-16 -z-0 h-64 w-64"
+        viewBox="0 0 200 200"
+      >
+        <circle cx="100" cy="100" r="100" fill="var(--color-teal)" opacity="0.85" />
+        <circle cx="100" cy="100" r="62" fill="var(--color-mustard)" opacity="0.85" />
+        <circle cx="100" cy="100" r="28" fill="var(--color-cream)" opacity="0.9" />
+      </svg>
+      <svg
+        aria-hidden
+        className="pointer-events-none absolute left-1/3 top-8 -z-0 hidden h-16 w-16 md:block"
+        viewBox="0 0 100 100"
+      >
+        <polygon points="50,5 61,38 96,38 68,59 79,92 50,71 21,92 32,59 4,38 39,38" fill="var(--color-mustard)" opacity="0.8" />
       </svg>
       <div className="relative mx-auto max-w-6xl">
         <h2 className="text-3xl font-extrabold uppercase tracking-tight text-cream sm:text-4xl">

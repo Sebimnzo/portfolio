@@ -15,6 +15,25 @@ export default function About() {
       >
         <polygon points="0,200 0,0 200,200" fill="var(--color-brick)" opacity="0.85" />
       </svg>
+      <svg
+        aria-hidden
+        className="pointer-events-none absolute -right-20 -top-20 -z-0 h-72 w-72"
+        viewBox="0 0 200 200"
+      >
+        <circle cx="100" cy="100" r="100" fill="var(--color-teal)" opacity="0.9" />
+        <circle cx="100" cy="100" r="72" fill="none" stroke="var(--color-cream)" strokeWidth="9" />
+        <circle cx="100" cy="100" r="46" fill="var(--color-brick)" />
+        <circle cx="100" cy="100" r="20" fill="var(--color-cream)" />
+      </svg>
+      <svg
+        aria-hidden
+        className="pointer-events-none absolute right-10 bottom-10 -z-0 hidden h-20 w-20 md:block"
+        viewBox="0 0 100 100"
+      >
+        <circle cx="50" cy="50" r="46" fill="none" stroke="var(--color-ink)" strokeWidth="4" opacity="0.5" />
+        <circle cx="50" cy="50" r="30" fill="none" stroke="var(--color-ink)" strokeWidth="4" opacity="0.5" />
+        <circle cx="50" cy="50" r="14" fill="none" stroke="var(--color-ink)" strokeWidth="4" opacity="0.5" />
+      </svg>
       <div className="relative mx-auto max-w-6xl">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <div>
