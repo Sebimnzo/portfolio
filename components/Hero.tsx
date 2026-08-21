@@ -58,15 +58,15 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap gap-4">
           <MagneticButton
             href="#trabajos"
-            className="border-2 border-ink bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-cream hover:bg-rust hover:border-rust"
+            className="inline-flex items-center gap-2 border-2 border-ink bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-cream hover:bg-rust hover:border-rust"
           >
-            Ver trabajos
+            Ver trabajos <span aria-hidden>→</span>
           </MagneticButton>
           <MagneticButton
             href="#contacto"
-            className="border-2 border-ink bg-transparent px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-ink hover:text-cream"
+            className="inline-flex items-center gap-2 border-2 border-ink bg-transparent px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-ink hover:text-cream"
           >
-            Contactarme
+            Contactarme <span aria-hidden>→</span>
           </MagneticButton>
         </div>
       </div>

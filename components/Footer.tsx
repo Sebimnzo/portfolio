@@ -7,8 +7,11 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {site.name}. Todos los derechos reservados.
         </p>
-        <a href="#" className="font-semibold uppercase tracking-wide hover:text-cream">
-          Volver arriba
+        <a
+          href="#"
+          className="inline-flex items-center gap-2 font-semibold uppercase tracking-wide hover:text-cream"
+        >
+          <span aria-hidden>↑</span> Volver arriba
         </a>
       </div>
     </footer>

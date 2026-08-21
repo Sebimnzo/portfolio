@@ -73,9 +73,9 @@ export default function Contact() {
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                className="transition-colors hover:text-cream"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-cream"
               >
-                {social.label}
+                {social.label} <span aria-hidden>↗</span>
               </a>
             </li>
           ))}
