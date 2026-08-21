@@ -4,51 +4,46 @@ import MagneticButton from "./MagneticButton";
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center overflow-hidden px-6 pb-16 pt-28 sm:min-h-screen sm:pb-6 sm:pt-24">
-      <div
+    <section className="relative flex items-center overflow-hidden bg-cream px-6 pb-16 pt-28 sm:min-h-screen sm:pb-6 sm:pt-24">
+      <svg
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          backgroundImage:
-            "radial-gradient(60% 50% at 50% 15%, rgba(124,58,237,0.32), transparent 70%)," +
-            "radial-gradient(45% 45% at 88% 78%, rgba(6,182,212,0.20), transparent 70%)," +
-            "radial-gradient(35% 35% at 6% 88%, rgba(236,72,153,0.16), transparent 70%)," +
-            "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)," +
-            "linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
-          backgroundSize: "100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px",
-          WebkitMaskImage:
-            "radial-gradient(80% 70% at 50% 30%, black 40%, transparent 100%)",
-          maskImage: "radial-gradient(80% 70% at 50% 30%, black 40%, transparent 100%)",
-        }}
-      />
-      <div className="mx-auto max-w-6xl">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/50">
+        className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+        preserveAspectRatio="xMidYMid slice"
+        viewBox="0 0 1000 1000"
+      >
+        <circle cx="860" cy="150" r="220" fill="var(--color-mustard)" />
+        <polygon points="1000,1000 1000,650 700,1000" fill="var(--color-teal)" />
+        <circle cx="90" cy="880" r="140" fill="none" stroke="var(--color-rust)" strokeWidth="18" />
+        <rect x="-60" y="380" width="180" height="180" fill="var(--color-brick)" transform="rotate(15 30 470)" />
+      </svg>
+      <div className="relative mx-auto max-w-6xl">
+        <p className="text-sm font-bold uppercase tracking-[0.25em] text-rust">
           {site.role}
         </p>
-        <div className="mt-4 flex items-center gap-5">
+        <div className="mt-4 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
           <Image
             src="/profile.jpg"
             alt={site.name}
             width={88}
             height={88}
             priority
-            className="h-16 w-16 rounded-full object-cover ring-2 ring-white/20 sm:h-22 sm:w-22"
+            className="h-16 w-16 shrink-0 rounded-full border-2 border-ink object-cover sm:h-22 sm:w-22"
           />
-          <h1 className="max-w-3xl text-5xl font-bold leading-[1.05] text-white sm:text-7xl">
+          <h1 className="min-w-0 max-w-3xl text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-ink sm:text-7xl">
             {site.name}
           </h1>
         </div>
-        <p className="mt-6 max-w-xl text-lg text-white/70">{site.tagline}</p>
+        <p className="mt-6 max-w-xl text-lg text-ink/80">{site.tagline}</p>
         <div className="mt-10 flex flex-wrap gap-4">
           <MagneticButton
             href="#trabajos"
-            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:opacity-90"
+            className="border-2 border-ink bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-cream hover:bg-rust hover:border-rust"
           >
             Ver trabajos
           </MagneticButton>
           <MagneticButton
             href="#contacto"
-            className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:border-white/40"
+            className="border-2 border-ink bg-transparent px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-ink hover:text-cream"
           >
             Contactarme
           </MagneticButton>

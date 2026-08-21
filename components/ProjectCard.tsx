@@ -70,11 +70,11 @@ export default function ProjectCard({ project }: { project: Project }) {
         transform: `perspective(800px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
         transition: "transform 0.2s ease-out, border-color 0.2s ease-out",
       }}
-      className="group overflow-visible rounded-2xl border border-white/10 bg-white/5 will-change-transform hover:border-white/20"
+      className="group overflow-visible border-[3px] border-ink bg-cream will-change-transform"
     >
       <div className={`${frameClasses} relative`}>
         <div
-          className="absolute inset-0 overflow-hidden rounded-2xl bg-black transition-[inset,box-shadow] duration-300 ease-out lg:hover:z-30 lg:hover:inset-[-37.5%] lg:hover:shadow-2xl lg:hover:shadow-black/60"
+          className="absolute inset-0 overflow-hidden bg-black transition-[inset,box-shadow] duration-300 ease-out lg:hover:z-30 lg:hover:inset-[-37.5%] lg:hover:shadow-2xl lg:hover:shadow-black/60"
         >
           {isPlaying ? (
             <div ref={playerContainerRef} className="h-full w-full" />
@@ -109,12 +109,12 @@ export default function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
       </div>
-      <div className="p-5">
-        <p className="text-xs font-medium uppercase tracking-wider text-white/50">
+      <div className="border-t-[3px] border-ink p-5">
+        <span className="inline-block bg-rust px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-cream">
           {project.category}
-        </p>
-        <h3 className="mt-2 text-lg font-semibold text-white">{project.title}</h3>
-        <p className="mt-2 text-sm text-white/60">{project.description}</p>
+        </span>
+        <h3 className="mt-2 text-lg font-bold text-ink">{project.title}</h3>
+        <p className="mt-2 text-sm text-ink/70">{project.description}</p>
       </div>
     </article>
   );

@@ -4,12 +4,24 @@ const skills = ["Adobe Premiere Pro", "Adobe After Effects", "Adobe Illustrator"
 
 export default function About() {
   return (
-    <section id="sobre-mi" className="border-t border-white/10 bg-white/[0.02]">
-      <div className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
+    <section
+      id="sobre-mi"
+      className="relative scroll-mt-24 overflow-hidden border-y-2 border-ink bg-mustard px-6 py-24"
+    >
+      <svg
+        aria-hidden
+        className="pointer-events-none absolute -bottom-10 -left-10 -z-0 h-56 w-56"
+        viewBox="0 0 200 200"
+      >
+        <polygon points="0,200 0,0 200,200" fill="var(--color-brick)" opacity="0.85" />
+      </svg>
+      <div className="relative mx-auto max-w-6xl">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Sobre mí</h2>
-            <p className="mt-6 text-white/70">
+            <h2 className="text-3xl font-extrabold uppercase tracking-tight text-ink sm:text-4xl">
+              Sobre mí
+            </h2>
+            <p className="mt-6 text-ink/80">
               Soy {site.name}, {site.role.toLowerCase()} con base en {site.location}.
               Trabajo en la edición y el motion graphics de piezas para marcas,
               agencias y creadores, cuidando ritmo, narrativa y detalle visual en
@@ -17,14 +29,14 @@ export default function About() {
             </p>
           </div>
           <div>
-            <h3 className="text-sm font-medium uppercase tracking-wider text-white/50">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-ink/70">
               Herramientas
             </h3>
             <ul className="mt-4 flex flex-wrap gap-3">
               {skills.map((skill) => (
                 <li
                   key={skill}
-                  className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/80"
+                  className="border-2 border-ink bg-cream px-4 py-2 text-sm font-semibold text-ink"
                 >
                   {skill}
                 </li>
