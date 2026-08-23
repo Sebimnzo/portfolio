@@ -26,8 +26,8 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
         <button
           type="button"
           onClick={() => setActiveFilter(null)}
-          className={`rounded-full border-2 border-cream px-4 py-1.5 text-xs font-bold uppercase tracking-wide transition-colors sm:text-sm ${
-            activeFilter === null ? "bg-cream text-teal" : "text-cream hover:bg-cream/10"
+          className={`rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium transition-colors sm:text-sm ${
+            activeFilter === null ? "bg-white text-black" : "text-white/70 hover:border-white/40"
           }`}
         >
           Todos ({projects.length})
@@ -37,10 +37,10 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
             key={category}
             type="button"
             onClick={() => setActiveFilter(category)}
-            className={`rounded-full border-2 border-cream px-4 py-1.5 text-xs font-bold uppercase tracking-wide transition-colors sm:text-sm ${
+            className={`rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium transition-colors sm:text-sm ${
               activeFilter === category
-                ? "bg-cream text-teal"
-                : "text-cream hover:bg-cream/10"
+                ? "bg-white text-black"
+                : "text-white/70 hover:border-white/40"
             }`}
           >
             {category} ({count})

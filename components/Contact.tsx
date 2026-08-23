@@ -4,58 +4,28 @@ import Reveal from "./Reveal";
 
 export default function Contact() {
   return (
-    <section
-      id="contacto"
-      className="relative scroll-mt-24 overflow-hidden bg-brick px-6 py-24"
-    >
-      <svg
-        aria-hidden
-        className="pointer-events-none absolute -right-12 -top-12 -z-0 h-52 w-52"
-        viewBox="0 0 200 200"
-      >
-        <circle cx="100" cy="100" r="100" fill="none" stroke="var(--color-cream)" strokeWidth="16" opacity="0.6" />
-        <circle cx="100" cy="100" r="65" fill="none" stroke="var(--color-mustard)" strokeWidth="12" opacity="0.7" />
-      </svg>
-      <svg
-        aria-hidden
-        className="pointer-events-none absolute -bottom-16 -left-16 -z-0 h-64 w-64"
-        viewBox="0 0 200 200"
-      >
-        <circle cx="100" cy="100" r="100" fill="var(--color-teal)" opacity="0.85" />
-        <circle cx="100" cy="100" r="62" fill="var(--color-mustard)" opacity="0.85" />
-        <circle cx="100" cy="100" r="28" fill="var(--color-cream)" opacity="0.9" />
-      </svg>
-      <svg
-        aria-hidden
-        className="pointer-events-none absolute left-1/3 top-8 -z-0 hidden h-16 w-16 md:block"
-        viewBox="0 0 100 100"
-      >
-        <polygon points="50,5 61,38 96,38 68,59 79,92 50,71 21,92 32,59 4,38 39,38" fill="var(--color-mustard)" opacity="0.8" />
-      </svg>
-      <div className="relative mx-auto max-w-6xl">
-        <div className="flex items-baseline gap-3 border-t-2 border-cream/30 pt-4">
-          <span className="text-sm font-bold text-cream/50">03</span>
-          <h2 className="font-display text-3xl uppercase tracking-tight text-cream sm:text-4xl">
-            Contacto
-          </h2>
-        </div>
-        <Reveal>
-        <p className="mt-4 max-w-xl text-cream/80">
+    <section id="contacto" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
+      <div className="flex items-baseline gap-3">
+        <span className="text-sm font-medium text-white/40">03</span>
+        <h2 className="font-display text-3xl text-white sm:text-4xl">Contacto</h2>
+      </div>
+      <Reveal>
+        <p className="mt-4 max-w-xl text-white/60">
           ¿Tenés un proyecto en mente? Escribime y lo charlamos.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <MagneticButton
             href={`mailto:${site.email}`}
-            className="inline-flex items-center gap-2 border-2 border-cream bg-cream px-8 py-4 text-sm font-bold uppercase tracking-wide text-ink hover:bg-mustard hover:border-mustard"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-black hover:opacity-90"
           >
-            Escribime <span className="normal-case tracking-normal text-ink/60">— {site.email}</span>
+            Escribime <span className="text-black/60">— {site.email}</span>
           </MagneticButton>
           <MagneticButton
             href={`https://wa.me/${site.whatsapp}`}
             target="_blank"
             rel="noreferrer"
             aria-label="Escribime por WhatsApp"
-            className="inline-flex items-center gap-2 border-2 border-cream bg-transparent px-6 py-4 text-sm font-bold uppercase tracking-wide text-cream hover:bg-cream hover:text-ink"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-4 text-sm font-semibold text-white hover:border-white/40"
           >
             <svg
               viewBox="0 0 24 24"
@@ -68,22 +38,21 @@ export default function Contact() {
             Escribime por WhatsApp
           </MagneticButton>
         </div>
-        <ul className="relative mt-8 flex flex-wrap gap-6 text-sm font-semibold text-cream/80">
+        <ul className="mt-8 flex flex-wrap gap-6 text-sm text-white/60">
           {site.socials.map((social) => (
             <li key={social.label}>
               <a
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 transition-colors hover:text-cream"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
               >
                 {social.label} <span aria-hidden>↗</span>
               </a>
             </li>
           ))}
         </ul>
-        </Reveal>
-      </div>
+      </Reveal>
     </section>
   );
 }

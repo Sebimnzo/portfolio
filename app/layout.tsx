@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: `${site.name} — ${site.role}`,
   description: site.tagline,
   other: {
-    "theme-color": "#f2e9d8",
+    "theme-color": "#0a0a0a",
   },
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} ${archivoBlack.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink">
+      <body className="min-h-full flex flex-col bg-black text-white">
         <a href="#main" className="skip-link">
           Saltar al contenido
         </a>

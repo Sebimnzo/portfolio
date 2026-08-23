@@ -5,41 +5,25 @@ import Reveal from "./Reveal";
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center overflow-hidden bg-cream px-6 pb-16 pt-28 sm:min-h-screen sm:pb-6 sm:pt-24">
-      <svg
+    <section className="relative flex items-center overflow-hidden px-6 pb-16 pt-28 sm:min-h-screen sm:pb-6 sm:pt-24">
+      <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
-        preserveAspectRatio="xMidYMid slice"
-        viewBox="0 0 1000 1000"
-      >
-        {/* concentric sunburst / target, top right */}
-        <circle cx="860" cy="150" r="240" fill="var(--color-mustard)" />
-        <circle cx="860" cy="150" r="190" fill="none" stroke="var(--color-cream)" strokeWidth="14" />
-        <circle cx="860" cy="150" r="140" fill="var(--color-rust)" />
-        <circle cx="860" cy="150" r="90" fill="none" stroke="var(--color-cream)" strokeWidth="12" />
-        <circle cx="860" cy="150" r="45" fill="var(--color-teal)" />
-
-        <polygon points="1000,1000 1000,650 700,1000" fill="var(--color-teal)" />
-
-        {/* spiral, bottom left */}
-        <path
-          d="M90 880 m0,-150 a150,150 0 1 1 -1,0 m-30,0 a120,120 0 1 0 1,0 m-25,0 a95,95 0 1 1 -1,0 m-20,0 a75,75 0 1 0 1,0"
-          fill="none"
-          stroke="var(--color-rust)"
-          strokeWidth="14"
-          strokeLinecap="round"
-        />
-
-        <rect x="-60" y="380" width="180" height="180" fill="var(--color-brick)" transform="rotate(15 30 470)" />
-
-        {/* scattered dots for texture */}
-        <circle cx="520" cy="80" r="16" fill="var(--color-rust)" opacity="0.8" />
-        <circle cx="590" cy="40" r="9" fill="var(--color-teal)" opacity="0.8" />
-        <circle cx="470" cy="900" r="22" fill="var(--color-teal)" opacity="0.6" />
-        <circle cx="560" cy="950" r="12" fill="var(--color-mustard)" opacity="0.9" />
-      </svg>
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          backgroundImage:
+            "radial-gradient(60% 50% at 50% 15%, rgba(124,58,237,0.32), transparent 70%)," +
+            "radial-gradient(45% 45% at 88% 78%, rgba(6,182,212,0.20), transparent 70%)," +
+            "radial-gradient(35% 35% at 6% 88%, rgba(236,72,153,0.16), transparent 70%)," +
+            "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)," +
+            "linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
+          backgroundSize: "100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px",
+          WebkitMaskImage:
+            "radial-gradient(80% 70% at 50% 30%, black 40%, transparent 100%)",
+          maskImage: "radial-gradient(80% 70% at 50% 30%, black 40%, transparent 100%)",
+        }}
+      />
       <Reveal className="relative mx-auto max-w-6xl">
-        <p className="text-sm font-bold uppercase tracking-[0.25em] text-rust">
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/50">
           {site.role}
         </p>
         <div className="mt-4 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
@@ -49,25 +33,25 @@ export default function Hero() {
             width={88}
             height={88}
             priority
-            className="h-16 w-16 shrink-0 rounded-full border-2 border-ink object-cover sm:h-22 sm:w-22"
+            className="h-16 w-16 shrink-0 rounded-full object-cover ring-2 ring-white/20 sm:h-22 sm:w-22"
           />
-          <h1 className="min-w-0 max-w-3xl font-display text-4xl uppercase leading-[0.95] tracking-tight text-ink sm:text-7xl">
+          <h1 className="min-w-0 max-w-3xl font-display text-4xl leading-[1.05] text-white sm:text-7xl">
             {site.name}
           </h1>
         </div>
-        <p className="mt-6 max-w-xl text-lg text-ink/80">{site.tagline}</p>
+        <p className="mt-6 max-w-xl text-lg text-white/70">{site.tagline}</p>
         <div className="mt-10 flex flex-wrap gap-4">
           <MagneticButton
             href="#trabajos"
-            className="inline-flex items-center gap-2 border-2 border-ink bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-cream hover:bg-rust hover:border-rust"
+            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:opacity-90"
           >
-            Ver trabajos <span aria-hidden>→</span>
+            Ver trabajos
           </MagneticButton>
           <MagneticButton
             href="#contacto"
-            className="inline-flex items-center gap-2 border-2 border-ink bg-transparent px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-ink hover:text-cream"
+            className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:border-white/40"
           >
-            Contactarme <span aria-hidden>→</span>
+            Contactarme
           </MagneticButton>
         </div>
       </Reveal>
