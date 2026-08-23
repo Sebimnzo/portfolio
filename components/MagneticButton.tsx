@@ -16,6 +16,7 @@ export default function MagneticButton({
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   function handleMouseMove(e: MouseEvent<HTMLAnchorElement>) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const rect = ref.current?.getBoundingClientRect();
     if (!rect) return;
     setOffset({

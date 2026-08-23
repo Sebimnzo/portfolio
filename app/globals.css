@@ -31,5 +31,39 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-rust);
+  outline-offset: 2px;
 }

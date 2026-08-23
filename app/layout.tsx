@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: `${site.name} — ${site.role}`,
   description: site.tagline,
+  other: {
+    "theme-color": "#f2e9d8",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -25,6 +28,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
+        <a href="#main" className="skip-link">
+          Saltar al contenido
+        </a>
         {children}
       </body>
     </html>

@@ -42,6 +42,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   }, [isPlaying, project.youtubeId]);
 
   function handleMouseMove(e: MouseEvent<HTMLElement>) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const rect = ref.current?.getBoundingClientRect();
     if (!rect) return;
     const px = (e.clientX - rect.left) / rect.width;
@@ -74,7 +75,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     >
       <div className={`${frameClasses} relative`}>
         <div
-          className="absolute inset-0 overflow-hidden bg-black transition-[inset,box-shadow] duration-300 ease-out lg:hover:z-30 lg:hover:inset-[-40px] lg:hover:shadow-2xl lg:hover:shadow-black/60"
+          className="absolute inset-0 overflow-hidden bg-black transition-[inset,box-shadow] duration-300 ease-out motion-safe:lg:hover:z-30 motion-safe:lg:hover:inset-[-40px] motion-safe:lg:hover:shadow-2xl motion-safe:lg:hover:shadow-black/60"
         >
           {isPlaying ? (
             <div ref={playerContainerRef} className="h-full w-full" />
