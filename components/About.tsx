@@ -1,4 +1,5 @@
 import { site } from "@/lib/data";
+import Reveal from "./Reveal";
 
 const skills = ["Adobe Premiere Pro", "Adobe After Effects", "Adobe Illustrator"];
 
@@ -37,11 +38,11 @@ export default function About() {
       <div className="relative mx-auto max-w-6xl">
         <div className="flex items-baseline gap-3 border-t-2 border-ink/30 pt-4">
           <span className="text-sm font-bold text-ink/50">02</span>
-          <h2 className="text-3xl font-extrabold uppercase tracking-tight text-ink sm:text-4xl">
+          <h2 className="font-display text-3xl uppercase tracking-tight text-ink sm:text-4xl">
             Sobre mí
           </h2>
         </div>
-        <div className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-2">
+        <Reveal className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-2">
           <div>
             <p className="mt-6 text-ink/80">
               Soy {site.name}, {site.role.toLowerCase()} con base en {site.location}.
@@ -65,7 +66,7 @@ export default function About() {
               ))}
             </ul>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

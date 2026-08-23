@@ -1,5 +1,6 @@
 import { site } from "@/lib/data";
 import MagneticButton from "./MagneticButton";
+import Reveal from "./Reveal";
 
 export default function Contact() {
   return (
@@ -34,10 +35,11 @@ export default function Contact() {
       <div className="relative mx-auto max-w-6xl">
         <div className="flex items-baseline gap-3 border-t-2 border-cream/30 pt-4">
           <span className="text-sm font-bold text-cream/50">03</span>
-          <h2 className="text-3xl font-extrabold uppercase tracking-tight text-cream sm:text-4xl">
+          <h2 className="font-display text-3xl uppercase tracking-tight text-cream sm:text-4xl">
             Contacto
           </h2>
         </div>
+        <Reveal>
         <p className="mt-4 max-w-xl text-cream/80">
           ¿Tenés un proyecto en mente? Escribime y lo charlamos.
         </p>
@@ -80,6 +82,7 @@ export default function Contact() {
             </li>
           ))}
         </ul>
+        </Reveal>
       </div>
     </section>
   );

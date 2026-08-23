@@ -39,7 +39,7 @@ export default function Projects() {
       <div className="relative mx-auto max-w-6xl">
         <div className="flex items-baseline gap-3 border-t-2 border-cream/40 pt-4">
           <span className="text-sm font-bold text-cream/50">01</span>
-          <h2 className="text-3xl font-extrabold uppercase tracking-tight text-cream sm:text-4xl">
+          <h2 className="font-display text-3xl uppercase tracking-tight text-cream sm:text-4xl">
             Trabajos Seleccionados
           </h2>
         </div>

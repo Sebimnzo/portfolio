@@ -22,6 +22,7 @@
   --color-brick: var(--color-brick);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
 }
 
 body {
@@ -66,4 +67,11 @@ a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--color-rust);
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

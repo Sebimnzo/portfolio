@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { site } from "@/lib/data";
 import MagneticButton from "./MagneticButton";
+import Reveal from "./Reveal";
 
 export default function Hero() {
   return (
@@ -37,7 +38,7 @@ export default function Hero() {
         <circle cx="470" cy="900" r="22" fill="var(--color-teal)" opacity="0.6" />
         <circle cx="560" cy="950" r="12" fill="var(--color-mustard)" opacity="0.9" />
       </svg>
-      <div className="relative mx-auto max-w-6xl">
+      <Reveal className="relative mx-auto max-w-6xl">
         <p className="text-sm font-bold uppercase tracking-[0.25em] text-rust">
           {site.role}
         </p>
@@ -50,7 +51,7 @@ export default function Hero() {
             priority
             className="h-16 w-16 shrink-0 rounded-full border-2 border-ink object-cover sm:h-22 sm:w-22"
           />
-          <h1 className="min-w-0 max-w-3xl text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-ink sm:text-7xl">
+          <h1 className="min-w-0 max-w-3xl font-display text-4xl uppercase leading-[0.95] tracking-tight text-ink sm:text-7xl">
             {site.name}
           </h1>
         </div>
@@ -69,7 +70,7 @@ export default function Hero() {
             Contactarme <span aria-hidden>→</span>
           </MagneticButton>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
