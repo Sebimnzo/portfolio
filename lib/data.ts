@@ -38,6 +38,22 @@ export const projects: Project[] = [
     orientation: "vertical",
   },
   {
+    slug: "maraldi-logo-animation",
+    title: "Maraldi — Logo Animation",
+    category: "Motion Graphics",
+    description: "Animación de logo para Maraldi, marca argentina de electrodomésticos.",
+    youtubeId: "B-3tmJ7X1Tk",
+    orientation: "horizontal",
+  },
+  {
+    slug: "komasa-logo-animation",
+    title: "Komasa — Logo Animation",
+    category: "Motion Graphics",
+    description: "Animación de logo para Komasa, empresa argentina de bombas eléctricas.",
+    youtubeId: "tIO3pqG1DdU",
+    orientation: "horizontal",
+  },
+  {
     slug: "german-grisotto-investing-coach",
     title: "Germán Grisotto — Investing Coach",
     category: "Longform",
