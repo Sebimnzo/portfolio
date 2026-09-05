@@ -22,6 +22,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "magnetic-impulsa-saas-agency",
+    title: "Magnetic Impulsa — SaaS Marketing Agency",
+    category: "Landing Page",
+    description:
+      "Video para la landing page de Magnetic Impulsa, agencia de marketing para empresas SaaS.",
+    youtubeId: "8WIwIcFDjXk",
+    orientation: "horizontal",
+  },
+  {
     slug: "mark-hyrox-gym",
     title: "Mark — Hyrox Gym",
     category: "Reel",
