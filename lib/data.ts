@@ -102,4 +102,21 @@ export const projects: Project[] = [
     youtubeId: "Lch9cMHdCFw",
     orientation: "vertical",
   },
+  {
+    slug: "yajaira-podcast-trailer",
+    title: "Yajaira — Tráiler de Podcast",
+    category: "Podcast",
+    description: "Tráiler del podcast Yajaira (España).",
+    youtubeId: "dDc-0eX2f3U",
+    orientation: "horizontal",
+  },
+  {
+    slug: "rhinos-app-reel",
+    title: "Rhinos App — Reel",
+    category: "Reel",
+    description:
+      "Reel para Rhinos App, aplicación de manejo de stock para empresas de logística.",
+    youtubeId: "-4_IcXGxbJs",
+    orientation: "vertical",
+  },
 ];
