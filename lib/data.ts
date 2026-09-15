@@ -31,6 +31,14 @@ export const projects: Project[] = [
     orientation: "horizontal",
   },
   {
+    slug: "yajaira-podcast-trailer",
+    title: "Yajaira — Tráiler de Podcast",
+    category: "Podcast",
+    description: "Tráiler del podcast Yajaira (España).",
+    youtubeId: "dDc-0eX2f3U",
+    orientation: "horizontal",
+  },
+  {
     slug: "mark-hyrox-gym",
     title: "Mark — Hyrox Gym",
     category: "Reel",
@@ -101,14 +109,6 @@ export const projects: Project[] = [
     description: "Reel de contenido para redes para el fitness coach Mateo García.",
     youtubeId: "Lch9cMHdCFw",
     orientation: "vertical",
-  },
-  {
-    slug: "yajaira-podcast-trailer",
-    title: "Yajaira — Tráiler de Podcast",
-    category: "Podcast",
-    description: "Tráiler del podcast Yajaira (España).",
-    youtubeId: "dDc-0eX2f3U",
-    orientation: "horizontal",
   },
   {
     slug: "rhinos-app-reel",
