@@ -119,4 +119,20 @@ export const projects: Project[] = [
     youtubeId: "-4_IcXGxbJs",
     orientation: "vertical",
   },
+  {
+    slug: "julian-architecture-consultant",
+    title: "Julián — Architecture Consultant",
+    category: "Reel",
+    description: "Video de contenido para redes para Julián, consultor de arquitectos.",
+    youtubeId: "GJBmOvtedcc",
+    orientation: "vertical",
+  },
+  {
+    slug: "goodly-fit-digital-totem",
+    title: "Goodly Fit — Tótem Digital",
+    category: "Motion Graphics",
+    description: "Pieza para tótem digital del gimnasio Goodly Fit.",
+    youtubeId: "JHuxhk2YIdE",
+    orientation: "vertical",
+  },
 ];
