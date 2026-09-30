@@ -22,6 +22,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "goodly-fit-digital-totem",
+    title: "Goodly Fit — Tótem Digital",
+    category: "Motion Graphics",
+    description: "Pieza para tótem digital del gimnasio Goodly Fit.",
+    youtubeId: "JHuxhk2YIdE",
+    orientation: "vertical",
+  },
+  {
+    slug: "julian-architecture-consultant",
+    title: "Julián — Architecture Consultant",
+    category: "Reel",
+    description: "Video de contenido para redes para Julián, consultor de arquitectos.",
+    youtubeId: "GJBmOvtedcc",
+    orientation: "vertical",
+  },
+  {
     slug: "magnetic-impulsa-saas-agency",
     title: "Magnetic Impulsa — SaaS Marketing Agency",
     category: "Landing Page",
@@ -117,22 +133,6 @@ export const projects: Project[] = [
     description:
       "Reel para Rhinos App, aplicación de manejo de stock para empresas de logística.",
     youtubeId: "-4_IcXGxbJs",
-    orientation: "vertical",
-  },
-  {
-    slug: "julian-architecture-consultant",
-    title: "Julián — Architecture Consultant",
-    category: "Reel",
-    description: "Video de contenido para redes para Julián, consultor de arquitectos.",
-    youtubeId: "GJBmOvtedcc",
-    orientation: "vertical",
-  },
-  {
-    slug: "goodly-fit-digital-totem",
-    title: "Goodly Fit — Tótem Digital",
-    category: "Motion Graphics",
-    description: "Pieza para tótem digital del gimnasio Goodly Fit.",
-    youtubeId: "JHuxhk2YIdE",
     orientation: "vertical",
   },
 ];
