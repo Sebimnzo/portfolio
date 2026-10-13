@@ -3,51 +3,42 @@ import MagneticButton from "./MagneticButton";
 import Reveal from "./Reveal";
 
 export default function Hero() {
+  const words = site.claim.split(" ");
+  const lastWord = words.pop();
+
   return (
-    <section className="relative flex items-center overflow-hidden px-6 pb-16 pt-28 sm:min-h-screen sm:pb-6 sm:pt-24">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          backgroundImage:
-            "radial-gradient(60% 50% at 50% 15%, rgba(124,58,237,0.32), transparent 70%)," +
-            "radial-gradient(45% 45% at 88% 78%, rgba(6,182,212,0.20), transparent 70%)," +
-            "radial-gradient(35% 35% at 6% 88%, rgba(236,72,153,0.16), transparent 70%)," +
-            "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)," +
-            "linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
-          backgroundSize: "100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px",
-          WebkitMaskImage:
-            "radial-gradient(80% 70% at 50% 30%, black 40%, transparent 100%)",
-          maskImage: "radial-gradient(80% 70% at 50% 30%, black 40%, transparent 100%)",
-        }}
-      />
-      <Reveal className="relative mx-auto max-w-6xl">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/50">
-          {site.role}
+    <section className="flex items-center bg-grafito px-6 pb-16 pt-28 text-blanco sm:min-h-screen sm:pt-32">
+      <Reveal className="mx-auto w-full max-w-6xl">
+        <p className="font-mono text-xs uppercase tracking-wider text-blanco/60">
+          + {site.role} — {site.location}
         </p>
-        <h1
-          translate="no"
-          className="mt-4 min-w-0 max-w-3xl font-display text-5xl leading-[1.05] text-white sm:text-7xl"
-        >
-          {site.name}
+        <h1 className="mt-6 text-[clamp(3.25rem,11vw,9rem)] font-black uppercase leading-[0.85] tracking-[-0.045em]">
+          <span className="block">{words.join(" ")}</span>
+          <span className="mt-[0.06em] inline-block bg-azul px-[0.06em] pb-[0.02em]">
+            {lastWord}
+          </span>
         </h1>
-        <p className="mt-6 max-w-xl text-lg text-white/70">{site.tagline}</p>
-        <p className="mt-4 text-sm text-white/50">
-          Fundado por <span className="text-white/80">{site.founder.name}</span>
-        </p>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <MagneticButton
-            href="#trabajos"
-            className="inline-block rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:opacity-90"
-          >
-            Ver trabajos
-          </MagneticButton>
-          <MagneticButton
-            href="#contacto"
-            className="inline-block rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:border-white/40"
-          >
-            Contactanos
-          </MagneticButton>
+        <div className="mt-12 grid grid-cols-1 gap-8 border-t border-blanco/20 pt-8 md:grid-cols-2 md:items-end">
+          <div>
+            <p className="max-w-xl text-lg text-blanco/80">{site.tagline}</p>
+            <p className="mt-4 font-mono text-xs uppercase tracking-wider text-blanco/50">
+              Fundado por <span className="text-blanco">{site.founder.name}</span>
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-4 md:justify-end">
+            <MagneticButton
+              href="#contacto"
+              className="inline-block bg-blanco px-6 py-3.5 text-sm font-extrabold uppercase text-grafito hover:bg-azul-claro"
+            >
+              Pedir propuesta <span aria-hidden>→</span>
+            </MagneticButton>
+            <MagneticButton
+              href="#trabajos"
+              className="inline-block border-2 border-blanco px-6 py-3 text-sm font-extrabold uppercase text-blanco hover:border-azul-claro hover:text-azul-claro"
+            >
+              Ver trabajos
+            </MagneticButton>
+          </div>
         </div>
       </Reveal>
     </section>

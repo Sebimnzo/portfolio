@@ -4,19 +4,22 @@ import Reveal from "./Reveal";
 
 export default function Projects() {
   return (
-    <section id="trabajos" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
-      <Reveal>
-        <div className="flex items-baseline gap-3">
-          <span className="text-sm font-medium text-white/40">01</span>
-          <h2 className="font-display text-3xl text-white sm:text-4xl">
-            Trabajos Seleccionados
-          </h2>
-        </div>
-        <p className="mt-3 max-w-xl text-white/60">
-          Selección de proyectos de edición de video y motion graphics.
-        </p>
-      </Reveal>
-      <ProjectsGrid projects={projects} />
+    <section id="trabajos" className="scroll-mt-16 bg-blanco px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <Reveal>
+          <div className="flex flex-wrap items-end justify-between gap-4 border-b-2 border-grafito pb-4">
+            <h2 className="text-[clamp(2.25rem,6vw,4.5rem)] font-black uppercase leading-[0.9] tracking-[-0.045em]">
+              Trabajos seleccionados
+            </h2>
+            <span className="font-mono text-xs uppercase text-grafito/60">01 / Trabajos</span>
+          </div>
+          <p className="mt-4 max-w-xl text-grafito/70">
+            Una selección de piezas de motion graphics y video para marcas, agencias y
+            creadores.
+          </p>
+        </Reveal>
+        <ProjectsGrid projects={projects} />
+      </div>
     </section>
   );
 }

@@ -59,8 +59,8 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   const isVertical = project.orientation === "vertical";
   const frameClasses = isVertical
-    ? "aspect-[9/16] mx-auto w-full max-w-64 bg-black"
-    : "aspect-video w-full bg-black";
+    ? "aspect-[9/16] mx-auto w-full max-w-64 bg-grafito"
+    : "aspect-video w-full bg-grafito";
 
   return (
     <article
@@ -71,11 +71,11 @@ export default function ProjectCard({ project }: { project: Project }) {
         transform: `perspective(800px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
         transition: "transform 0.2s ease-out, border-color 0.2s ease-out",
       }}
-      className="group overflow-visible rounded-2xl border border-white/10 bg-white/5 will-change-transform hover:border-white/20"
+      className="group overflow-visible border-2 border-grafito bg-blanco will-change-transform hover:border-azul"
     >
       <div className={`${frameClasses} relative`}>
         <div
-          className="absolute inset-0 overflow-hidden rounded-2xl bg-black transition-[inset,box-shadow] duration-300 ease-out motion-safe:lg:hover:z-30 motion-safe:lg:hover:inset-[-40px] motion-safe:lg:hover:shadow-2xl motion-safe:lg:hover:shadow-black/60"
+          className="absolute inset-0 overflow-hidden bg-grafito transition-[inset,box-shadow] duration-300 ease-out motion-safe:lg:hover:z-30 motion-safe:lg:hover:inset-[-40px] motion-safe:lg:hover:shadow-2xl motion-safe:lg:hover:shadow-grafito/60"
         >
           {isPlaying ? (
             <div ref={playerContainerRef} className="h-full w-full" />
@@ -99,10 +99,10 @@ export default function ProjectCard({ project }: { project: Project }) {
                 sizes={isVertical ? "384px" : "(min-width: 768px) 75vw, 100vw"}
                 className="object-cover"
               />
-              <span className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover/play:bg-black/35">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 transition-transform group-hover/play:scale-110">
-                  <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6 fill-black">
-                    <path d="M8 5v14l11-7z" />
+              <span className="absolute inset-0 flex items-center justify-center bg-grafito/20 transition-colors group-hover/play:bg-grafito/40">
+                <span className="flex h-14 w-14 items-center justify-center bg-azul transition-transform group-hover/play:scale-110">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" className="ml-0.5 h-6 w-6 fill-blanco">
+                    <path d="M7 4v16l13-8z" />
                   </svg>
                 </span>
               </span>
@@ -110,12 +110,12 @@ export default function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
       </div>
-      <div className="p-5">
-        <p className="text-xs font-medium uppercase tracking-wider text-white/50">
-          {project.category}
-        </p>
-        <h3 className="mt-2 text-lg font-semibold text-white">{project.title}</h3>
-        <p className="mt-2 text-sm text-white/60">{project.description}</p>
+      <div className="border-t-2 border-grafito p-5">
+        <p className="font-mono text-xs uppercase text-azul">{project.category}</p>
+        <h3 className="mt-2 text-lg font-extrabold uppercase leading-tight tracking-[-0.02em]">
+          {project.title}
+        </h3>
+        <p className="mt-2 text-sm text-grafito/70">{project.description}</p>
       </div>
     </article>
   );

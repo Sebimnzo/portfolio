@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
+/* Paleta del manual de marca Mansalva v2.0 */
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --azul: #005bdb;
+  --azul-claro: #5b9bff; /* acento sobre fondos oscuros */
+  --cobalto: #225aa8;
+  --acero: #2f4c75;
+  --noche: #283342;
+  --grafito: #292d33;
+  --blanco: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-display);
+  --color-azul: var(--azul);
+  --color-azul-claro: var(--azul-claro);
+  --color-cobalto: var(--cobalto);
+  --color-acero: var(--acero);
+  --color-noche: var(--noche);
+  --color-grafito: var(--grafito);
+  --color-blanco: var(--blanco);
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-plex-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: var(--blanco);
+  color: var(--grafito);
+  font-family: var(--font-archivo), Arial, Helvetica, sans-serif;
+  line-height: 1.35;
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
+}
+
+::selection {
+  background: var(--azul);
+  color: var(--blanco);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -39,12 +55,11 @@ h2 {
   top: -100%;
   left: 1rem;
   z-index: 100;
-  background: #ffffff;
-  color: #0a0a0a;
+  background: var(--azul);
+  color: var(--blanco);
   padding: 0.75rem 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .skip-link:focus {
@@ -53,7 +68,7 @@ h2 {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid #ffffff;
+  outline: 3px solid var(--azul);
   outline-offset: 2px;
 }
 

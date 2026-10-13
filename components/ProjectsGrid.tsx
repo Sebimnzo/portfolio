@@ -22,28 +22,23 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
 
   return (
     <div>
-      <div className="mt-10 flex flex-wrap gap-3">
-        <button
-          type="button"
-          onClick={() => setActiveFilter(null)}
-          className={`rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium transition-colors sm:text-sm ${
-            activeFilter === null ? "bg-white text-black" : "text-white/70 hover:border-white/40"
-          }`}
-        >
-          Todos ({projects.length})
-        </button>
-        {categories.map(([category, count]) => (
+      <div className="mt-10 flex flex-wrap gap-2">
+        {[
+          { key: null, label: "Todos", count: projects.length },
+          ...categories.map(([category, count]) => ({ key: category, label: category, count })),
+        ].map((filter) => (
           <button
-            key={category}
+            key={filter.label}
             type="button"
-            onClick={() => setActiveFilter(category)}
-            className={`rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium transition-colors sm:text-sm ${
-              activeFilter === category
-                ? "bg-white text-black"
-                : "text-white/70 hover:border-white/40"
+            aria-pressed={activeFilter === filter.key}
+            onClick={() => setActiveFilter(filter.key)}
+            className={`border-2 px-3 py-1.5 font-mono text-xs uppercase transition-colors ${
+              activeFilter === filter.key
+                ? "border-azul bg-azul text-blanco"
+                : "border-grafito text-grafito hover:bg-grafito hover:text-blanco"
             }`}
           >
-            {category} ({count})
+            {filter.label} ({filter.count})
           </button>
         ))}
       </div>

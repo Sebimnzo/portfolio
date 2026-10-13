@@ -1,9 +1,33 @@
 export const site = {
-  name: "Mansalva Design",
+  name: "Mansalva",
   url: "https://www.mansalvadesign.com",
-  role: "Estudio de Video & Motion Graphics",
+  role: "Estudio de motion graphics",
+  claim: "Nada se queda quieto.",
   tagline:
-    "Contamos historias con edición y motion graphics: spots, contenido de redes, videos institucionales y piezas animadas.",
+    "Mansalva es un estudio de motion graphics. Damos movimiento a marcas que necesitan hacerse notar ante clientes, inversores y público de feria.",
+  purpose:
+    "Que las empresas comuniquen con la misma precisión con la que trabajan, y que se las recuerde por cómo se mueven.",
+  services: [
+    "Stands de feria",
+    "Animación web",
+    "Video para redes",
+    "VSL para landings",
+    "Logos animados",
+  ],
+  personality: [
+    {
+      name: "Rigurosa",
+      text: "Plazos claros, procesos ordenados y cada fotograma con un motivo.",
+    },
+    {
+      name: "Irreverente",
+      text: "Rompemos la rutina corporativa sin perder la seriedad.",
+    },
+    {
+      name: "Elegante",
+      text: "Pocos elementos, bien elegidos y bien resueltos.",
+    },
+  ],
   email: "manzo@mansalvadesign.com",
   whatsapp: "5493794232631",
   location: "Argentina",
