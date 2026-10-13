@@ -38,7 +38,6 @@ export default function MagneticButton({
       style={{
         transform: `translate(${offset.x}px, ${offset.y}px)`,
         transition: "transform 0.2s ease-out, opacity 0.2s ease-out, border-color 0.2s ease-out",
-        display: "inline-block",
       }}
       {...props}
     >

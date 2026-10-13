@@ -1,14 +1,20 @@
 export const site = {
-  name: "Sebastián Manzolillo",
-  role: "Editor de Video & Motion Graphics Designer",
+  name: "Mansalva Design",
+  url: "https://www.mansalvadesign.com",
+  role: "Estudio de Video & Motion Graphics",
   tagline:
-    "Cuento historias con edición y motion graphics: spots, contenido de redes, videos institucionales y piezas animadas.",
+    "Contamos historias con edición y motion graphics: spots, contenido de redes, videos institucionales y piezas animadas.",
   email: "sebastian15manzo@gmail.com",
   whatsapp: "5493794232631",
   location: "Argentina",
-  socials: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/sebastian-manzolillo/" },
-  ],
+  // Redes del estudio (Instagram, Behance, etc.). Si está vacío, no se muestra nada.
+  socials: [] as { label: string; href: string }[],
+  founder: {
+    name: "Sebastián Manzolillo",
+    title: "Editor de Video & Motion Graphics Designer",
+    photo: "/profile.jpg",
+    linkedin: "https://www.linkedin.com/in/sebastian-manzolillo/",
+  },
 };
 
 export type Project = {

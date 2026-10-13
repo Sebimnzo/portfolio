@@ -20,8 +20,19 @@ const archivoBlack = Archivo_Black({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: `${site.name} — ${site.role}`,
   description: site.tagline,
+  authors: [{ name: site.founder.name }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: `${site.name} — ${site.role}`,
+    description: site.tagline,
+    url: "/",
+    siteName: site.name,
+    locale: "es_AR",
+    type: "website",
+  },
   other: {
     "theme-color": "#0a0a0a",
   },
