@@ -2,7 +2,10 @@ export const site = {
   name: "Mansalva",
   url: "https://www.mansalvadesign.com",
   role: "Estudio de motion graphics",
-  claim: "Nada se queda quieto.",
+  // Títulos provisorios (lorem ipsum) hasta definir los claims.
+  // La última palabra de cada uno se resalta en azul.
+  claim: "Lorem ipsum dolor sit.",
+  contactHeadline: "Lorem ipsum dolor sit amet.",
   tagline:
     "Mansalva es un estudio de motion graphics. Damos movimiento a marcas que necesitan hacerse notar ante clientes, inversores y público de feria.",
   purpose:

@@ -3,12 +3,16 @@ import MagneticButton from "./MagneticButton";
 import Reveal from "./Reveal";
 
 export default function Contact() {
+  const headlineWords = site.contactHeadline.split(" ");
+  const headlineLast = headlineWords.pop();
+
   return (
     <section id="contacto" className="scroll-mt-16 bg-grafito px-6 py-24 text-blanco">
       <div className="mx-auto max-w-6xl">
       <div className="flex flex-wrap items-end justify-between gap-4 border-b border-blanco/20 pb-4">
         <h2 className="text-[clamp(2.25rem,6vw,4.5rem)] font-black uppercase leading-[0.9] tracking-[-0.045em]">
-          Tu marca no se queda <span className="text-azul-claro">quieta.</span>
+          {headlineWords.join(" ")}{" "}
+          <span className="text-azul-claro">{headlineLast}</span>
         </h2>
         <span className="font-mono text-xs uppercase text-blanco/60">03 / Contacto</span>
       </div>
