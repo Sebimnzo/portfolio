@@ -4,7 +4,7 @@ export const site = {
   role: "Estudio de Video & Motion Graphics",
   tagline:
     "Contamos historias con edición y motion graphics: spots, contenido de redes, videos institucionales y piezas animadas.",
-  email: "sebastian15manzo@gmail.com",
+  email: "manzo@mansalvadesign.com",
   whatsapp: "5493794232631",
   location: "Argentina",
   // Redes del estudio (Instagram, Behance, etc.). Si está vacío, no se muestra nada.
