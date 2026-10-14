@@ -148,10 +148,14 @@ summary:focus-visible {
   transform-style: preserve-3d;
 }
 
-/* Carrusel curvo de trabajos: la curva la arma Works.tsx en cada scroll */
+/* Carrusel curvo de trabajos: la curva la arma Works.tsx en cada scroll.
+   --card-w es el ancho de una tarjeta vertical (3:4); las horizontales son
+   16:9 a la misma altura (4/3 × 16/9 = 64/27 del ancho), así se ven enteras.
+   El margen lateral alcanza para centrar la más ancha. */
 .curve-track {
   --card-w: 150px;
-  padding-inline: calc(50% - var(--card-w) / 2);
+  --wide-w: calc(var(--card-w) * 64 / 27);
+  padding-inline: calc(50% - var(--wide-w) / 2);
 }
 @media (min-width: 640px) {
   .curve-track {
@@ -165,6 +169,9 @@ summary:focus-visible {
 }
 .curve-track > li {
   width: var(--card-w);
+}
+.curve-track > li[data-wide] {
+  width: var(--wide-w);
 }
 
 .video-dialog::backdrop {

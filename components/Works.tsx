@@ -227,10 +227,12 @@ export default function Works() {
           const isActive = k === centered;
           // Las copias del loop no se anuncian ni reciben foco: solo la del medio.
           const copy = loop && Math.floor(k / n) !== 1;
+          const wide = project.orientation === "horizontal";
           return (
             <li
               key={`${project.slug}-${k}`}
               aria-hidden={copy || undefined}
+              data-wide={wide || undefined}
               className="shrink-0 snap-center will-change-transform"
             >
               <button
@@ -239,7 +241,9 @@ export default function Works() {
                 onClick={() => onCardClick(k)}
                 onFocus={() => !copy && centerOn(k, true)}
                 aria-label={`${isActive ? "Reproducir" : "Ver"} ${project.title}: ${categoryText(project)}`}
-                className="group/card relative block aspect-[3/4] w-full overflow-hidden rounded-[22px] bg-grafito transition-transform duration-300 ease-out hover:-translate-y-1.5"
+                className={`group/card relative block w-full overflow-hidden rounded-[22px] bg-grafito transition-transform duration-300 ease-out hover:-translate-y-1.5 ${
+                  wide ? "aspect-video" : "aspect-[3/4]"
+                }`}
               >
                 <Image
                   src={thumbnail(project)}
@@ -247,7 +251,11 @@ export default function Works() {
                   fill
                   draggable={false}
                   loading={loop && Math.abs(k - n) < 4 ? "eager" : "lazy"}
-                  sizes="(min-width: 1024px) 300px, (min-width: 640px) 250px, 190px"
+                  sizes={
+                    wide
+                      ? "(min-width: 1024px) 700px, (min-width: 640px) 590px, 445px"
+                      : "(min-width: 1024px) 300px, (min-width: 640px) 250px, 190px"
+                  }
                   className="object-cover transition-transform duration-500 group-hover/card:scale-[1.04]"
                 />
                 <span
