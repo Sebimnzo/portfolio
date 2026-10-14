@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { site } from "@/lib/data";
 
 const archivo = Archivo({
@@ -8,10 +9,13 @@ const archivo = Archivo({
   subsets: ["latin"],
 });
 
+// Solo para etiquetas chicas: un peso y sin preload, así no compite con
+// la tipografía del título (el LCP).
 const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
-  weight: ["400", "500"],
+  weight: "400",
   subsets: ["latin"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -47,6 +51,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Saltar al contenido
         </a>
         {children}
+        {/* Métricas de usuarios reales (LCP, INP, CLS): se activan en el panel de Vercel */}
+        <SpeedInsights />
       </body>
     </html>
   );

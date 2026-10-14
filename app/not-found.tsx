@@ -3,6 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Página no encontrada — Mansalva",
+  // Sin canonical: si no, hereda el de la home.
+  alternates: { canonical: null },
 };
 
 export default function NotFound() {

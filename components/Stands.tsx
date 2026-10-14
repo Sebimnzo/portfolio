@@ -76,6 +76,15 @@ const shapes: Record<string, ReactNode> = {
   cube: <path d="M60 6l24 14v28L60 62 36 48V20zM36 20l24 14 24-14M60 34v28" {...stroke} />,
 };
 
+// Cada soporte enlaza a su página de servicio.
+const pageFor: Record<string, string> = {
+  led: "/contenido-pantallas-led",
+  videowall: "/animacion-videowall",
+  totem: "/totems-digitales",
+  loop: "/videos-para-stands",
+  cube: "/animacion-3d-producto",
+};
+
 export default function Stands() {
   return (
     <section id="stands" aria-labelledby="stands-title" className="scroll-mt-24 border-t border-linea">
@@ -114,7 +123,11 @@ export default function Stands() {
                 {shapes[format.shape]}
               </svg>
               <div>
-                <h3 className="text-[19px] font-extrabold leading-[1.15]">{format.name}</h3>
+                <h3 className="text-[19px] font-extrabold leading-[1.15]">
+                  <Link href={pageFor[format.shape]} className="transition-colors hover:text-azul">
+                    {format.name} <span aria-hidden className="text-azul">→</span>
+                  </Link>
+                </h3>
                 <p className="mt-1.5 font-mono text-xs text-gris">{format.spec}</p>
               </div>
               <p className="max-w-[60ch] text-[15px] leading-[1.5] text-gris">{format.text}</p>

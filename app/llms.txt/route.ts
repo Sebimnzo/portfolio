@@ -1,5 +1,6 @@
 import { projects, site } from "@/lib/data";
 import { ledGuide } from "@/lib/guides";
+import { services } from "@/lib/services";
 
 // Resumen del sitio en Markdown para asistentes de IA (convención llms.txt),
 // armado con los mismos datos que la página para que no se desactualice.
@@ -26,6 +27,10 @@ export function GET() {
     "## Preguntas frecuentes",
     "",
     ...site.faq.flatMap((item) => [`### ${item.q}`, "", item.a, ""]),
+    "## Servicios en detalle",
+    "",
+    ...services.map((s) => `- [${s.h1}](${site.url}/${s.slug}): ${s.description}`),
+    "",
     "## Guías",
     "",
     `- [${ledGuide.title}](${site.url}${ledGuide.path}): ${ledGuide.description}`,

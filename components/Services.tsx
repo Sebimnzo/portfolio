@@ -2,16 +2,25 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "@/lib/data";
 import Tilt from "./Tilt";
 
 const tabs = ["Servicios", "El estudio"] as const;
 
-function Item({ title, text }: { title: string; text: string }) {
+function Item({ title, text, href }: { title: string; text: string; href?: string }) {
   return (
     <Tilt className="group/item">
       <div className="tilt-rotate border-t border-linea-oscura pt-[18px] transition-colors [--tilt:7deg] group-hover/item:border-azul-claro">
-        <h3 className="text-[19px] font-extrabold text-blanco">{title}</h3>
+        <h3 className="text-[19px] font-extrabold text-blanco">
+          {href ? (
+            <Link href={href} className="hover:text-azul-claro">
+              {title} <span aria-hidden className="text-azul-claro">→</span>
+            </Link>
+          ) : (
+            title
+          )}
+        </h3>
         <p className="mt-2 text-[13px] leading-[1.45] text-plata">{text}</p>
       </div>
     </Tilt>
@@ -76,7 +85,12 @@ export default function Services() {
           {tab === "Servicios" ? (
             <div className="grid grid-cols-1 gap-x-7 gap-y-5 sm:grid-cols-2">
               {site.services.map((s) => (
-                <Item key={s.name} title={s.name} text={s.text} />
+                <Item
+                  key={s.name}
+                  title={s.name}
+                  text={s.text}
+                  href={s.name === "Stands de feria" ? "/videos-para-stands" : "/motion-graphics"}
+                />
               ))}
               <div className="border-t border-linea-oscura pt-[18px]">
                 <p className="font-medium">¿No sabés qué formato necesitás?</p>
