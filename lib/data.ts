@@ -143,7 +143,11 @@ export const site = {
   founder: {
     name: "Sebastián Manzolillo",
     title: "Editor de Video & Motion Graphics Designer",
-    photo: "/profile.jpg",
+    // Foto vertical (1050 × 1400) en el stand de Goodly Fit.
+    photo: "/fundador-expo-mercado-fitness.jpg",
+    photoAlt:
+      "Sebastián Manzolillo junto a una pantalla vertical en un stand de Expo Mercado Fitness 2026, en La Rural",
+    photoCaption: "En Expo Mercado Fitness 2026, La Rural (Buenos Aires).",
     linkedin: "https://www.linkedin.com/in/sebastian-manzolillo/",
   },
 };

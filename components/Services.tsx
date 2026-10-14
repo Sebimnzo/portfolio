@@ -40,26 +40,28 @@ export default function Services() {
             {site.studioTitle}
           </h2>
           <p className="text-[15px] leading-[1.45] text-plata">{site.studioText}</p>
-          <div className="flex items-center gap-3.5 pt-3.5">
+          <figure className="flex flex-col gap-3.5 pt-3.5">
             <Image
               src={founder.photo}
-              alt={founder.name}
-              width={80}
-              height={88}
-              className="h-[88px] w-20 shrink-0 object-cover"
+              alt={founder.photoAlt}
+              width={1050}
+              height={1400}
+              sizes="(min-width: 640px) 356px, 100vw"
+              className="aspect-[3/4] w-full max-w-[356px] object-cover"
             />
-            <div className="flex min-w-0 flex-col gap-1.5">
-              <p className="font-extrabold">{founder.name}</p>
-              <p className="text-xs leading-[1.35] text-plata">Fundador · {founder.title}</p>
-              <a
-                href={founder.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="text-xs text-azul-claro hover:underline"
-              >
-                Conoceme en LinkedIn <span aria-hidden>→</span>
-              </a>
-            </div>
+            <figcaption className="font-mono text-[11px] text-plata">{founder.photoCaption}</figcaption>
+          </figure>
+          <div className="flex min-w-0 flex-col gap-1.5">
+            <p className="font-extrabold">{founder.name}</p>
+            <p className="text-xs leading-[1.35] text-plata">Fundador · {founder.title}</p>
+            <a
+              href={founder.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-azul-claro hover:underline"
+            >
+              Conoceme en LinkedIn <span aria-hidden>→</span>
+            </a>
           </div>
         </div>
 
