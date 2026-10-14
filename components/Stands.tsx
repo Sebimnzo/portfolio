@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import { site } from "@/lib/data";
+import Link from "next/link";
+import { ledGuide } from "@/lib/guides";
 import Tilt from "./Tilt";
 
 // Cada soporte dibujado en su proporción real: LED 32:9, videowall de 3 × 2
@@ -87,6 +89,13 @@ export default function Stands() {
             {site.standsTitle}
           </h2>
           <p className="mt-4 text-[17px] leading-[1.45] text-gris">{site.standsText}</p>
+          <Link
+            href={ledGuide.path}
+            className="mt-5 inline-flex min-h-12 items-center gap-4 text-sm font-medium text-azul hover:text-cobalto"
+          >
+            <span aria-hidden className="h-[3px] w-8 bg-azul" />
+            Calculá la resolución de tu pantalla LED <span aria-hidden>→</span>
+          </Link>
         </div>
 
         <ul>

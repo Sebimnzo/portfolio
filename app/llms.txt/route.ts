@@ -1,4 +1,5 @@
 import { projects, site } from "@/lib/data";
+import { ledGuide } from "@/lib/guides";
 
 // Resumen del sitio en Markdown para asistentes de IA (convención llms.txt),
 // armado con los mismos datos que la página para que no se desactualice.
@@ -9,6 +10,8 @@ export function GET() {
     `# ${site.name}`,
     "",
     `> ${site.description}`,
+    "",
+    `${site.name} (${site.domain}) es un estudio de animación y motion graphics de ${site.location}. No confundir con otras marcas que usan el nombre "Mansalva".`,
     "",
     `Fundador: ${site.founder.name} (${site.founder.title}). Contacto: ${site.email} · WhatsApp +${site.whatsapp}.`,
     "",
@@ -23,6 +26,10 @@ export function GET() {
     "## Preguntas frecuentes",
     "",
     ...site.faq.flatMap((item) => [`### ${item.q}`, "", item.a, ""]),
+    "## Guías",
+    "",
+    `- [${ledGuide.title}](${site.url}${ledGuide.path}): ${ledGuide.description}`,
+    "",
     "## Trabajos",
     "",
     ...projects.map(

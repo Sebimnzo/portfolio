@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 // Menú del celular: en pantallas chicas los enlaces del header no entran.
 export default function MobileMenu({ links }: { links: { href: string; label: string }[] }) {
@@ -37,13 +38,13 @@ export default function MobileMenu({ links }: { links: { href: string; label: st
       >
         {links.map((link) => (
           <li key={link.href} className="border-t border-linea first:border-t-0">
-            <a
+            <Link
               href={link.href}
               onClick={() => setOpen(false)}
               className="flex min-h-14 items-center justify-between text-lg font-extrabold"
             >
               {link.label} <span aria-hidden className="text-azul">→</span>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

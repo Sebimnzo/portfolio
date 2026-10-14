@@ -181,10 +181,13 @@ export default function Works() {
   return (
     <section id="trabajos" className="scroll-mt-24 overflow-hidden border-t border-linea">
       <div className="mx-auto flex max-w-[1552px] flex-col gap-[18px] px-5 pb-9 pt-7 sm:px-12">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-[clamp(1.75rem,4vw,38px)] font-extrabold leading-tight">
-            {site.worksTitle}
-          </h2>
+        <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-[clamp(1.75rem,4vw,38px)] font-extrabold leading-tight">
+              {site.worksTitle}
+            </h2>
+            <p className="max-w-[60ch] text-[15px] leading-[1.45] text-gris">{site.worksIntro}</p>
+          </div>
           <p className="font-mono text-[11px] uppercase text-gris">
             {projects.length} proyectos / distintos formatos
           </p>

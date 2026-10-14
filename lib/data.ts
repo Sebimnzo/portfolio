@@ -18,10 +18,13 @@ export const site = {
   // a mano solo cuando cambia el contenido, no en cada deploy.
   updated: "2026-10-14",
   worksTitle: "El trabajo habla. Y se mueve.",
+  // Bajadas de sección: el título es de marca, la bajada lleva la búsqueda.
+  worksIntro:
+    "Videos para stands de feria, pantallas LED y videowalls, contenido para redes y logos animados.",
   studioLabel: "Mansalva / Desde Argentina",
   studioTitle: "No movemos cosas porque sí.",
   studioText:
-    "Pensamos el movimiento como una decisión de diseño: qué decir, dónde poner el foco y qué dejar afuera.",
+    "Somos un estudio de animación y motion graphics. Pensamos el movimiento como una decisión de diseño: qué decir, dónde poner el foco y qué dejar afuera.",
   purpose:
     "Que las empresas comuniquen con la misma precisión con la que trabajan, y que se las recuerde por cómo se mueven.",
   services: [
@@ -109,8 +112,12 @@ export const site = {
       a: "Es la distancia en milímetros entre los centros de dos LEDs vecinos. Cuanto más chico, más resolución por metro y más cerca se puede mirar sin ver los puntos: como referencia, la distancia mínima de visión en metros es parecida al pitch en milímetros (P2,5 se ve bien desde unos 2,5 m).",
     },
     {
-      q: "¿Cuánto tiene que durar un loop para un stand de feria?",
-      a: "Entre 10 y 30 segundos. Es lo que suele mirar alguien que pasa caminando frente al stand, así que el mensaje completo tiene que entrar en ese tiempo. Si hay más para contar, armamos varias piezas cortas que rotan.",
+      q: "¿Cuánto tiene que durar un video para un stand de feria?",
+      a: "Entre 10 y 30 segundos, en loop. Es lo que suele mirar alguien que pasa caminando frente al stand, así que el mensaje completo tiene que entrar en ese tiempo. Si hay más para contar, armamos varias piezas cortas que rotan.",
+    },
+    {
+      q: "¿Cómo se anima un video para un videowall?",
+      a: "Se anima un único lienzo con la resolución total del videowall y después se reparte entre los monitores. Un videowall de 3 × 2 monitores Full HD, por ejemplo, es un lienzo de 5760 × 2160 px. Cuidamos que ningún texto ni rostro quede cortado por los marcos entre pantallas y entregamos un archivo por salida o el lienzo completo, según lo que pida el procesador.",
     },
     {
       q: "¿Los videos para stands llevan sonido?",
@@ -122,10 +129,14 @@ export const site = {
     },
   ],
   contactHeadline: "Hagamos que se note.",
-  contactText: "Contanos qué necesitás mover. Empecemos por ahí.",
+  contactText:
+    "Contanos qué necesitás mover: el video de tu stand, el contenido de una pantalla LED o un videowall. Empecemos por ahí.",
   email: "manzo@mansalvadesign.com",
   whatsapp: "5493794232631",
   location: "Argentina",
+  // Otros nombres con los que se busca a la marca (para buscadores e IA:
+  // "Mansalva" también es una editorial, una tipografía y una expresión).
+  alternateName: ["Mansalva Design", "mansalvadesign.com"],
   // Logos de clientes ({ name, src } con el archivo en /public). Mientras esté
   // vacío, la sección "Marcas que confiaron en Mansalva" no se muestra.
   brands: [] as { name: string; src: string }[],
@@ -167,7 +178,7 @@ export const projects: Project[] = [
   },
   {
     slug: "maraldi-logo-animation",
-    title: "Maraldi — Logo Animation",
+    title: "Maraldi — Logo animado",
     category: "Motion Graphics",
     description: "Animación de logo para Maraldi, marca argentina de electrodomésticos.",
     youtubeId: "B-3tmJ7X1Tk",
@@ -175,7 +186,7 @@ export const projects: Project[] = [
   },
   {
     slug: "magnetic-impulsa-saas-agency",
-    title: "Magnetic Impulsa — SaaS Marketing Agency",
+    title: "Magnetic Impulsa — Agencia de marketing SaaS",
     category: "Landing Page",
     description:
       "Video para la landing page de Magnetic Impulsa, agencia de marketing para empresas SaaS.",
@@ -184,7 +195,7 @@ export const projects: Project[] = [
   },
   {
     slug: "hoken-industrial-mockup",
-    title: "Höken — Industrial Mock-up",
+    title: "Höken — Mock-up industrial",
     category: "Reel",
     description: "Reel de mock-up industrial para la marca Höken.",
     youtubeId: "inV9Wjm1xhw",
@@ -192,7 +203,7 @@ export const projects: Project[] = [
   },
   {
     slug: "komasa-logo-animation",
-    title: "Komasa — Logo Animation",
+    title: "Komasa — Logo animado",
     category: "Motion Graphics",
     description: "Animación de logo para Komasa, empresa argentina de bombas eléctricas.",
     youtubeId: "tIO3pqG1DdU",
@@ -200,7 +211,7 @@ export const projects: Project[] = [
   },
   {
     slug: "julian-architecture-consultant",
-    title: "Julián — Architecture Consultant",
+    title: "Julián — Consultor de arquitectura",
     category: "Reel",
     description: "Video de contenido para redes para Julián, consultor de arquitectos.",
     youtubeId: "GJBmOvtedcc",
@@ -216,7 +227,7 @@ export const projects: Project[] = [
   },
   {
     slug: "mark-hyrox-gym",
-    title: "Mark — Hyrox Gym",
+    title: "Mark — Gimnasio Hyrox",
     category: "Reel",
     description: "Reel de contenido para redes para el gimnasio de Hyrox de Mark.",
     youtubeId: "oeWs1RTdv7o",
@@ -224,7 +235,7 @@ export const projects: Project[] = [
   },
   {
     slug: "maraldi-appliance-company",
-    title: "Maraldi — Appliance Company",
+    title: "Maraldi — Electrodomésticos",
     category: "Reel",
     description: "Reel de contenido para redes para la marca de electrodomésticos Maraldi.",
     youtubeId: "3VxtUCGPRF8",
@@ -232,7 +243,7 @@ export const projects: Project[] = [
   },
   {
     slug: "german-grisotto-investing-coach",
-    title: "Germán Grisotto — Investing Coach",
+    title: "Germán Grisotto — Coach de inversiones",
     category: "Longform",
     description: "Video longform para el investing coach Germán Grisotto.",
     youtubeId: "7OYRLXfeYv8",
@@ -240,7 +251,7 @@ export const projects: Project[] = [
   },
   {
     slug: "berry-investing-financial-startup",
-    title: "Berry Investing — Financial Startup",
+    title: "Berry Investing — Startup financiera",
     category: "Reel",
     description: "Reel de contenido para redes para la startup financiera Berry Investing.",
     youtubeId: "aTii8hzeAYw",
@@ -248,7 +259,7 @@ export const projects: Project[] = [
   },
   {
     slug: "matias-lago-fitness-coach",
-    title: "Matías Lago — Fitness Coach",
+    title: "Matías Lago — Coach de fitness",
     category: "Reel",
     description: "Reel de contenido para redes para el fitness coach Matías Lago.",
     youtubeId: "cYxz3lPuhCI",
@@ -256,7 +267,7 @@ export const projects: Project[] = [
   },
   {
     slug: "mateo-garcia-fitness-coach",
-    title: "Mateo García — Fitness Coach",
+    title: "Mateo García — Coach de fitness",
     category: "Reel",
     description: "Reel de contenido para redes para el fitness coach Mateo García.",
     youtubeId: "Lch9cMHdCFw",
