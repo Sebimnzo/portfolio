@@ -148,7 +148,7 @@ export const site = {
   },
 };
 
-// Categorías en el orden de las pestañas, con el texto que se muestra.
+// Categorías de los trabajos (se muestran debajo del título de cada uno).
 export const categories = [
   { key: "Motion Graphics", label: "Motion graphics" },
   { key: "Reel", label: "Reels" },
@@ -165,11 +165,15 @@ export type Project = {
   description: string;
   youtubeId: string; // ID del video de YouTube (lo que va después de v= en la URL)
   orientation: "vertical" | "horizontal";
+  // Hecho para una feria o stand: va en la pestaña principal de Trabajos.
+  // El resto aparece en "Otros trabajos".
+  fair?: boolean;
 };
 
 export const projects: Project[] = [
   {
     slug: "goodly-fit-digital-totem",
+    fair: true,
     title: "Goodly Fit — Tótem Digital",
     category: "Motion Graphics",
     description: "Pieza para tótem digital del gimnasio Goodly Fit.",
@@ -178,6 +182,7 @@ export const projects: Project[] = [
   },
   {
     slug: "maraldi-logo-animation",
+    fair: true,
     title: "Maraldi — Logo animado",
     category: "Motion Graphics",
     description: "Animación de logo para Maraldi, marca argentina de electrodomésticos.",
@@ -203,6 +208,7 @@ export const projects: Project[] = [
   },
   {
     slug: "komasa-logo-animation",
+    fair: true,
     title: "Komasa — Logo animado",
     category: "Motion Graphics",
     description: "Animación de logo para Komasa, empresa argentina de bombas eléctricas.",

@@ -1,10 +1,13 @@
-import { projects, site } from "@/lib/data";
+import { projects, site, type Project } from "@/lib/data";
 import { ledGuide } from "@/lib/guides";
 import { services } from "@/lib/services";
 
 // Resumen del sitio en Markdown para asistentes de IA (convención llms.txt),
 // armado con los mismos datos que la página para que no se desactualice.
 export const dynamic = "force-static";
+
+const work = (p: Project) =>
+  `- [${p.title}](https://www.youtube.com/watch?v=${p.youtubeId}): ${p.category}, video ${p.orientation}`;
 
 export function GET() {
   const body = [
@@ -35,11 +38,13 @@ export function GET() {
     "",
     `- [${ledGuide.title}](${site.url}${ledGuide.path}): ${ledGuide.description}`,
     "",
-    "## Trabajos",
+    "## Trabajos para ferias y stands",
     "",
-    ...projects.map(
-      (p) => `- [${p.title}](https://www.youtube.com/watch?v=${p.youtubeId}): ${p.category}, video ${p.orientation}`
-    ),
+    ...projects.filter((p) => p.fair).map(work),
+    "",
+    "## Otros trabajos",
+    "",
+    ...projects.filter((p) => !p.fair).map(work),
     "",
   ].join("\n");
 

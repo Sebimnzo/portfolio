@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from "react";
 import Image from "next/image";
-import { categories, projects, site, type Project } from "@/lib/data";
+import { projects, site, type Project } from "@/lib/data";
 import VideoModal from "./VideoModal";
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -21,8 +21,15 @@ const MAX_GROW = 0.24; // escala extra en el borde
 // las copias son idénticas). Así siempre está llena de punta a punta.
 const LOOP_MIN = 4;
 
+// Primero lo hecho para ferias (lo que el estudio ofrece); el resto, aparte.
+const groups = [
+  { key: "feria", label: "Ferias y stands", items: projects.filter((p) => p.fair) },
+  { key: "otros", label: "Otros trabajos", items: projects.filter((p) => !p.fair) },
+] as const;
+type Group = (typeof groups)[number]["key"];
+
 export default function Works() {
-  const [filter, setFilter] = useState<Project["category"] | null>(null);
+  const [group, setGroup] = useState<Group>("feria");
   const [active, setActive] = useState(0);
   // Posición de la tarjeta centrada dentro de la franja (incluye las copias).
   const slot = useRef(0);
@@ -37,21 +44,11 @@ export default function Works() {
   // Arrastre con mouse: posición inicial y si ya se movió lo suficiente para no contar como clic.
   const drag = useRef<{ x: number; left: number; moved: boolean } | null>(null);
 
-  const visible = filter ? projects.filter((p) => p.category === filter) : projects;
+  const visible = groups.find((g) => g.key === group)!.items;
   const n = visible.length;
   const loop = n >= LOOP_MIN;
   const cards = loop ? [...visible, ...visible, ...visible] : visible;
   const current = visible[Math.min(active, n - 1)];
-  const tabs = [
-    { key: null, label: "Todos", count: projects.length },
-    ...categories
-      .map((c) => ({
-        key: c.key,
-        label: c.label,
-        count: projects.filter((p) => p.category === c.key).length,
-      }))
-      .filter((t) => t.count > 0),
-  ];
 
   const layout = useCallback(() => {
     const track = trackRef.current;
@@ -113,8 +110,9 @@ export default function Works() {
   }, [layout, loopWidth]);
 
   useEffect(() => {
-    // Arranca con el primer trabajo de la copia del medio en el centro.
-    centerOn(loop ? n : 0, false);
+    // Arranca con el primer trabajo de la copia del medio en el centro; sin
+    // loop (menos de 4 trabajos), con el del medio para que quede parejo.
+    centerOn(loop ? n : Math.floor((n - 1) / 2), false);
     layout();
     window.addEventListener("resize", onScroll);
     return () => {
@@ -122,7 +120,7 @@ export default function Works() {
       cancelAnimationFrame(frame.current);
       window.clearTimeout(idle.current);
     };
-  }, [layout, onScroll, centerOn, loop, n, filter]);
+  }, [layout, onScroll, centerOn, loop, n, group]);
 
   // Lleva el trabajo i al centro, usando la copia más cercana a la actual.
   function goTo(i: number) {
@@ -139,8 +137,8 @@ export default function Works() {
     else goTo(active + delta);
   }
 
-  function selectFilter(key: Project["category"] | null) {
-    setFilter(key);
+  function selectGroup(key: Group) {
+    setGroup(key);
     setActive(0);
   }
 
@@ -189,26 +187,26 @@ export default function Works() {
             <p className="max-w-[60ch] text-[15px] leading-[1.45] text-gris">{site.worksIntro}</p>
           </div>
           <p className="font-mono text-[11px] uppercase text-gris">
-            {projects.length} proyectos / distintos formatos
+            {n} {n === 1 ? "proyecto" : "proyectos"} / {group === "feria" ? "para stands" : "otros formatos"}
           </p>
         </div>
 
         <div className="no-scrollbar flex overflow-x-auto border-b border-linea">
-          {tabs.map((tab) => {
-            const selected = filter === tab.key;
+          {groups.map((tab) => {
+            const selected = group === tab.key;
             return (
               <button
-                key={tab.label}
+                key={tab.key}
                 type="button"
                 aria-pressed={selected}
-                onClick={() => selectFilter(tab.key)}
+                onClick={() => selectGroup(tab.key)}
                 className={`-mb-px min-h-12 shrink-0 whitespace-nowrap border-b-2 px-4 py-3 text-sm transition-colors sm:px-6 ${
                   selected
                     ? "border-azul font-semibold text-azul"
                     : "border-transparent text-gris hover:text-grafito"
                 }`}
               >
-                {tab.label} · {tab.count}
+                {tab.label} · {tab.items.length}
               </button>
             );
           })}
