@@ -82,7 +82,13 @@ export const services: Service[] = [
         a: "Se puede reutilizar material, pero casi nunca el video tal cual: suele durar más, depende del audio y está en 16:9. Lo reeditamos y lo animamos de nuevo para la medida y la distancia de lectura del stand.",
       },
     ],
-    projects: ["cocchiola-expo-argenplas", "goodly-fit-crm", "goodly-fit-app", "goodly-fit-anuncios"],
+    projects: [
+      "cocchiola-expo-argenplas",
+      "clon-factory-expo-cannabis",
+      "goodly-fit-crm",
+      "goodly-fit-app",
+      "goodly-fit-anuncios",
+    ],
   },
   {
     slug: "contenido-pantallas-led",

@@ -182,6 +182,16 @@ export const projects: Project[] = [
     orientation: "horizontal",
   },
   {
+    slug: "clon-factory-expo-cannabis",
+    fair: true,
+    title: "Clon Factory — Stand en Expo Cannabis 2026",
+    category: "Motion Graphics",
+    detail: "Stand de feria",
+    description: "Video para el stand de Clon Factory en la feria Expo Cannabis 2026.",
+    youtubeId: "c8OHQbZbKe4",
+    orientation: "horizontal",
+  },
+  {
     slug: "goodly-fit-crm",
     fair: true,
     title: "Goodly Fit — CRM para gimnasios",
