@@ -82,7 +82,7 @@ export const services: Service[] = [
         a: "Se puede reutilizar material, pero casi nunca el video tal cual: suele durar más, depende del audio y está en 16:9. Lo reeditamos y lo animamos de nuevo para la medida y la distancia de lectura del stand.",
       },
     ],
-    projects: ["goodly-fit-digital-totem", "hoken-industrial-mockup"],
+    projects: ["cocchiola-expo-argenplas", "goodly-fit-crm", "goodly-fit-app", "goodly-fit-anuncios"],
   },
   {
     slug: "contenido-pantallas-led",
@@ -138,7 +138,7 @@ export const services: Service[] = [
         a: "Sí. En exterior el pitch suele ser más grande y la gente mira desde más lejos, así que el diseño usa menos elementos, más contraste y textos todavía más grandes.",
       },
     ],
-    projects: ["goodly-fit-digital-totem"],
+    projects: ["cocchiola-expo-argenplas"],
   },
   {
     slug: "animacion-videowall",
@@ -241,7 +241,7 @@ export const services: Service[] = [
         a: "No: queda chico, con franjas negras o recortado. Un tótem necesita una composición pensada en vertical desde el principio.",
       },
     ],
-    projects: ["goodly-fit-digital-totem"],
+    projects: ["goodly-fit-crm", "goodly-fit-app", "goodly-fit-anuncios"],
   },
   {
     slug: "animacion-3d-producto",

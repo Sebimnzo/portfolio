@@ -172,12 +172,44 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "goodly-fit-digital-totem",
+    slug: "cocchiola-expo-argenplas",
     fair: true,
-    title: "Goodly Fit — Tótem Digital",
+    title: "Cocchiola — Stand en Expo Argenplás",
     category: "Motion Graphics",
-    description: "Pieza para tótem digital del gimnasio Goodly Fit.",
-    youtubeId: "JHuxhk2YIdE",
+    detail: "Stand de feria",
+    description: "Video para el stand de Cocchiola SA en la feria Expo Argenplás.",
+    youtubeId: "T4IWO4G7NVs",
+    orientation: "horizontal",
+  },
+  {
+    slug: "goodly-fit-crm",
+    fair: true,
+    title: "Goodly Fit — CRM para gimnasios",
+    category: "Motion Graphics",
+    detail: "Stand de feria",
+    description: "Video de feria de Goodly Fit que explica su CRM para administrar socios de gimnasio.",
+    youtubeId: "Z4j_udKCI9E",
+    orientation: "vertical",
+  },
+  {
+    slug: "goodly-fit-app",
+    fair: true,
+    title: "Goodly Fit — App gamificada",
+    category: "Motion Graphics",
+    detail: "Stand de feria",
+    description: "Video de feria de Goodly Fit que presenta su app gamificada para socios de gimnasio.",
+    youtubeId: "O1rWpk9zbJM",
+    orientation: "vertical",
+  },
+  {
+    slug: "goodly-fit-anuncios",
+    fair: true,
+    title: "Goodly Fit — Anuncios y chatbot",
+    category: "Motion Graphics",
+    detail: "Stand de feria",
+    description:
+      "Video de feria de Goodly Fit sobre su sistema de anuncios y chatbot para atraer y convertir socios.",
+    youtubeId: "Hj-8D9kOnis",
     orientation: "vertical",
   },
   {
