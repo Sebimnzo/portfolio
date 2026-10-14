@@ -9,6 +9,12 @@
   --noche: #283342;
   --grafito: #292d33;
   --blanco: #ffffff;
+  /* Neutros del diseño "Nueva home" (Figma) */
+  --linea: #dde1e6;
+  --gris: #69717c;
+  --humo: #f4f6f8;
+  --plata: #b8c3d2;
+  --linea-oscura: #48505b;
 }
 
 @theme inline {
@@ -19,6 +25,11 @@
   --color-noche: var(--noche);
   --color-grafito: var(--grafito);
   --color-blanco: var(--blanco);
+  --color-linea: var(--linea);
+  --color-gris: var(--gris);
+  --color-humo: var(--humo);
+  --color-plata: var(--plata);
+  --color-linea-oscura: var(--linea-oscura);
   --font-sans: var(--font-archivo);
   --font-mono: var(--font-plex-mono);
 }
@@ -72,9 +83,25 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal-hidden {
-    opacity: 1 !important;
-    transform: none !important;
+/* Pistas con scroll horizontal (carrusel, pestañas) sin barra visible */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Único movimiento automático: la trayectoria del hero se dibuja al cargar */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: motion-path-draw 1.8s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+  }
+}
+
+@keyframes motion-path-draw {
+  to {
+    stroke-dashoffset: 0;
   }
 }

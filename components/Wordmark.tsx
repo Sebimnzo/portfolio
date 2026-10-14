@@ -15,7 +15,7 @@ export default function Wordmark({
       Mansalva
       <span
         aria-hidden
-        className={`ml-[0.05em] inline-block h-[0.24em] w-[0.24em] ${dotClassName}`}
+        className={`ml-[0.08em] inline-block h-[0.24em] w-[0.24em] ${dotClassName}`}
       />
     </span>
   );

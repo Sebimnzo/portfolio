@@ -2,31 +2,35 @@ import Link from "next/link";
 import Wordmark from "./Wordmark";
 
 const links = [
-  { href: "#trabajos", label: "Trabajos", index: "01" },
-  { href: "#sobre-mi", label: "Estudio", index: "02" },
-  { href: "#contacto", label: "Contacto", index: "03" },
+  { href: "#trabajos", label: "Trabajos" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#estudio", label: "Estudio" },
 ];
 
 export default function Header() {
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b-2 border-grafito bg-blanco">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
+    <header className="sticky top-0 z-50 border-b border-linea bg-blanco/95 backdrop-blur-sm">
+      <nav className="mx-auto flex h-16 max-w-[1552px] items-center justify-between px-5 sm:h-[88px] sm:px-12">
         <Link href="#" aria-label="Mansalva, ir al inicio" className="text-grafito">
-          <Wordmark className="text-lg sm:text-xl" />
+          <Wordmark className="text-2xl sm:text-[32px]" />
         </Link>
-        <ul className="flex items-center gap-4 font-mono text-xs uppercase text-grafito/70 sm:gap-8">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="inline-flex items-baseline gap-1.5 whitespace-nowrap transition-colors hover:text-azul"
-              >
-                <span className="hidden text-azul sm:inline">{link.index}</span>
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-8">
+          <ul className="hidden items-center gap-8 text-sm font-medium md:flex">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="transition-colors hover:text-azul">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#contacto"
+            className="rounded bg-azul px-4 py-2.5 text-sm font-medium text-blanco transition-colors hover:bg-cobalto"
+          >
+            Hablemos <span aria-hidden>→</span>
+          </a>
+        </div>
       </nav>
     </header>
   );

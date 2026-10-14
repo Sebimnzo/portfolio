@@ -1,46 +1,27 @@
 import { site } from "@/lib/data";
-import MagneticButton from "./MagneticButton";
-import Reveal from "./Reveal";
+import MotionPath from "./MotionPath";
 
 export default function Hero() {
-  const words = site.claim.split(" ");
-  const lastWord = words.pop();
-
   return (
-    <section className="flex items-center bg-grafito px-6 pb-16 pt-28 text-blanco sm:min-h-screen sm:pt-32">
-      <Reveal className="mx-auto w-full max-w-6xl">
-        <p className="font-mono text-xs uppercase tracking-wider text-blanco/60">
-          + {site.role} — {site.location}
-        </p>
-        <h1 className="mt-6 text-[clamp(3.25rem,11vw,9rem)] font-black uppercase leading-[0.85] tracking-[-0.045em]">
-          <span className="block">{words.join(" ")}</span>
-          <span className="mt-[0.06em] inline-block bg-azul px-[0.06em] pb-[0.02em]">
-            {lastWord}
-          </span>
+    <section className="mx-auto grid w-full max-w-[1552px] grid-cols-1 gap-10 px-5 pb-12 pt-10 sm:px-12 lg:grid-cols-[1fr_380px] lg:gap-12 lg:pb-9 lg:pt-8">
+      <div>
+        <p className="font-mono text-[11px] uppercase text-gris">{site.heroLabel}</p>
+        <h1 className="mt-[22px] text-[clamp(3rem,7vw,84px)] font-black uppercase leading-[0.93] tracking-[-0.045em]">
+          {site.claim}
         </h1>
-        <div className="mt-12 grid grid-cols-1 gap-8 border-t border-blanco/20 pt-8 md:grid-cols-2 md:items-end">
-          <div>
-            <p className="max-w-xl text-lg text-blanco/80">{site.tagline}</p>
-            <p className="mt-4 font-mono text-xs uppercase tracking-wider text-blanco/50">
-              Fundado por <span className="text-blanco">{site.founder.name}</span>
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-4 md:justify-end">
-            <MagneticButton
-              href="#contacto"
-              className="inline-block bg-blanco px-6 py-3.5 text-sm font-extrabold uppercase text-grafito hover:bg-azul-claro"
-            >
-              Pedir propuesta <span aria-hidden>→</span>
-            </MagneticButton>
-            <MagneticButton
-              href="#trabajos"
-              className="inline-block border-2 border-blanco px-6 py-3 text-sm font-extrabold uppercase text-blanco hover:border-azul-claro hover:text-azul-claro"
-            >
-              Ver trabajos
-            </MagneticButton>
-          </div>
-        </div>
-      </Reveal>
+        <a
+          href="#trabajos"
+          className="mt-[22px] inline-flex items-center gap-4 text-sm font-medium text-azul hover:text-cobalto"
+        >
+          <span aria-hidden className="h-[3px] w-8 bg-azul" />
+          Explorá nuestros trabajos <span aria-hidden>↓</span>
+        </a>
+      </div>
+      <div className="flex flex-col gap-[22px] lg:pt-[5px]">
+        <MotionPath className="h-[66px] w-full max-w-[380px]" />
+        <p className="text-[27px] font-extrabold leading-[1.1]">{site.heroTitle}</p>
+        <p className="text-[17px] leading-[1.45] text-gris">{site.tagline}</p>
+      </div>
     </section>
   );
 }

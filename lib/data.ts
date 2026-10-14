@@ -1,21 +1,42 @@
 export const site = {
   name: "Mansalva",
   url: "https://www.mansalvadesign.com",
+  domain: "mansalvadesign.com",
   role: "Estudio de motion graphics",
-  // Títulos provisorios (lorem ipsum) hasta definir los claims.
-  // La última palabra de cada uno se resalta en azul.
+  // Título del inicio: provisorio (lorem ipsum) hasta definir el claim.
   claim: "Lorem ipsum dolor sit.",
-  contactHeadline: "Lorem ipsum dolor sit amet.",
+  heroLabel: "Motion con intención / Argentina",
+  heroTitle: "Estudio de motion graphics en Argentina.",
   tagline:
-    "Mansalva es un estudio de motion graphics. Damos movimiento a marcas que necesitan hacerse notar ante clientes, inversores y público de feria.",
+    "Damos movimiento a marcas que necesitan hacerse notar. Ante clientes, inversores y público de feria.",
+  worksTitle: "El trabajo habla. Y se mueve.",
+  studioLabel: "Mansalva / Desde Argentina",
+  studioTitle: "No movemos cosas porque sí.",
+  studioText:
+    "Pensamos el movimiento como una decisión de diseño: qué decir, dónde poner el foco y qué dejar afuera.",
   purpose:
     "Que las empresas comuniquen con la misma precisión con la que trabajan, y que se las recuerde por cómo se mueven.",
   services: [
-    "Stands de feria",
-    "Animación web",
-    "Video para redes",
-    "VSL para landings",
-    "Logos animados",
+    {
+      name: "Stands de feria",
+      text: "Piezas para pantallas y stands que se hacen notar entre el ruido.",
+    },
+    {
+      name: "Animación web",
+      text: "Movimiento que acompaña la experiencia, sin distraer del mensaje.",
+    },
+    {
+      name: "Video para redes",
+      text: "Edición y motion para contar lo importante antes del próximo scroll.",
+    },
+    {
+      name: "VSL para landings",
+      text: "Una narrativa clara para presentar tu propuesta y llevarla a la acción.",
+    },
+    {
+      name: "Logos animados",
+      text: "El gesto justo para que tu identidad también se reconozca en movimiento.",
+    },
   ],
   personality: [
     {
@@ -31,11 +52,14 @@ export const site = {
       text: "Pocos elementos, bien elegidos y bien resueltos.",
     },
   ],
+  contactHeadline: "Hagamos que se note.",
+  contactText: "Contanos qué necesitás mover. Empecemos por ahí.",
   email: "manzo@mansalvadesign.com",
   whatsapp: "5493794232631",
   location: "Argentina",
-  // Redes del estudio (Instagram, Behance, etc.). Si está vacío, no se muestra nada.
-  socials: [] as { label: string; href: string }[],
+  // Logos de clientes ({ name, src } con el archivo en /public). Mientras esté
+  // vacío, la sección "Marcas que confiaron en Mansalva" no se muestra.
+  brands: [] as { name: string; src: string }[],
   founder: {
     name: "Sebastián Manzolillo",
     title: "Editor de Video & Motion Graphics Designer",
@@ -44,10 +68,20 @@ export const site = {
   },
 };
 
+// Categorías en el orden de las pestañas, con el texto que se muestra.
+export const categories = [
+  { key: "Motion Graphics", label: "Motion graphics" },
+  { key: "Reel", label: "Reels" },
+  { key: "Landing Page", label: "Landing page" },
+  { key: "Podcast", label: "Podcast" },
+  { key: "Longform", label: "Longform" },
+] as const;
+
 export type Project = {
   slug: string;
   title: string;
-  category: string;
+  category: (typeof categories)[number]["key"];
+  detail?: string; // se muestra después de la categoría, ej. "Reel · Stock / logística"
   description: string;
   youtubeId: string; // ID del video de YouTube (lo que va después de v= en la URL)
   orientation: "vertical" | "horizontal";
@@ -63,12 +97,12 @@ export const projects: Project[] = [
     orientation: "vertical",
   },
   {
-    slug: "julian-architecture-consultant",
-    title: "Julián — Architecture Consultant",
-    category: "Reel",
-    description: "Video de contenido para redes para Julián, consultor de arquitectos.",
-    youtubeId: "GJBmOvtedcc",
-    orientation: "vertical",
+    slug: "maraldi-logo-animation",
+    title: "Maraldi — Logo Animation",
+    category: "Motion Graphics",
+    description: "Animación de logo para Maraldi, marca argentina de electrodomésticos.",
+    youtubeId: "B-3tmJ7X1Tk",
+    orientation: "horizontal",
   },
   {
     slug: "magnetic-impulsa-saas-agency",
@@ -78,6 +112,30 @@ export const projects: Project[] = [
       "Video para la landing page de Magnetic Impulsa, agencia de marketing para empresas SaaS.",
     youtubeId: "8WIwIcFDjXk",
     orientation: "horizontal",
+  },
+  {
+    slug: "hoken-industrial-mockup",
+    title: "Höken — Industrial Mock-up",
+    category: "Reel",
+    description: "Reel de mock-up industrial para la marca Höken.",
+    youtubeId: "inV9Wjm1xhw",
+    orientation: "vertical",
+  },
+  {
+    slug: "komasa-logo-animation",
+    title: "Komasa — Logo Animation",
+    category: "Motion Graphics",
+    description: "Animación de logo para Komasa, empresa argentina de bombas eléctricas.",
+    youtubeId: "tIO3pqG1DdU",
+    orientation: "horizontal",
+  },
+  {
+    slug: "julian-architecture-consultant",
+    title: "Julián — Architecture Consultant",
+    category: "Reel",
+    description: "Video de contenido para redes para Julián, consultor de arquitectos.",
+    youtubeId: "GJBmOvtedcc",
+    orientation: "vertical",
   },
   {
     slug: "yajaira-podcast-trailer",
@@ -104,22 +162,6 @@ export const projects: Project[] = [
     orientation: "vertical",
   },
   {
-    slug: "maraldi-logo-animation",
-    title: "Maraldi — Logo Animation",
-    category: "Motion Graphics",
-    description: "Animación de logo para Maraldi, marca argentina de electrodomésticos.",
-    youtubeId: "B-3tmJ7X1Tk",
-    orientation: "horizontal",
-  },
-  {
-    slug: "komasa-logo-animation",
-    title: "Komasa — Logo Animation",
-    category: "Motion Graphics",
-    description: "Animación de logo para Komasa, empresa argentina de bombas eléctricas.",
-    youtubeId: "tIO3pqG1DdU",
-    orientation: "horizontal",
-  },
-  {
     slug: "german-grisotto-investing-coach",
     title: "Germán Grisotto — Investing Coach",
     category: "Longform",
@@ -144,14 +186,6 @@ export const projects: Project[] = [
     orientation: "vertical",
   },
   {
-    slug: "hoken-industrial-mockup",
-    title: "Höken — Industrial Mock-up",
-    category: "Reel",
-    description: "Reel de mock-up industrial para la marca Höken.",
-    youtubeId: "inV9Wjm1xhw",
-    orientation: "vertical",
-  },
-  {
     slug: "mateo-garcia-fitness-coach",
     title: "Mateo García — Fitness Coach",
     category: "Reel",
@@ -163,6 +197,7 @@ export const projects: Project[] = [
     slug: "rhinos-app-reel",
     title: "Rhinos App — Reel",
     category: "Reel",
+    detail: "Stock / logística",
     description:
       "Reel para Rhinos App, aplicación de manejo de stock para empresas de logística.",
     youtubeId: "-4_IcXGxbJs",

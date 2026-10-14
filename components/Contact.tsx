@@ -1,70 +1,39 @@
 import { site } from "@/lib/data";
-import MagneticButton from "./MagneticButton";
-import Reveal from "./Reveal";
 
 export default function Contact() {
-  const headlineWords = site.contactHeadline.split(" ");
-  const headlineLast = headlineWords.pop();
-
   return (
-    <section id="contacto" className="scroll-mt-16 bg-grafito px-6 py-24 text-blanco">
-      <div className="mx-auto max-w-6xl">
-      <div className="flex flex-wrap items-end justify-between gap-4 border-b border-blanco/20 pb-4">
-        <h2 className="text-[clamp(2.25rem,6vw,4.5rem)] font-black uppercase leading-[0.9] tracking-[-0.045em]">
-          {headlineWords.join(" ")}{" "}
-          <span className="text-azul-claro">{headlineLast}</span>
-        </h2>
-        <span className="font-mono text-xs uppercase text-blanco/60">03 / Contacto</span>
-      </div>
-      <Reveal>
-        <p className="mt-6 max-w-xl text-lg text-blanco/80">
-          ¿Tenés un proyecto en mente? Escribinos y lo charlamos.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          <MagneticButton
-            href={`mailto:${site.email}?subject=${encodeURIComponent("Pedido de propuesta")}`}
-            className="inline-block bg-blanco px-6 py-3.5 text-sm font-extrabold uppercase text-grafito hover:bg-azul-claro"
-          >
-            Pedir propuesta <span aria-hidden>→</span>
-          </MagneticButton>
-          <MagneticButton
-            href={`https://wa.me/${site.whatsapp}`}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Escribinos por WhatsApp"
-            className="inline-flex items-center gap-2 border-2 border-blanco px-6 py-3 text-sm font-extrabold uppercase text-blanco hover:border-azul-claro hover:text-azul-claro"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-5 w-5 fill-current"
-              aria-hidden="true"
-            >
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-              <path d="M12.004 2c-5.514 0-9.997 4.478-9.997 9.997 0 1.762.462 3.484 1.34 5.002L2 22l5.13-1.345a9.96 9.96 0 0 0 4.874 1.243h.004c5.514 0 9.997-4.478 9.997-9.998C21.998 6.478 17.518 2 12.004 2zm0 18.163h-.003a8.153 8.153 0 0 1-4.157-1.14l-.298-.177-3.045.799.813-2.968-.194-.305a8.15 8.15 0 0 1-1.253-4.375c0-4.508 3.669-8.176 8.18-8.176 2.186 0 4.24.852 5.785 2.398a8.13 8.13 0 0 1 2.394 5.785c0 4.508-3.67 8.16-8.222 8.16z" />
-            </svg>
-            WhatsApp
-          </MagneticButton>
+    <section id="contacto" className="scroll-mt-24">
+      <div className="mx-auto grid max-w-[1552px] grid-cols-1 gap-8 px-5 py-14 sm:px-12 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div>
+          <h2 className="text-[clamp(2.25rem,5vw,56px)] font-extrabold leading-[1.02]">
+            {site.contactHeadline}
+          </h2>
+          <p className="mt-3 text-[15px] text-gris">{site.contactText}</p>
         </div>
-        <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs uppercase text-blanco/60">
-          <li>
-            <a href={`mailto:${site.email}`} className="transition-colors hover:text-azul-claro">
-              {site.email}
+        <div className="flex flex-col gap-4">
+          <a
+            href={`mailto:${site.email}`}
+            className="break-all text-[clamp(1.125rem,2vw,22px)] text-azul hover:text-cobalto"
+          >
+            {site.email} <span aria-hidden>→</span>
+          </a>
+          <div className="flex flex-wrap items-center gap-5">
+            <a
+              href={`mailto:${site.email}?subject=${encodeURIComponent("Pedido de propuesta")}`}
+              className="rounded bg-azul px-4 py-2.5 text-sm font-medium text-blanco transition-colors hover:bg-cobalto"
+            >
+              Pedir propuesta
             </a>
-          </li>
-          {site.socials.map((social) => (
-            <li key={social.label}>
-              <a
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 transition-colors hover:text-azul-claro"
-              >
-                {social.label} <span aria-hidden>↗</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </Reveal>
+            <a
+              href={`https://wa.me/${site.whatsapp}`}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm font-medium transition-colors hover:text-azul"
+            >
+              WhatsApp <span aria-hidden>→</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
