@@ -329,41 +329,6 @@ export default function Works() {
             ))}
           </div>
         </div>
-
-        <ul className="hidden grid-cols-7 gap-2 lg:grid">
-          {visible.map((project, i) => (
-            <li key={project.slug}>
-              <button
-                type="button"
-                aria-current={i === active}
-                onClick={() => goTo(i)}
-                className={`flex h-[86px] w-full gap-2 rounded-[4px] border p-2 text-left transition-colors ${
-                  i === active
-                    ? "border-azul bg-humo"
-                    : "border-linea bg-blanco hover:border-gris"
-                }`}
-              >
-                <span className="relative size-11 shrink-0 overflow-hidden bg-grafito">
-                  <Image
-                    src={`https://i.ytimg.com/vi/${project.youtubeId}/hqdefault.jpg`}
-                    alt=""
-                    fill
-                    sizes="44px"
-                    className="object-cover"
-                  />
-                </span>
-                <span className="flex min-w-0 flex-col gap-1">
-                  <span className="line-clamp-3 text-xs font-medium leading-[1.2]">
-                    {project.title}
-                  </span>
-                  <span className="text-[10px] leading-[1.2] text-gris">
-                    {categoryText(project)}
-                  </span>
-                </span>
-              </button>
-            </li>
-          ))}
-        </ul>
       </div>
 
       <VideoModal project={playing} onClose={() => setPlaying(null)} />
