@@ -75,9 +75,11 @@ export default function VideoModal({
             {/* La IFrame API reemplaza este div por el iframe del reproductor */}
             <div key={project.youtubeId} ref={playerRef} className="h-full w-full" />
           </div>
-          <p className="self-start text-sm text-plata">
-            <span className="font-extrabold text-blanco">{project.title}</span> · {project.description}
-          </p>
+          {/* Mismo texto y jerarquía que sobre la tarjeta del carrusel */}
+          <div className="flex flex-col gap-1 self-start text-blanco">
+            <p className="text-[17px] font-extrabold leading-[1.15]">{project.title}</p>
+            <p className="max-w-[60ch] text-[13px] leading-[1.35] text-blanco/80">{project.description}</p>
+          </div>
         </div>
       )}
     </dialog>
