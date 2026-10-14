@@ -133,6 +133,8 @@ export const site = {
     "Contanos para qué feria es, qué pantallas vas a tener y para cuándo lo necesitás. Te respondemos con una propuesta.",
   email: "manzo@mansalvadesign.com",
   whatsapp: "5493794232631",
+  // Página de empresa en LinkedIn (la del fundador está en founder.linkedin).
+  linkedin: "https://www.linkedin.com/company/mansalvadesign/",
   location: "Argentina",
   // Otros nombres con los que se busca a la marca (para buscadores e IA:
   // "Mansalva" también es una editorial, una tipografía y una expresión).

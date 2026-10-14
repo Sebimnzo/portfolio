@@ -24,7 +24,7 @@ export default function Footer() {
         <Wordmark className="text-[26px]" />
         <p className="justify-self-end text-[13px] text-gris">{site.domain}</p>
         <a
-          href={site.founder.linkedin}
+          href={site.linkedin}
           target="_blank"
           rel="noreferrer"
           className="text-sm font-medium transition-colors hover:text-azul"

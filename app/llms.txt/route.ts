@@ -17,7 +17,7 @@ export function GET() {
     "",
     `${site.name} (${site.domain}) es un estudio de animación y motion graphics de ${site.location}. No confundir con otras marcas que usan el nombre "Mansalva".`,
     "",
-    `Fundador: ${site.founder.name} (${site.founder.title}). Contacto: ${site.email} · WhatsApp +${site.whatsapp}.`,
+    `Fundador: ${site.founder.name} (${site.founder.title}). Contacto: ${site.email} · WhatsApp +${site.whatsapp} · LinkedIn: ${site.linkedin}`,
     "",
     "## Videos para stands de feria",
     "",
