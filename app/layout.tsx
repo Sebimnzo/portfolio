@@ -16,13 +16,13 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: `${site.name} — ${site.role}`,
-  description: site.tagline,
+  title: site.seoTitle,
+  description: site.description,
   authors: [{ name: site.founder.name }],
   alternates: { canonical: "/" },
   openGraph: {
-    title: `${site.name} — ${site.role}`,
-    description: site.tagline,
+    title: site.seoTitle,
+    description: site.description,
     url: "/",
     siteName: site.name,
     locale: "es_AR",

@@ -2,7 +2,7 @@ import { site } from "@/lib/data";
 
 export default function Contact() {
   return (
-    <section id="contacto" className="scroll-mt-24">
+    <section id="contacto" className="scroll-mt-24 border-t border-linea">
       <div className="mx-auto grid max-w-[1552px] grid-cols-1 gap-8 px-5 py-14 sm:px-12 lg:grid-cols-[1fr_auto] lg:items-center">
         <div>
           <h2 className="text-[clamp(2.25rem,5vw,56px)] font-extrabold leading-[1.02]">

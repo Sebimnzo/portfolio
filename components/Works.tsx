@@ -115,14 +115,16 @@ export default function Works() {
             <article key={project.slug} className="w-[280px] shrink-0 snap-start sm:w-[352px]">
               <VideoThumb project={project} />
               <div className="mt-3.5 flex flex-col gap-[7px]">
-                <a
-                  href={youtubeUrl(project.youtubeId)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[19px] font-extrabold leading-[1.15] transition-colors hover:text-azul"
-                >
-                  {project.title} <span aria-hidden>→</span>
-                </a>
+                <h3 className="text-[19px] font-extrabold leading-[1.15]">
+                  <a
+                    href={youtubeUrl(project.youtubeId)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition-colors hover:text-azul"
+                  >
+                    {project.title} <span aria-hidden>→</span>
+                  </a>
+                </h3>
                 <p className="text-[13px] text-gris">{categoryText(project)}</p>
               </div>
             </article>

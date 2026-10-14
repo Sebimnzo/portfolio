@@ -6,9 +6,13 @@ export const site = {
   // Título del inicio: provisorio (lorem ipsum) hasta definir el claim.
   claim: "Lorem ipsum dolor sit.",
   heroLabel: "Motion con intención / Argentina",
-  heroTitle: "Estudio de motion graphics en Argentina.",
+  // Es el <h1> de la página: la búsqueda principal del sitio.
+  heroTitle: "Estudio de diseño especializado en videos para stands de feria.",
   tagline:
     "Damos movimiento a marcas que necesitan hacerse notar. Ante clientes, inversores y público de feria.",
+  seoTitle: "Mansalva — Videos para stands de feria y motion graphics",
+  description:
+    "Estudio de diseño especializado en videos para stands de feria: contenido para pantallas LED, videowalls y tótems digitales, loops silenciosos y animación 3D. Desde Argentina.",
   worksTitle: "El trabajo habla. Y se mueve.",
   studioLabel: "Mansalva / Desde Argentina",
   studioTitle: "No movemos cosas porque sí.",
@@ -50,6 +54,67 @@ export const site = {
     {
       name: "Elegante",
       text: "Pocos elementos, bien elegidos y bien resueltos.",
+    },
+  ],
+  standsLabel: "Pantallas / Tótems / Videowalls",
+  standsTitle: "Videos para stands de feria, al píxel de cada pantalla.",
+  standsText:
+    "Cada soporte tiene su medida, su distancia de lectura y su ruido alrededor. Diseñamos para esas condiciones antes de animar.",
+  // `shape` elige el dibujo que muestra la proporción real de cada soporte.
+  standFormats: [
+    {
+      shape: "led",
+      name: "Pantallas LED",
+      spec: "Resolución según tamaño y pixel pitch",
+      text: "Una pantalla LED no tiene una resolución estándar. Una de 5 × 2 m con pitch de 2,5 mm muestra 2000 × 800 px: animamos a esa medida exacta, sin reescalar.",
+    },
+    {
+      shape: "videowall",
+      name: "Videowalls",
+      spec: "Mosaico de monitores con marcos",
+      text: "Repartimos la pieza entre los monitores y cuidamos que ningún texto ni rostro quede cortado por la unión entre pantallas.",
+    },
+    {
+      shape: "totem",
+      name: "Tótems digitales",
+      spec: "Vertical 9:16 · 1080 × 1920 px",
+      text: "Se miran de cerca y de pie: jerarquía clara, tipografía grande y la marca siempre a la vista.",
+    },
+    {
+      shape: "loop",
+      name: "Loops silenciosos",
+      spec: "10 a 30 s · sin audio · corte invisible",
+      text: "En una feria casi nadie escucha: el mensaje se entiende sin sonido y el último cuadro empalma con el primero para que el loop no se note.",
+    },
+    {
+      shape: "cube",
+      name: "Animación 3D",
+      spec: "Productos, procesos y maquinaria",
+      text: "Mostramos lo que no entra en el stand: un producto por dentro, una máquina funcionando o un proceso completo en pocos segundos.",
+    },
+  ],
+  faqTitle: "Preguntas frecuentes sobre videos para stands",
+  // También se publican como datos estructurados FAQPage (ver StructuredData).
+  faq: [
+    {
+      q: "¿Qué resolución tiene que tener un video para una pantalla LED de stand?",
+      a: "La que resulta de dividir el ancho y el alto de la pantalla, en milímetros, por su pixel pitch. Una pantalla de 5 × 2 m con pitch de 2,5 mm tiene 2000 × 800 px. Antes de animar le pedimos el mapa de píxeles al proveedor de la pantalla y trabajamos a esa medida exacta.",
+    },
+    {
+      q: "¿Qué es el pixel pitch y por qué importa?",
+      a: "Es la distancia en milímetros entre los centros de dos LEDs vecinos. Cuanto más chico, más resolución por metro y más cerca se puede mirar sin ver los puntos: como referencia, la distancia mínima de visión en metros es parecida al pitch en milímetros (P2,5 se ve bien desde unos 2,5 m).",
+    },
+    {
+      q: "¿Cuánto tiene que durar un loop para un stand de feria?",
+      a: "Entre 10 y 30 segundos. Es lo que suele mirar alguien que pasa caminando frente al stand, así que el mensaje completo tiene que entrar en ese tiempo. Si hay más para contar, armamos varias piezas cortas que rotan.",
+    },
+    {
+      q: "¿Los videos para stands llevan sonido?",
+      a: "Por lo general no. El ruido de una feria tapa el audio, así que diseñamos para que todo se entienda en silencio: texto en pantalla, alto contraste y pocas ideas por pieza. Si el stand tiene una zona de charlas o demos, hacemos una versión con sonido aparte.",
+    },
+    {
+      q: "¿En qué formato entregan los archivos?",
+      a: "En MP4 (H.264 o H.265) a la resolución exacta de cada pantalla y a la cantidad de cuadros por segundo que pida el reproductor. Si el procesador de la pantalla necesita otro códec, como ProRes, lo entregamos así. Para videowalls y stands con varias pantallas enviamos un archivo por salida o un único lienzo con el mapa completo.",
     },
   ],
   contactHeadline: "Hagamos que se note.",

@@ -3,6 +3,7 @@ import Wordmark from "./Wordmark";
 
 const links = [
   { href: "#trabajos", label: "Trabajos" },
+  { href: "#stands", label: "Stands" },
   { href: "#servicios", label: "Servicios" },
   { href: "#estudio", label: "Estudio" },
 ];
