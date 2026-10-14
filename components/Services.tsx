@@ -33,22 +33,28 @@ export default function Services() {
 
   return (
     <section id="servicios" className="scroll-mt-24 bg-grafito text-blanco">
-      <div className="mx-auto grid max-w-[1552px] grid-cols-1 gap-12 px-5 py-9 sm:px-12 lg:grid-cols-[356px_1fr]">
-        <div id="estudio" className="flex scroll-mt-24 flex-col gap-[18px]">
+      {/* En escritorio la foto del fundador ocupa toda la columna izquierda y se
+          recorta para medir lo mismo que el texto y los servicios de la derecha. */}
+      <div className="mx-auto grid max-w-[1552px] grid-cols-1 gap-x-12 gap-y-10 px-5 py-9 sm:px-12 lg:grid-cols-[356px_1fr] lg:py-14">
+        <div id="estudio" className="flex scroll-mt-24 flex-col gap-[18px] lg:col-start-2 lg:row-start-1">
           <p className="font-mono text-[11px] uppercase text-azul-claro">{site.studioLabel}</p>
           <h2 className="text-[clamp(2rem,4vw,39px)] font-extrabold leading-[1.02]">
             {site.studioTitle}
           </h2>
-          <p className="text-[15px] leading-[1.45] text-plata">{site.studioText}</p>
-          <figure className="flex flex-col gap-3.5 pt-3.5">
-            <Image
-              src={founder.photo}
-              alt={founder.photoAlt}
-              width={1050}
-              height={1400}
-              sizes="(min-width: 640px) 356px, 100vw"
-              className="aspect-[3/4] w-full max-w-[356px] object-cover"
-            />
+          <p className="max-w-[62ch] text-[15px] leading-[1.45] text-plata">{site.studioText}</p>
+        </div>
+
+        <div className="flex flex-col gap-3.5 lg:col-start-1 lg:row-span-2 lg:row-start-1">
+          <figure className="flex flex-col gap-3.5 lg:flex-1">
+            <div className="relative aspect-[3/4] w-full max-w-[356px] overflow-hidden lg:aspect-auto lg:min-h-[400px] lg:flex-1">
+              <Image
+                src={founder.photo}
+                alt={founder.photoAlt}
+                fill
+                sizes="(min-width: 640px) 356px, 100vw"
+                className="object-cover"
+              />
+            </div>
             <figcaption className="font-mono text-[11px] text-plata">{founder.photoCaption}</figcaption>
           </figure>
           <div className="flex min-w-0 flex-col gap-1.5">
@@ -65,7 +71,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-col gap-5">
+        <div className="flex min-w-0 flex-col gap-5 lg:col-start-2 lg:row-start-2">
           <div className="no-scrollbar flex overflow-x-auto border-b border-linea-oscura">
             {tabs.map((t) => (
               <button
@@ -84,8 +90,14 @@ export default function Services() {
             ))}
           </div>
 
-          {tab === "Servicios" ? (
-            <div className="grid grid-cols-1 gap-x-7 gap-y-5 sm:grid-cols-2">
+          {/* Las dos pestañas ocupan la misma celda: la oculta guarda el lugar,
+              así el alto (y la foto) no cambia al pasar de una a otra. */}
+          <div className="grid">
+            <div
+              className={`col-start-1 row-start-1 grid grid-cols-1 content-start gap-x-7 gap-y-5 sm:grid-cols-2 ${
+                tab === "Servicios" ? "" : "invisible"
+              }`}
+            >
               {site.services.map((s) => (
                 <Item
                   key={s.name}
@@ -104,14 +116,17 @@ export default function Services() {
                 </a>
               </div>
             </div>
-          ) : (
-            <div className="grid grid-cols-1 gap-x-7 gap-y-5 sm:grid-cols-2">
+            <div
+              className={`col-start-1 row-start-1 grid grid-cols-1 content-start gap-x-7 gap-y-5 sm:grid-cols-2 ${
+                tab === "El estudio" ? "" : "invisible"
+              }`}
+            >
               <Item title="Propósito" text={site.purpose} />
               {site.personality.map((p) => (
                 <Item key={p.name} title={p.name} text={p.text} />
               ))}
             </div>
-          )}
+          </div>
         </div>
       </div>
     </section>
