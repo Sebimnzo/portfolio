@@ -106,3 +106,67 @@ summary:focus-visible {
     stroke-dashoffset: 0;
   }
 }
+
+/* ── Profundidad 3D ────────────────────────────────────────────────────────
+   <Tilt> publica --px/--py según el puntero; registradas con @property para
+   que vuelvan al reposo con transición. */
+@property --px {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --py {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.tilt {
+  transition: --px 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), --py 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* El elemento gira hacia el puntero */
+.tilt-rotate {
+  transform: perspective(900px) rotateX(calc(var(--py) * var(--tilt, 6deg) * -1))
+    rotateY(calc(var(--px) * var(--tilt, 6deg)));
+}
+
+/* Capa que se desplaza (parallax): --depth positivo acompaña, negativo se opone */
+.tilt-shift {
+  translate: calc(var(--px) * var(--depth, 8px)) calc(var(--py) * var(--depth, 8px));
+}
+
+/* Tipografía con volumen: una copia desplazada detrás que se mueve con el puntero */
+.type-depth {
+  text-shadow: calc(5px - var(--px) * 7px) calc(5px - var(--py) * 7px) 0 var(--linea);
+}
+
+/* Soportes de la sección Stands: vistos en perspectiva, se enderezan hacia el puntero */
+.stand-3d {
+  transform: perspective(520px) rotateX(calc(14deg - var(--py) * 14deg))
+    rotateY(calc(-26deg + var(--px) * 26deg));
+  transform-style: preserve-3d;
+}
+
+/* Carrusel curvo de trabajos: la curva la arma Works.tsx en cada scroll */
+.curve-track {
+  --card-w: 150px;
+  padding-inline: calc(50% - var(--card-w) / 2);
+}
+@media (min-width: 640px) {
+  .curve-track {
+    --card-w: 200px;
+  }
+}
+@media (min-width: 1024px) {
+  .curve-track {
+    --card-w: 236px;
+  }
+}
+.curve-track > li {
+  width: var(--card-w);
+}
+
+.video-dialog::backdrop {
+  background: rgb(41 45 51 / 0.88);
+}

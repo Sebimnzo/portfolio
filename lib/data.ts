@@ -11,8 +11,12 @@ export const site = {
   tagline:
     "Damos movimiento a marcas que necesitan hacerse notar. Ante clientes, inversores y público de feria.",
   seoTitle: "Mansalva — Videos para stands de feria y motion graphics",
+  // Meta description: hasta 155 caracteres para que Google no la corte.
   description:
-    "Estudio de diseño especializado en videos para stands de feria: contenido para pantallas LED, videowalls y tótems digitales, loops silenciosos y animación 3D. Desde Argentina.",
+    "Estudio de diseño especializado en videos para stands de feria: pantallas LED, videowalls, tótems digitales, loops silenciosos y animación 3D. Argentina.",
+  // Fecha del último cambio de contenido (lastmod del sitemap). Actualizarla
+  // a mano solo cuando cambia el contenido, no en cada deploy.
+  updated: "2026-10-14",
   worksTitle: "El trabajo habla. Y se mueve.",
   studioLabel: "Mansalva / Desde Argentina",
   studioTitle: "No movemos cosas porque sí.",

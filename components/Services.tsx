@@ -3,15 +3,18 @@
 import { useState } from "react";
 import Image from "next/image";
 import { site } from "@/lib/data";
+import Tilt from "./Tilt";
 
 const tabs = ["Servicios", "El estudio"] as const;
 
 function Item({ title, text }: { title: string; text: string }) {
   return (
-    <div className="border-t border-linea-oscura pt-[18px]">
-      <h3 className="text-[19px] font-extrabold text-blanco">{title}</h3>
-      <p className="mt-2 text-[13px] leading-[1.45] text-plata">{text}</p>
-    </div>
+    <Tilt className="group/item">
+      <div className="tilt-rotate border-t border-linea-oscura pt-[18px] transition-colors [--tilt:7deg] group-hover/item:border-azul-claro">
+        <h3 className="text-[19px] font-extrabold text-blanco">{title}</h3>
+        <p className="mt-2 text-[13px] leading-[1.45] text-plata">{text}</p>
+      </div>
+    </Tilt>
   );
 }
 

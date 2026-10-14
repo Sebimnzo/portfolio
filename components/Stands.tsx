@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
 import { site } from "@/lib/data";
+import Tilt from "./Tilt";
 
 // Cada soporte dibujado en su proporción real: LED 32:9, videowall de 3 × 2
-// monitores 16:9, tótem 9:16, loop de 10 a 30 s y volumen 3D.
+// monitores 16:9, tótem 9:16, loop de 10 a 30 s y volumen 3D. Se ven en
+// perspectiva, como dentro de un stand, y se enderezan hacia el puntero.
 const stroke = {
   fill: "none",
   stroke: "currentColor",
@@ -89,15 +91,16 @@ export default function Stands() {
 
         <ul>
           {site.standFormats.map((format) => (
-            <li
+            <Tilt
+              as="li"
               key={format.name}
-              className="grid grid-cols-[96px_minmax(0,1fr)] gap-x-5 gap-y-2 border-t border-linea py-6 last:border-b sm:grid-cols-[120px_minmax(0,1fr)_minmax(0,1.4fr)] sm:gap-x-8"
+              className="group/stand grid grid-cols-[96px_minmax(0,1fr)] gap-x-5 gap-y-2 border-t border-linea py-6 last:border-b sm:grid-cols-[120px_minmax(0,1fr)_minmax(0,1.4fr)] sm:gap-x-8"
             >
               <svg
                 aria-hidden
                 viewBox="0 0 120 68"
                 overflow="visible"
-                className="row-span-2 w-full self-start text-grafito sm:row-span-1"
+                className="stand-3d row-span-2 w-full self-start text-grafito transition-colors group-hover/stand:text-azul sm:row-span-1"
               >
                 {shapes[format.shape]}
               </svg>
@@ -106,7 +109,7 @@ export default function Stands() {
                 <p className="mt-1.5 font-mono text-xs text-gris">{format.spec}</p>
               </div>
               <p className="max-w-[60ch] text-[15px] leading-[1.5] text-gris">{format.text}</p>
-            </li>
+            </Tilt>
           ))}
         </ul>
       </div>
