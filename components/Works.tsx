@@ -309,7 +309,7 @@ export default function Works() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <p className="hidden text-[13px] text-gris sm:block">Arrastrá o recorré los proyectos</p>
+            <p className="hidden text-[13px] text-gris sm:block">Arrastrá para ver más</p>
             {[
               { label: "Trabajo anterior", arrow: "←", delta: -1, disabled: !loop && active === 0 },
               {

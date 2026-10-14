@@ -20,7 +20,7 @@ export default function Hero() {
           className="mt-[22px] inline-flex min-h-12 items-center gap-4 text-sm font-medium text-azul hover:text-cobalto"
         >
           <span aria-hidden className="h-[3px] w-8 bg-azul" />
-          Explorá nuestros trabajos <span aria-hidden>↓</span>
+          Ver trabajos <span aria-hidden>↓</span>
         </a>
       </div>
       <div className="flex flex-col gap-[22px] lg:pt-[5px]">

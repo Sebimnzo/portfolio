@@ -317,10 +317,10 @@ export const services: Service[] = [
     label: "Motion graphics",
     seoTitle: "Productora de motion graphics: logos animados, reels y VSL — Mansalva",
     description:
-      "Estudio de animación y motion graphics en Argentina: logos animados, video para redes, VSL para landings y animación web, con criterio de diseño.",
+      "Estudio de animación y motion graphics en Argentina: logos animados, videos para redes, videos de venta (VSL) para landings y animación web.",
     h1: "Motion graphics para marcas",
     intro: [
-      "Además de stands, hacemos motion graphics para marcas, startups y profesionales: logos animados, videos para redes, VSL para landings y animación para la web.",
+      "Además de stands, hacemos motion graphics para marcas, startups y profesionales: logos animados, videos para redes, videos de venta (VSL) para landings y animación para la web.",
       "La lógica es la misma que en una feria: decidir qué decir, dónde poner el foco y qué dejar afuera. El movimiento está para que el mensaje se entienda y se recuerde, no para adornar.",
     ],
     specs: [
@@ -333,10 +333,10 @@ export const services: Service[] = [
       {
         h2: "Qué hacemos",
         bullets: [
-          "Logos animados: el gesto justo para que la identidad también se reconozca en movimiento, en versiones para videos, redes y presentaciones.",
-          "Video para redes: edición y motion para contar lo importante antes del próximo scroll, en vertical y con subtítulos.",
-          "VSL para landings: una narrativa clara para presentar una propuesta y llevarla a la acción.",
-          "Animación web: movimiento que acompaña la experiencia sin distraer del mensaje.",
+          "Logos animados: tu logo en movimiento, en versiones para cerrar videos, redes y presentaciones.",
+          "Video para redes: edición de reels y videos cortos en vertical, con subtítulos y gráficos.",
+          "Videos de venta (VSL): un video que presenta la oferta en la landing y lleva a escribir o comprar.",
+          "Animación web: animaciones para el sitio que ayudan a entender el producto sin distraer.",
         ],
       },
       {

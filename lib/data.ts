@@ -5,68 +5,68 @@ export const site = {
   role: "Estudio de motion graphics",
   // Título grande del inicio (gráfico). El <h1> con la búsqueda es heroTitle.
   claim: "Que tu stand se vea primero.",
-  heroLabel: "Motion con intención / Argentina",
+  heroLabel: "Motion graphics / Argentina",
   // Es el <h1> de la página: la búsqueda principal del sitio.
-  heroTitle: "Estudio de diseño especializado en videos para stands de feria.",
+  heroTitle: "Un estudio que hace videos para stands de feria.",
   tagline:
-    "Damos movimiento a marcas que necesitan hacerse notar. Ante clientes, inversores y público de feria.",
+    "Diseñamos y animamos lo que va en las pantallas LED, tótems y videowalls de tu stand, para que quien pasa entienda en segundos qué ofrecés.",
   seoTitle: "Mansalva — Videos para stands de feria y motion graphics",
   // Meta description: hasta 155 caracteres para que Google no la corte.
   description:
-    "Estudio de diseño especializado en videos para stands de feria: pantallas LED, videowalls, tótems digitales, loops silenciosos y animación 3D. Argentina.",
+    "Hacemos videos para stands de feria: contenido para pantallas LED, tótems y videowalls, loops sin sonido y animación 3D. Estudio en Argentina.",
   // Fecha del último cambio de contenido (lastmod del sitemap). Actualizarla
   // a mano solo cuando cambia el contenido, no en cada deploy.
   updated: "2026-10-14",
-  worksTitle: "El trabajo habla. Y se mueve.",
+  worksTitle: "Mirá lo que ya hicimos.",
   // Bajadas de sección: el título es de marca, la bajada lleva la búsqueda.
   worksIntro:
-    "Videos para stands de feria, pantallas LED y videowalls, contenido para redes y logos animados.",
+    "Videos que ya se vieron en ferias y stands. En «Otros trabajos» hay reels, videos para landings y contenido para redes.",
   studioLabel: "Mansalva / Desde Argentina",
-  studioTitle: "No movemos cosas porque sí.",
+  studioTitle: "Primero el mensaje, después la animación.",
   studioText:
-    "Somos un estudio de animación y motion graphics. Pensamos el movimiento como una decisión de diseño: qué decir, dónde poner el foco y qué dejar afuera.",
+    "Somos un estudio de animación y motion graphics de Argentina. Antes de animar definimos qué tiene que entender quien mira, dónde va la atención y qué sobra.",
   purpose:
-    "Que las empresas comuniquen con la misma precisión con la que trabajan, y que se las recuerde por cómo se mueven.",
+    "Que quien pase por tu stand entienda qué hacés antes de seguir de largo.",
   services: [
     {
       name: "Stands de feria",
-      text: "Piezas para pantallas y stands que se hacen notar entre el ruido.",
+      text: "Videos para las pantallas LED, tótems y videowalls de tu stand.",
     },
     {
       name: "Animación web",
-      text: "Movimiento que acompaña la experiencia, sin distraer del mensaje.",
+      text: "Animaciones para tu sitio que ayudan a entender el producto.",
     },
     {
       name: "Video para redes",
-      text: "Edición y motion para contar lo importante antes del próximo scroll.",
+      text: "Edición de reels y videos cortos, con subtítulos y gráficos.",
     },
     {
-      name: "VSL para landings",
-      text: "Una narrativa clara para presentar tu propuesta y llevarla a la acción.",
+      name: "Videos de venta (VSL)",
+      text: "Un video que presenta tu oferta en la landing y lleva a la persona a escribirte o comprar.",
     },
     {
       name: "Logos animados",
-      text: "El gesto justo para que tu identidad también se reconozca en movimiento.",
+      text: "Tu logo en movimiento, para cerrar videos, presentaciones y pantallas.",
     },
   ],
   personality: [
     {
       name: "Rigurosa",
-      text: "Plazos claros, procesos ordenados y cada fotograma con un motivo.",
+      text: "Plazos acordados desde el principio y archivos listos para cargar en la pantalla.",
     },
     {
       name: "Irreverente",
-      text: "Rompemos la rutina corporativa sin perder la seriedad.",
+      text: "Nos animamos a ideas que se salen de lo corporativo cuando ayudan a que te miren.",
     },
     {
       name: "Elegante",
-      text: "Pocos elementos, bien elegidos y bien resueltos.",
+      text: "Pocos elementos y bien resueltos. Lo que no ayuda a entender, se saca.",
     },
   ],
   standsLabel: "Pantallas / Tótems / Videowalls",
-  standsTitle: "Videos para stands de feria, al píxel de cada pantalla.",
+  standsTitle: "Videos a la medida de cada pantalla de tu stand.",
   standsText:
-    "Cada soporte tiene su medida, su distancia de lectura y su ruido alrededor. Diseñamos para esas condiciones antes de animar.",
+    "Una pantalla LED, un tótem y un videowall no se miran igual: cambian la medida, la distancia y el ruido alrededor. Lo resolvemos antes de animar.",
   // `shape` elige el dibujo que muestra la proporción real de cada soporte.
   standFormats: [
     {
@@ -85,7 +85,7 @@ export const site = {
       shape: "totem",
       name: "Tótems digitales",
       spec: "Vertical 9:16 · 1080 × 1920 px",
-      text: "Se miran de cerca y de pie: jerarquía clara, tipografía grande y la marca siempre a la vista.",
+      text: "Se miran de cerca y al pasar: textos grandes, una idea por pantalla y la marca siempre a la vista.",
     },
     {
       shape: "loop",
@@ -130,7 +130,7 @@ export const site = {
   ],
   contactHeadline: "Hagamos que se note.",
   contactText:
-    "Contanos qué necesitás mover: el video de tu stand, el contenido de una pantalla LED o un videowall. Empecemos por ahí.",
+    "Contanos para qué feria es, qué pantallas vas a tener y para cuándo lo necesitás. Te respondemos con una propuesta.",
   email: "manzo@mansalvadesign.com",
   whatsapp: "5493794232631",
   location: "Argentina",
