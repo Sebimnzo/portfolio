@@ -6,7 +6,6 @@ import { projects, site, type Project } from "@/lib/data";
 import VideoModal from "./VideoModal";
 
 const pad = (n: number) => String(n).padStart(2, "0");
-const youtubeUrl = (id: string) => `https://www.youtube.com/watch?v=${id}`;
 const categoryText = (p: Project) => (p.detail ? `${p.category} · ${p.detail}` : p.category);
 // Miniatura grande: los verticales tienen la de 9:16 (960 × 1920), los horizontales la de 16:9.
 const thumbnail = (p: Project) =>
@@ -258,8 +257,25 @@ export default function Works() {
                   }
                   className="object-cover transition-transform duration-500 group-hover/card:scale-[1.04]"
                 />
+                {/* Capa oscura: leve sobre toda la portada (se sigue viendo) y más
+                    densa abajo, para que el texto se lea también en portadas claras. */}
                 <span
-                  className={`absolute bottom-3 left-3 flex size-10 items-center justify-center bg-azul transition-opacity duration-300 ${
+                  aria-hidden
+                  className="absolute inset-0 bg-linear-to-t from-grafito/90 via-grafito/40 to-grafito/25"
+                />
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-3 text-left text-blanco sm:p-4"
+                >
+                  <span className="line-clamp-2 text-[13px] font-extrabold leading-[1.15] sm:text-[15px] lg:text-[17px]">
+                    {project.title}
+                  </span>
+                  <span className="line-clamp-2 max-w-[46ch] text-[11px] leading-[1.35] text-blanco/80 sm:text-xs lg:text-[13px]">
+                    {project.description}
+                  </span>
+                </span>
+                <span
+                  className={`absolute left-3 top-3 flex size-10 items-center justify-center bg-azul transition-opacity duration-300 sm:left-4 sm:top-4 ${
                     isActive ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -274,33 +290,11 @@ export default function Works() {
       </ul>
 
       <div className="mx-auto flex max-w-[1552px] flex-col gap-[18px] px-5 pb-9 sm:px-12">
-        {current && (
-          <div aria-live="polite" className="mx-auto flex max-w-[560px] flex-col items-center gap-2 text-center">
-            <h3 className="text-[clamp(1.25rem,2.4vw,26px)] font-extrabold leading-[1.15]">
-              {current.title}
-            </h3>
-            <p className="text-[13px] text-gris">{categoryText(current)}</p>
-            <p className="text-[15px] leading-[1.45] text-gris">{current.description}</p>
-            <div className="mt-1 flex flex-wrap items-center justify-center gap-x-6">
-              <button
-                type="button"
-                onClick={() => setPlaying(current)}
-                className="inline-flex min-h-12 items-center gap-3 text-sm font-medium text-azul hover:text-cobalto"
-              >
-                <span aria-hidden className="h-[3px] w-8 bg-azul" />
-                Reproducir acá
-              </button>
-              <a
-                href={youtubeUrl(current.youtubeId)}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-12 items-center text-sm text-gris hover:text-grafito"
-              >
-                Ver en YouTube <span aria-hidden>&nbsp;→</span>
-              </a>
-            </div>
-          </div>
-        )}
+        {/* El título y la descripción van sobre cada tarjeta; esto solo anuncia
+            a los lectores de pantalla qué trabajo quedó al centro. */}
+        <p aria-live="polite" className="sr-only">
+          {current && `${current.title}: ${current.description}`}
+        </p>
 
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
