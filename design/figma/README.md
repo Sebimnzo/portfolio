@@ -31,4 +31,4 @@ Leído una vez con el conector de Figma (2026-10-14) para no gastar lecturas (pl
 
 ## Diferencias decididas al implementar
 - Mail y dominio: se usan `manzo@mansalvadesign.com` / `mansalvadesign.com` (decisión de Sebastián), no los de `mansalva.studio` del diseño.
-- H1 del hero: queda el lorem ipsum (`site.claim`), porque el claim "Nada se queda quieto." fue descartado.
+- Claim del hero (`site.claim`): "Que tu stand se vea primero." reemplaza al lorem ipsum ("Nada se queda quieto." fue descartado). El `<h1>` sigue siendo `site.heroTitle`, en la columna derecha.

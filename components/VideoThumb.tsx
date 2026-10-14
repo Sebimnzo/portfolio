@@ -61,7 +61,7 @@ export default function VideoThumb({ project }: { project: Project }) {
             onError={() =>
               setThumbnailSrc(`https://i.ytimg.com/vi/${project.youtubeId}/hqdefault.jpg`)
             }
-            alt=""
+            alt={project.description}
             fill
             sizes={vertical ? "112px" : "352px"}
             className={`transition-transform duration-500 group-hover/play:scale-[1.03] ${

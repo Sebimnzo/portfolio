@@ -3,8 +3,8 @@ export const site = {
   url: "https://www.mansalvadesign.com",
   domain: "mansalvadesign.com",
   role: "Estudio de motion graphics",
-  // Título del inicio: provisorio (lorem ipsum) hasta definir el claim.
-  claim: "Lorem ipsum dolor sit.",
+  // Título grande del inicio (gráfico). El <h1> con la búsqueda es heroTitle.
+  claim: "Que tu stand se vea primero.",
   heroLabel: "Motion con intención / Argentina",
   // Es el <h1> de la página: la búsqueda principal del sitio.
   heroTitle: "Estudio de diseño especializado en videos para stands de feria.",
