@@ -41,11 +41,30 @@ export default function Services() {
           <h2 className="text-[clamp(2rem,4vw,39px)] font-extrabold leading-[1.02]">
             {site.studioTitle}
           </h2>
-          {site.studioText.map((p) => (
-            <p key={p} className="max-w-[62ch] text-[15px] leading-[1.45] text-plata">
-              {p}
-            </p>
-          ))}
+          {/* Texto corto a la izquierda y rubros a la derecha: se lee de un vistazo
+              y no deja media columna vacía en escritorio. */}
+          <div className="grid grid-cols-1 gap-x-12 gap-y-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+            <div className="flex flex-col gap-3">
+              {site.studioText.map((p) => (
+                <p key={p} className="max-w-[56ch] text-[15px] leading-[1.5] text-plata">
+                  {p}
+                </p>
+              ))}
+            </div>
+            <div className="flex flex-col gap-3">
+              <h3 className="font-mono text-[11px] uppercase text-plata">Con quién trabajamos</h3>
+              <ul className="flex flex-wrap gap-2">
+                {site.studioClients.map((c) => (
+                  <li
+                    key={c}
+                    className="border border-linea-oscura px-2.5 py-1.5 text-[13px] leading-none text-blanco"
+                  >
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-col gap-3.5 lg:col-start-1 lg:row-span-2 lg:row-start-1">
