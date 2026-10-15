@@ -37,7 +37,7 @@ export default function Services() {
           recorta para medir lo mismo que el texto y los servicios de la derecha. */}
       <div className="mx-auto grid max-w-[1552px] grid-cols-1 gap-x-12 gap-y-10 px-5 py-9 sm:px-12 lg:grid-cols-[356px_1fr] lg:py-14">
         <div id="estudio" className="flex scroll-mt-24 flex-col gap-[18px] lg:col-start-2 lg:row-start-1">
-          <p className="font-mono text-[11px] uppercase text-azul-claro">{site.studioLabel}</p>
+          <p className="font-medium text-[11px] uppercase tracking-wide text-azul-claro">{site.studioLabel}</p>
           <h2 className="text-[clamp(2rem,4vw,39px)] font-extrabold leading-[1.02]">
             {site.studioTitle}
           </h2>
@@ -52,7 +52,7 @@ export default function Services() {
               ))}
             </div>
             <div className="flex flex-col gap-3">
-              <h3 className="font-mono text-[11px] uppercase text-plata">Con quién trabajamos</h3>
+              <h3 className="font-medium text-[11px] uppercase tracking-wide text-plata">Con quién trabajamos</h3>
               <ul className="flex flex-wrap gap-2">
                 {site.studioClients.map((c) => (
                   <li
@@ -78,7 +78,7 @@ export default function Services() {
                 className="object-cover"
               />
             </div>
-            <figcaption className="font-mono text-[11px] text-plata">{founder.photoCaption}</figcaption>
+            <figcaption className="font-medium text-[11px] text-plata">{founder.photoCaption}</figcaption>
           </figure>
           <div className="flex min-w-0 flex-col gap-1.5">
             <p className="font-extrabold">{founder.name}</p>

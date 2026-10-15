@@ -52,7 +52,7 @@ export default function LedGuide() {
       <main id="main" className="flex-1">
         <article className="mx-auto flex w-full max-w-[860px] flex-col gap-10 px-5 py-12 sm:px-12 sm:py-16">
           <header className="flex flex-col gap-5">
-            <p className="font-mono text-[11px] uppercase text-gris">Guía / Pantallas LED</p>
+            <p className="font-medium text-[11px] uppercase tracking-wide text-gris">Guía / Pantallas LED</p>
             <h1 className="text-[clamp(2.25rem,5.5vw,60px)] font-black leading-[0.98] tracking-[-0.035em]">
               {ledGuide.title}
             </h1>
@@ -72,7 +72,7 @@ export default function LedGuide() {
             <p className={body}>
               Dividí el ancho y el alto de la pantalla, en milímetros, por el pixel pitch:
             </p>
-            <p className="rounded-[14px] border border-linea px-5 py-4 font-mono text-[15px]">
+            <p className="rounded-[14px] border border-linea px-5 py-4 font-medium text-[15px]">
               píxeles = medida en mm ÷ pitch en mm
             </p>
             <p className={body}>
@@ -94,7 +94,7 @@ export default function LedGuide() {
             <div className="overflow-x-auto">
               <table className="w-full min-w-[560px] border-collapse text-left text-[15px]">
                 <thead>
-                  <tr className="border-b-2 border-grafito font-mono text-[11px] uppercase text-gris">
+                  <tr className="border-b-2 border-grafito font-medium text-[11px] uppercase tracking-wide text-gris">
                     <th className="py-3 pr-4 font-normal">Pitch</th>
                     <th className="py-3 pr-4 font-normal">Píxeles por metro</th>
                     <th className="py-3 pr-4 font-normal">Pantalla de 5 × 2 m</th>

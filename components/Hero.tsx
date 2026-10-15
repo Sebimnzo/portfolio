@@ -9,7 +9,7 @@ export default function Hero() {
       className="mx-auto grid w-full max-w-[1552px] grid-cols-1 gap-10 px-5 pb-12 pt-10 sm:px-12 lg:grid-cols-[1fr_380px] lg:gap-12 lg:pb-9 lg:pt-8"
     >
       <div>
-        <p className="font-mono text-[11px] uppercase text-gris">{site.heroLabel}</p>
+        <p className="font-medium text-[11px] uppercase tracking-wide text-gris">{site.heroLabel}</p>
         {/* El claim es gráfico; el <h1> (búsqueda principal) está en la columna derecha.
             Gira hacia el puntero con una copia desplazada detrás que le da volumen. */}
         <p className="tilt-rotate type-depth mt-[22px] origin-left text-[clamp(3rem,7vw,84px)] font-black uppercase leading-[0.93] tracking-[-0.045em] [--tilt:5deg]">

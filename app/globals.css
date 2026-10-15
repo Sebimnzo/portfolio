@@ -31,7 +31,6 @@
   --color-plata: var(--plata);
   --color-linea-oscura: var(--linea-oscura);
   --font-sans: var(--font-archivo);
-  --font-mono: var(--font-plex-mono);
 }
 
 body {

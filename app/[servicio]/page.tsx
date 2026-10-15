@@ -92,7 +92,7 @@ export default async function ServicePage({ params }: PageProps<"/[servicio]">) 
       <main id="main" className="flex-1">
         <div className="mx-auto flex w-full max-w-[1100px] flex-col gap-12 px-5 py-12 sm:px-12 sm:py-16">
           <header className="flex flex-col gap-5">
-            <nav aria-label="Miga de pan" className="font-mono text-[11px] uppercase text-gris">
+            <nav aria-label="Miga de pan" className="font-medium text-[11px] uppercase tracking-wide text-gris">
               <ol className="flex flex-wrap gap-x-2">
                 {crumbs.map((c, i) => (
                   <li key={c.url} className="flex gap-2">
@@ -125,7 +125,7 @@ export default async function ServicePage({ params }: PageProps<"/[servicio]">) 
           <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-[18px] bg-linea sm:grid-cols-2 lg:grid-cols-4">
             {service.specs.map((s) => (
               <div key={s.label} className="bg-humo p-5">
-                <dt className="font-mono text-[11px] uppercase text-gris">{s.label}</dt>
+                <dt className="font-medium text-[11px] uppercase tracking-wide text-gris">{s.label}</dt>
                 <dd className="mt-2 text-[17px] font-extrabold leading-[1.25]">{s.value}</dd>
               </div>
             ))}

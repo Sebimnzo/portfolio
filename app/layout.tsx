@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { site } from "@/lib/data";
@@ -7,15 +7,6 @@ import { site } from "@/lib/data";
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-});
-
-// Solo para etiquetas chicas: un peso y sin preload, así no compite con
-// la tipografía del título (el LCP).
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  weight: "400",
-  subsets: ["latin"],
-  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -44,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${archivo.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-blanco text-grafito">
         <a href="#main" className="skip-link">

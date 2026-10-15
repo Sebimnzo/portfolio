@@ -182,7 +182,7 @@ export default function Works() {
             </h2>
             <p className="max-w-[60ch] text-[15px] leading-[1.45] text-gris">{site.worksIntro}</p>
           </div>
-          <p className="font-mono text-[11px] uppercase text-gris">
+          <p className="font-medium text-[11px] uppercase tracking-wide text-gris">
             {n} {n === 1 ? "proyecto" : "proyectos"} / {group === "feria" ? "para stands" : "otros formatos"}
           </p>
         </div>
@@ -295,7 +295,7 @@ export default function Works() {
 
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <p className="font-mono text-xs text-azul">
+            <p className="font-medium text-xs text-azul">
               {pad(active + 1)} / {pad(n)}
             </p>
             <div className="relative h-[3px] w-[110px] bg-linea sm:w-[248px]">

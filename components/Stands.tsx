@@ -66,7 +66,7 @@ const shapes: Record<string, ReactNode> = {
           textAnchor={x === 116 ? "end" : x === 4 ? "start" : "middle"}
           fontSize="10"
           fill="var(--gris)"
-          className="font-mono"
+          className="font-medium"
         >
           {t}
         </text>
@@ -90,7 +90,7 @@ export default function Stands() {
     <section id="stands" aria-labelledby="stands-title" className="scroll-mt-24 border-t border-linea">
       <div className="mx-auto grid max-w-[1552px] grid-cols-1 gap-10 px-5 py-14 sm:px-12 lg:grid-cols-[380px_1fr] lg:gap-12">
         <div className="lg:sticky lg:top-[120px] lg:self-start">
-          <p className="font-mono text-[11px] uppercase text-gris">{site.standsLabel}</p>
+          <p className="font-medium text-[11px] uppercase tracking-wide text-gris">{site.standsLabel}</p>
           <h2
             id="stands-title"
             className="mt-[22px] text-[clamp(1.75rem,4vw,38px)] font-extrabold leading-[1.05]"
@@ -128,7 +128,7 @@ export default function Stands() {
                     {format.name} <span aria-hidden className="text-azul">→</span>
                   </Link>
                 </h3>
-                <p className="mt-1.5 font-mono text-xs text-gris">{format.spec}</p>
+                <p className="mt-1.5 font-medium text-xs text-gris">{format.spec}</p>
               </div>
               <p className="max-w-[60ch] text-[15px] leading-[1.5] text-gris">{format.text}</p>
             </Tilt>

@@ -31,7 +31,7 @@ export default function Footer() {
         >
           LinkedIn <span aria-hidden>→</span>
         </a>
-        <p className="justify-self-end font-mono text-[10px] uppercase text-gris">
+        <p className="justify-self-end font-medium text-[11px] uppercase tracking-wide text-gris">
           © {new Date().getFullYear()} {site.name}
         </p>
       </div>

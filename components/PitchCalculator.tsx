@@ -76,17 +76,17 @@ export default function PitchCalculator() {
 
       <dl aria-live="polite" className="mt-6 grid grid-cols-1 gap-4 border-t border-linea pt-6 sm:grid-cols-3">
         <div>
-          <dt className="font-mono text-[11px] uppercase text-gris">Resolución para animar</dt>
+          <dt className="font-medium text-[11px] uppercase tracking-wide text-gris">Resolución para animar</dt>
           <dd className="mt-1 text-[clamp(1.75rem,4vw,40px)] font-black leading-none tracking-[-0.03em] text-azul">
             {valid ? `${px} × ${py} px` : "—"}
           </dd>
         </div>
         <div>
-          <dt className="font-mono text-[11px] uppercase text-gris">Proporción</dt>
+          <dt className="font-medium text-[11px] uppercase tracking-wide text-gris">Proporción</dt>
           <dd className="mt-1 text-2xl font-extrabold">{valid ? ratio(px, py) : "—"}</dd>
         </div>
         <div>
-          <dt className="font-mono text-[11px] uppercase text-gris">Distancia mínima de visión</dt>
+          <dt className="font-medium text-[11px] uppercase tracking-wide text-gris">Distancia mínima de visión</dt>
           <dd className="mt-1 text-2xl font-extrabold">
             {valid ? `≈ ${p.toLocaleString("es-AR")} m` : "—"}
           </dd>
