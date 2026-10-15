@@ -44,7 +44,7 @@ const jsonLd = {
       name: site.founder.name,
       jobTitle: site.founder.title,
       image: `${site.url}${site.founder.photo}`,
-      sameAs: [site.founder.linkedin],
+      sameAs: [site.founder.linkedin, site.founder.behance],
       worksFor: { "@id": id("estudio") },
     },
     {

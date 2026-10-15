@@ -158,6 +158,7 @@ export const site = {
       "Sebastián Manzolillo junto a una pantalla vertical en un stand de Expo Mercado Fitness 2026, en La Rural",
     photoCaption: "En Expo Mercado Fitness 2026, La Rural (Buenos Aires).",
     linkedin: "https://www.linkedin.com/in/sebastian-manzolillo/",
+    behance: "https://www.behance.net/sebastimanzoli",
   },
 };
 
