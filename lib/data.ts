@@ -230,6 +230,18 @@ export const projects: Project[] = [
     poster: "/trabajos/grupo-briones.jpg",
   },
   {
+    slug: "pedisy-presentacion",
+    fair: true,
+    title: "Pedisy — Video de presentación",
+    category: "Motion Graphics",
+    description:
+      "Video de presentación de Pedisy, sistema de gestión para restaurantes: punto de venta, cocina, stock y pedidos online.",
+    youtubeId: "32ck6MPAojo",
+    orientation: "horizontal",
+    // Cuadro de los 4 s, cuando ya se ve completa la primera frase.
+    poster: "/trabajos/pedisy.jpg",
+  },
+  {
     slug: "goodly-fit-crm",
     fair: true,
     title: "Goodly Fit — CRM para gimnasios",
@@ -268,17 +280,6 @@ export const projects: Project[] = [
     description: "Animación de logo para Maraldi, marca argentina de electrodomésticos.",
     youtubeId: "B-3tmJ7X1Tk",
     orientation: "horizontal",
-  },
-  {
-    slug: "pedisy-presentacion",
-    title: "Pedisy — Video de presentación",
-    category: "Motion Graphics",
-    description:
-      "Video de presentación de Pedisy, sistema de gestión para restaurantes: punto de venta, cocina, stock y pedidos online.",
-    youtubeId: "32ck6MPAojo",
-    orientation: "horizontal",
-    // Cuadro de los 4 s, cuando ya se ve completa la primera frase.
-    poster: "/trabajos/pedisy.jpg",
   },
   {
     slug: "magnetic-impulsa-saas-agency",
