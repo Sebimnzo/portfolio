@@ -19,6 +19,9 @@ const csp = [
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
+  // Vercel agrega "Access-Control-Allow-Origin: *" por defecto; se limita al
+  // propio dominio porque ninguna otra web necesita leer estas respuestas.
+  { key: "Access-Control-Allow-Origin", value: "https://www.mansalvadesign.com" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=()" },
   { key: "X-Frame-Options", value: "DENY" },
