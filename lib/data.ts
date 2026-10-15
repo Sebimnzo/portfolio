@@ -174,7 +174,16 @@ export type Project = {
   // Hecho para una feria o stand: va en la pestaña principal de Trabajos.
   // El resto aparece en "Otros trabajos".
   fair?: boolean;
+  // Portada propia en /public (ej. un cuadro del comienzo del video). Si no
+  // hay, se usa la miniatura de YouTube.
+  poster?: string;
 };
+
+// Portada de un trabajo: la propia si tiene, si no la de YouTube (9:16 para
+// los verticales, 16:9 para los horizontales).
+export const thumbnailOf = (p: Project) =>
+  p.poster ??
+  `https://i.ytimg.com/vi/${p.youtubeId}/${p.orientation === "vertical" ? "oardefault" : "maxresdefault"}.jpg`;
 
 export const projects: Project[] = [
   {
@@ -197,6 +206,18 @@ export const projects: Project[] = [
       "Video para el stand de Cocchiola SA que presenta sus insumos, como el hilo de molibdeno y la resina.",
     youtubeId: "VVdZ91eC_FQ",
     orientation: "horizontal",
+  },
+  {
+    slug: "grupo-briones",
+    fair: true,
+    title: "Grupo Briones — Desarrollos inmobiliarios",
+    category: "Motion Graphics",
+    description:
+      "Video para Grupo Briones, desarrolladora inmobiliaria de Buenos Aires: sus proyectos, del plano al departamento.",
+    youtubeId: "BYZBxf6nKL8",
+    orientation: "horizontal",
+    // Cuadro de los 2 s del video, cuando ya se ve todo el texto de la primera escena.
+    poster: "/trabajos/grupo-briones.jpg",
   },
   {
     slug: "goodly-fit-crm",

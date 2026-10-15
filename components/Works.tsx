@@ -2,14 +2,11 @@
 
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from "react";
 import Image from "next/image";
-import { projects, site, type Project } from "@/lib/data";
+import { projects, site, thumbnailOf, type Project } from "@/lib/data";
 import VideoModal from "./VideoModal";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 const categoryText = (p: Project) => (p.detail ? `${p.category} · ${p.detail}` : p.category);
-// Miniatura grande: los verticales tienen la de 9:16 (960 × 1920), los horizontales la de 16:9.
-const thumbnail = (p: Project) =>
-  `https://i.ytimg.com/vi/${p.youtubeId}/${p.orientation === "vertical" ? "oardefault" : "maxresdefault"}.jpg`;
 
 // Curva del carrusel: cuanto más lejos del centro, más gira la tarjeta hacia
 // adentro y más grande se ve, como si las tarjetas rodearan a quien mira.
@@ -245,7 +242,7 @@ export default function Works() {
                 }`}
               >
                 <Image
-                  src={thumbnail(project)}
+                  src={thumbnailOf(project)}
                   alt={project.description}
                   fill
                   draggable={false}

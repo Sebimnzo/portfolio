@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import type { Project } from "@/lib/data";
+import { thumbnailOf, type Project } from "@/lib/data";
 import Tilt from "./Tilt";
 import VideoModal from "./VideoModal";
 
@@ -24,7 +24,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
             >
               <span className="relative block aspect-[3/4] overflow-hidden rounded-[18px] bg-grafito">
                 <Image
-                  src={`https://i.ytimg.com/vi/${p.youtubeId}/${p.orientation === "vertical" ? "oardefault" : "maxresdefault"}.jpg`}
+                  src={thumbnailOf(p)}
                   alt={p.description}
                   fill
                   sizes="(min-width: 1024px) 300px, 45vw"
