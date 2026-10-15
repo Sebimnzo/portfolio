@@ -41,7 +41,11 @@ export default function Services() {
           <h2 className="text-[clamp(2rem,4vw,39px)] font-extrabold leading-[1.02]">
             {site.studioTitle}
           </h2>
-          <p className="max-w-[62ch] text-[15px] leading-[1.45] text-plata">{site.studioText}</p>
+          {site.studioText.map((p) => (
+            <p key={p} className="max-w-[62ch] text-[15px] leading-[1.45] text-plata">
+              {p}
+            </p>
+          ))}
         </div>
 
         <div className="flex flex-col gap-3.5 lg:col-start-1 lg:row-span-2 lg:row-start-1">

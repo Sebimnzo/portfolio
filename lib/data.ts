@@ -23,8 +23,13 @@ export const site = {
     "Videos que ya se vieron en ferias y stands. En «Otros trabajos» hay reels, videos para landings y contenido para redes.",
   studioLabel: "Mansalva / Desde Argentina",
   studioTitle: "Primero el mensaje, después la animación.",
-  studioText:
-    "Somos un estudio de animación y motion graphics de Argentina. Antes de animar definimos qué tiene que entender quien mira, dónde va la atención y qué sobra.",
+  // Un párrafo por elemento. Las fechas coinciden con LinkedIn: edición freelance
+  // desde feb. 2024, Mansalva fundada en mar. 2025.
+  studioText: [
+    "Somos un estudio de diseño y animación de Argentina. Editamos y animamos videos para marcas y creadores desde 2024, y en 2025 nació Mansalva, enfocada en stands de feria.",
+    "Trabajamos con empresas industriales y de maquinaria, marcas de electrodomésticos, gimnasios y software para fitness, desarrolladoras inmobiliarias, startups, agencias de marketing, coaches, creadores de contenido, podcasts y artistas musicales.",
+    "Antes de animar definimos qué tiene que entender quien mira, dónde va la atención y qué sobra.",
+  ],
   purpose:
     "Que quien pase por tu stand entienda qué hacés antes de seguir de largo.",
   services: [
