@@ -18,7 +18,7 @@ const jsonLd = {
       availableLanguage: "es",
       email: site.email,
       telephone: `+${site.whatsapp}`,
-      sameAs: [site.linkedin],
+      sameAs: [site.linkedin, site.youtube],
       address: { "@type": "PostalAddress", addressCountry: "AR" },
       founder: { "@id": id("fundador") },
       knowsAbout: [

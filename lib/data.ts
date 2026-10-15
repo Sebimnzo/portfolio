@@ -135,6 +135,8 @@ export const site = {
   whatsapp: "5493794232631",
   // Página de empresa en LinkedIn (la del fundador está en founder.linkedin).
   linkedin: "https://www.linkedin.com/company/mansalvadesign/",
+  // Canal de YouTube "Mansalva Design" (URL fija por ID: no cambia si cambia el identificador @).
+  youtube: "https://www.youtube.com/channel/UCgJvahN_uipA7atpbVOkuzw",
   location: "Argentina",
   // Otros nombres con los que se busca a la marca (para buscadores e IA:
   // "Mansalva" también es una editorial, una tipografía y una expresión).
