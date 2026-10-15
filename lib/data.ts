@@ -187,16 +187,6 @@ export const thumbnailOf = (p: Project) =>
 
 export const projects: Project[] = [
   {
-    slug: "cocchiola-expo-argenplas",
-    fair: true,
-    title: "Cocchiola — Stand en Expo Argenplás",
-    category: "Motion Graphics",
-    detail: "Stand de feria",
-    description: "Video para el stand de Cocchiola SA en la feria Expo Argenplás.",
-    youtubeId: "T4IWO4G7NVs",
-    orientation: "horizontal",
-  },
-  {
     slug: "cocchiola-insumos",
     fair: true,
     title: "Cocchiola — Insumos industriales",

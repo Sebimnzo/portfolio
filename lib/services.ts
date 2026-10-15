@@ -83,7 +83,6 @@ export const services: Service[] = [
       },
     ],
     projects: [
-      "cocchiola-expo-argenplas",
       "cocchiola-insumos",
       "grupo-briones",
       "goodly-fit-crm",
@@ -145,7 +144,7 @@ export const services: Service[] = [
         a: "Sí. En exterior el pitch suele ser más grande y la gente mira desde más lejos, así que el diseño usa menos elementos, más contraste y textos todavía más grandes.",
       },
     ],
-    projects: ["cocchiola-expo-argenplas"],
+    projects: ["cocchiola-insumos"],
   },
   {
     slug: "animacion-videowall",
