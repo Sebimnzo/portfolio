@@ -41,6 +41,20 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  // Las direcciones *.vercel.app de producción muestran el mismo sitio:
+  // redirigen al dominio para que Google no indexe una copia. Las vistas
+  // previas (VERCEL_ENV=preview) no se tocan, así se pueden seguir probando.
+  async redirects() {
+    if (process.env.VERCEL_ENV !== "production") return [];
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: ".*\\.vercel\\.app" }],
+        destination: "https://www.mansalvadesign.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
