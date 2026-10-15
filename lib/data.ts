@@ -188,6 +188,17 @@ export const projects: Project[] = [
     orientation: "horizontal",
   },
   {
+    slug: "cocchiola-insumos",
+    fair: true,
+    title: "Cocchiola — Insumos industriales",
+    category: "Motion Graphics",
+    detail: "Stand de feria",
+    description:
+      "Video para el stand de Cocchiola SA que presenta sus insumos, como el hilo de molibdeno y la resina.",
+    youtubeId: "VVdZ91eC_FQ",
+    orientation: "horizontal",
+  },
+  {
     slug: "goodly-fit-crm",
     fair: true,
     title: "Goodly Fit — CRM para gimnasios",
