@@ -270,6 +270,17 @@ export const projects: Project[] = [
     orientation: "horizontal",
   },
   {
+    slug: "pedisy-presentacion",
+    title: "Pedisy — Video de presentación",
+    category: "Motion Graphics",
+    description:
+      "Video de presentación de Pedisy, sistema de gestión para restaurantes: punto de venta, cocina, stock y pedidos online.",
+    youtubeId: "32ck6MPAojo",
+    orientation: "horizontal",
+    // Cuadro de los 4 s, cuando ya se ve completa la primera frase.
+    poster: "/trabajos/pedisy.jpg",
+  },
+  {
     slug: "magnetic-impulsa-saas-agency",
     title: "Magnetic Impulsa — Agencia de marketing SaaS",
     category: "Landing Page",

@@ -375,6 +375,7 @@ export const services: Service[] = [
       },
     ],
     projects: [
+      "pedisy-presentacion",
       "maraldi-logo-animation",
       "komasa-logo-animation",
       "magnetic-impulsa-saas-agency",
