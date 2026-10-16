@@ -16,7 +16,7 @@ export const site = {
     "Hacemos videos para stands de feria: contenido para pantallas LED, tótems y videowalls, loops sin sonido y animación 3D. Estudio en Argentina.",
   // Fecha del último cambio de contenido (lastmod del sitemap). Actualizarla
   // a mano solo cuando cambia el contenido, no en cada deploy.
-  updated: "2026-10-14",
+  updated: "2026-10-16",
   worksTitle: "Mirá lo que ya hicimos.",
   // Bajadas de sección: el título es de marca, la bajada lleva la búsqueda.
   worksIntro:

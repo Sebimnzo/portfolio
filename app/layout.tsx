@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/data";
 
 const archivo = Archivo({
@@ -44,6 +45,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         {/* Métricas de usuarios reales (LCP, INP, CLS): se activan en el panel de Vercel */}
         <SpeedInsights />
+        {/* Visitas por página y el evento cta_contacto de las guías (components/GuideCta.tsx) */}
+        <Analytics />
       </body>
     </html>
   );

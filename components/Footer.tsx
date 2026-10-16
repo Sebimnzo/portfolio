@@ -1,7 +1,6 @@
 import { site } from "@/lib/data";
 import Link from "next/link";
 import { services } from "@/lib/services";
-import { ledGuide } from "@/lib/guides";
 import Wordmark from "./Wordmark";
 
 export default function Footer() {
@@ -16,8 +15,8 @@ export default function Footer() {
             {s.label}
           </Link>
         ))}
-        <Link href={ledGuide.path} className="min-h-12 content-center hover:text-azul">
-          Guía de resolución LED
+        <Link href="/#guias" className="min-h-12 content-center hover:text-azul">
+          Guías
         </Link>
       </nav>
       <div className="mx-auto grid max-w-[1552px] grid-cols-2 items-center gap-4 px-5 pb-7 pt-[22px] sm:flex sm:justify-between sm:px-12">

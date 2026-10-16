@@ -1,5 +1,5 @@
 import { projects, site, type Project } from "@/lib/data";
-import { ledGuide } from "@/lib/guides";
+import { guides } from "@/lib/guides";
 import { services } from "@/lib/services";
 
 // Resumen del sitio en Markdown para asistentes de IA (convención llms.txt),
@@ -36,7 +36,7 @@ export function GET() {
     "",
     "## Guías",
     "",
-    `- [${ledGuide.title}](${site.url}${ledGuide.path}): ${ledGuide.description}`,
+    ...guides.map((g) => `- [${g.title}](${site.url}${g.path}): ${g.description} (lectura: ${g.readingMinutes} min)`),
     "",
     "## Trabajos para ferias y stands",
     "",

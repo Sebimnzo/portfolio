@@ -4,6 +4,7 @@ import Works from "@/components/Works";
 import Stands from "@/components/Stands";
 import Services from "@/components/Services";
 import Brands from "@/components/Brands";
+import Guides from "@/components/Guides";
 import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -20,6 +21,7 @@ export default function Home() {
         <Stands />
         <Services />
         <Brands />
+        <Guides />
         <Faq />
         <Contact />
       </main>

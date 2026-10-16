@@ -1,72 +1,30 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import GuideArticle from "@/components/GuideArticle";
 import PitchCalculator from "@/components/PitchCalculator";
-import { site } from "@/lib/data";
-import { ledGuide, pitchTable } from "@/lib/guides";
+import { getGuide, guideMetadata, pitchTable } from "@/lib/guides";
 
-export const metadata: Metadata = {
-  title: ledGuide.seoTitle,
-  description: ledGuide.description,
-  alternates: { canonical: ledGuide.path },
-  openGraph: {
-    title: ledGuide.title,
-    description: ledGuide.description,
-    url: ledGuide.path,
-    siteName: site.name,
-    locale: "es_AR",
-    type: "article",
-  },
-};
+const guide = getGuide("resolucion-pantalla-led");
+
+export const metadata: Metadata = guideMetadata(guide);
 
 const fmt = (n: number) => n.toLocaleString("es-AR");
-const date = (iso: string) =>
-  new Date(`${iso}T12:00:00`).toLocaleDateString("es-AR", { day: "numeric", month: "long", year: "numeric" });
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: ledGuide.title,
-  description: ledGuide.description,
-  inLanguage: "es-AR",
-  datePublished: ledGuide.published,
-  dateModified: ledGuide.updated,
-  mainEntityOfPage: `${site.url}${ledGuide.path}`,
-  image: `${site.url}/opengraph-image`,
-  author: { "@id": `${site.url}/#fundador` },
-  publisher: { "@id": `${site.url}/#estudio` },
-};
 
 const h2 = "text-[clamp(1.5rem,3vw,30px)] font-extrabold leading-[1.1]";
 const body = "text-[17px] leading-[1.6] text-grafito";
 
 export default function LedGuide() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
-      />
-      <Header />
-      <main id="main" className="flex-1">
-        <article className="mx-auto flex w-full max-w-[860px] flex-col gap-10 px-5 py-12 sm:px-12 sm:py-16">
-          <header className="flex flex-col gap-5">
-            <p className="font-medium text-[11px] uppercase tracking-wide text-gris">Guía / Pantallas LED</p>
-            <h1 className="text-[clamp(2.25rem,5.5vw,60px)] font-black leading-[0.98] tracking-[-0.035em]">
-              {ledGuide.title}
-            </h1>
-            <p className="text-sm text-gris">
-              Por {site.founder.name} · Actualizada el{" "}
-              <time dateTime={ledGuide.updated}>{date(ledGuide.updated)}</time>
-            </p>
-            <p className={body}>
-              Una pantalla LED no tiene una resolución estándar como un monitor. Depende de dos datos:
-              cuánto mide y qué <strong>pixel pitch</strong> tiene. Si el video no se anima a esa medida
-              exacta, el reproductor lo reescala y los textos finos se ven borrosos o cortados.
-            </p>
-          </header>
-
+    <GuideArticle
+      guide={guide}
+      intro={
+        <p className={body}>
+          Una pantalla LED no tiene una resolución estándar como un monitor. Depende de dos datos:
+          cuánto mide y qué <strong>pixel pitch</strong> tiene. Si el video no se anima a esa medida
+          exacta, el reproductor lo reescala y los textos finos se ven borrosos o cortados.
+        </p>
+      }
+    >
           <section className="flex flex-col gap-4">
             <h2 className={h2}>La fórmula</h2>
             <p className={body}>
@@ -168,9 +126,6 @@ export default function LedGuide() {
               Pedir una propuesta
             </Link>
           </section>
-        </article>
-      </main>
-      <Footer />
-    </>
+    </GuideArticle>
   );
 }
