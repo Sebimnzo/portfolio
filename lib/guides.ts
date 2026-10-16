@@ -275,7 +275,8 @@ export const guides: Guide[] = [
 ];
 
 // Orden de las categorías en la home.
-export const guideCategories = ["Pantallas LED", "Videowalls", "Tótems", "Video para stands", "Stands de feria"];
+// Orden de la home: primero el dolor del expositor, después la pantalla y el video, al final los formatos.
+export const guideCategories = ["Stands de feria", "Pantallas LED", "Video para stands", "Videowalls", "Tótems"];
 
 export function getGuide(slug: string): Guide {
   const guide = guides.find((g) => g.slug === slug);
