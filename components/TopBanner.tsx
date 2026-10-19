@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-// Banner animado de arriba de todo: loop de 15 s sin audio. El navegador elige
-// una sola versión según el ancho (1800×200 en escritorio, 1080×360 hasta
+// Banner animado de arriba de todo: loop de 13,6 s sin audio. El navegador elige
+// una sola versión según el ancho (1800×100 en escritorio, 1080×180 hasta
 // 767 px), WebM primero y MP4 de respaldo. Mientras carga, y con "reducir
 // movimiento", se ve el póster quieto (estilos en globals.css, .top-banner).
 // En compu (desde 768 px) queda fijo arriba junto con el menú; su alto se
@@ -63,10 +63,10 @@ export default function TopBanner() {
       aria-label="Mansalva: pantallas LED, videowalls, animación 3D y loops sin corte. Nada se queda quieto."
     >
       <video ref={video} autoPlay muted loop playsInline preload="auto" aria-hidden="true">
-        <source media={MOBILE} src="/videos/mansalva-banner_1080x360_v1.webm" type="video/webm" />
-        <source media={MOBILE} src="/videos/mansalva-banner_1080x360_v1.mp4" type="video/mp4" />
-        <source src="/videos/mansalva-banner_1800x200_v1.webm" type="video/webm" />
-        <source src="/videos/mansalva-banner_1800x200_v1.mp4" type="video/mp4" />
+        <source media={MOBILE} src="/videos/mansalva-banner_1080x180_v2.webm" type="video/webm" />
+        <source media={MOBILE} src="/videos/mansalva-banner_1080x180_v2.mp4" type="video/mp4" />
+        <source src="/videos/mansalva-banner_1800x100_v2.webm" type="video/webm" />
+        <source src="/videos/mansalva-banner_1800x100_v2.mp4" type="video/mp4" />
       </video>
     </div>
   );
