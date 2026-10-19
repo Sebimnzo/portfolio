@@ -3,6 +3,7 @@ import { Archivo } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import TopBanner from "@/components/TopBanner";
 import { site } from "@/lib/data";
 
 const archivo = Archivo({
@@ -42,6 +43,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main" className="skip-link">
           Saltar al contenido
         </a>
+        {/* Banner animado arriba de todo; la barra de navegación queda fija debajo al bajar */}
+        <TopBanner />
         {children}
         {/* Métricas de usuarios reales (LCP, INP, CLS): se activan en el panel de Vercel */}
         <SpeedInsights />

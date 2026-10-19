@@ -210,3 +210,32 @@ summary:focus-visible {
 .video-dialog::backdrop {
   background: rgb(41 45 51 / 0.88);
 }
+
+/* Banner animado de arriba de todo (components/TopBanner.tsx): 9:1 en
+   escritorio y 3:1 hasta 767 px, con el póster de cada medida de fondo
+   mientras carga el video. Con "reducir movimiento" queda solo el póster. */
+.top-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 1;
+  overflow: hidden;
+  background: var(--humo) url("/videos/mansalva-banner_1800x200_poster_v1.jpg") center / cover no-repeat;
+}
+.top-banner video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 767px) {
+  .top-banner {
+    aspect-ratio: 3 / 1;
+    background-image: url("/videos/mansalva-banner_1080x360_poster_v1.jpg");
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .top-banner video {
+    display: none;
+  }
+}
