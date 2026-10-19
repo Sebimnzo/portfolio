@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Works from "@/components/Works";
 import Stands from "@/components/Stands";
+import Packages from "@/components/Packages";
 import Services from "@/components/Services";
 import Brands from "@/components/Brands";
 import Guides from "@/components/Guides";
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <Works />
         <Stands />
+        <Packages />
         <Services />
         <Brands />
         <Guides />

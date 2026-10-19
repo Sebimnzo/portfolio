@@ -5,6 +5,7 @@ import MobileMenu from "./MobileMenu";
 const links = [
   { href: "/#trabajos", label: "Trabajos" },
   { href: "/#stands", label: "Stands" },
+  { href: "/#paquetes", label: "Paquetes" },
   { href: "/#servicios", label: "Servicios" },
   { href: "/#estudio", label: "Estudio" },
   { href: "/#guias", label: "Guías" },
@@ -17,8 +18,8 @@ export default function Header() {
         <Link href="/" aria-label="Mansalva, ir al inicio" className="text-grafito">
           <Wordmark className="text-2xl sm:text-[32px]" />
         </Link>
-        <div className="flex items-center gap-3 md:gap-8">
-          <ul className="hidden items-center gap-8 text-sm font-medium md:flex">
+        <div className="flex items-center gap-3 lg:gap-8">
+          <ul className="hidden items-center gap-8 text-sm font-medium lg:flex">
             {links.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="transition-colors hover:text-azul">

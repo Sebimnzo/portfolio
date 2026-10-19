@@ -1,4 +1,4 @@
-import { site } from "@/lib/data";
+import { packages, site } from "@/lib/data";
 
 // Datos estructurados (schema.org) para buscadores y asistentes de IA.
 const id = (name: string) => `${site.url}/#${name}`;
@@ -30,6 +30,10 @@ const jsonLd = {
         "@type": "OfferCatalog",
         name: "Servicios",
         itemListElement: [
+          ...packages.map((p) => ({
+            name: `Paquete: ${p.name}`,
+            description: `${p.spec}. ${p.text} Plazo: ${p.standard}${p.express ? `; express: ${p.express}` : ""}. Se cotiza por pieza y por versión extra.`,
+          })),
           ...site.standFormats.map((f) => ({ name: f.name, description: f.text })),
           ...site.services.map((s) => ({ name: s.name, description: s.text })),
         ].map((service) => ({

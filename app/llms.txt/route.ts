@@ -1,4 +1,4 @@
-import { projects, site, type Project } from "@/lib/data";
+import { packages, packagesSection, projects, site, type Project } from "@/lib/data";
 import { guides } from "@/lib/guides";
 import { services } from "@/lib/services";
 
@@ -22,6 +22,17 @@ export function GET() {
     "## Videos para stands de feria",
     "",
     ...site.standFormats.map((f) => `- **${f.name}** (${f.spec}): ${f.text}`),
+    "",
+    "## Paquetes (precio a cotizar)",
+    "",
+    packagesSection.text,
+    "",
+    ...packages.map(
+      (p) =>
+        `- **${p.name}** (${p.spec}): ${p.text} Incluye: ${p.includes.join("; ")}. Plazo: ${p.standard}${p.express ? `; express: ${p.express}` : ""}.`
+    ),
+    "",
+    packagesSection.note,
     "",
     "## Servicios",
     "",

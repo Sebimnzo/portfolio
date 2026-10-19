@@ -174,6 +174,62 @@ export const site = {
   },
 };
 
+// Paquetes cerrados para cotizar sin llamada (sin precio publicado: se cotiza
+// por pieza y por versión extra). Los plazos son en días hábiles y corren desde
+// que están las medidas de la pantalla y el material de la marca.
+export const packagesSection = {
+  label: "Paquetes",
+  title: "Tres paquetes cerrados para cotizar rápido.",
+  text: "Si armás stands o representás a una marca, elegí el paquete y pedí la cotización: cada uno tiene duración, formato y plazo definidos. Se cotiza por pieza, y cada versión extra (otra medida, otro idioma u otra duración) se suma aparte.",
+  note: "Los plazos son en días hábiles y corren desde que tenemos las medidas de la pantalla y el material de la marca.",
+};
+
+export const packages = [
+  {
+    slug: "loop-totem",
+    shape: "totem",
+    name: "Loop para tótem",
+    spec: "15 s · vertical 9:16 · 1080 × 1920 px",
+    text: "Una pieza vertical para tótem digital, pensada para leerse de cerca y al pasar.",
+    includes: [
+      "Guion y cuadros clave antes de animar",
+      "Animación en loop sin corte y sin sonido",
+      "MP4 listo para cargar en el tótem",
+    ],
+    standard: "7 días hábiles",
+    express: "3 días hábiles",
+  },
+  {
+    slug: "loop-led",
+    shape: "led",
+    name: "Loop para pantalla LED",
+    spec: "20 a 30 s · a la resolución exacta de la pantalla",
+    text: "Una pieza para la pantalla LED del stand, animada al píxel según su tamaño y su pitch.",
+    includes: [
+      "Trabajo con el mapa de píxeles del proveedor",
+      "Animación en loop sin corte y sin sonido",
+      "Archivo con el códec y los cuadros por segundo que pida el procesador",
+    ],
+    standard: "7 días hábiles",
+    express: "3 días hábiles",
+  },
+  {
+    slug: "set-multipantalla",
+    shape: "multi",
+    name: "Set multipantalla",
+    spec: "LED, tótems y videowalls en el mismo stand",
+    text: "Una idea repartida en todas las pantallas, para que el stand se vea como una sola cosa y no como pantallas compitiendo.",
+    includes: [
+      "Una pieza por pantalla, a la medida de cada una",
+      "Piezas sincronizadas o pensadas para verse juntas",
+      "Entrega por salida o en un lienzo único, según el reproductor",
+    ],
+    // Depende de cuántas pantallas sean: no hay plazo fijo ni express.
+    standard: "A convenir según la cantidad de pantallas",
+    express: null,
+  },
+] as const;
+
 // Categorías de los trabajos (se muestran debajo del título de cada uno).
 export const categories = [
   { key: "Motion Graphics", label: "Motion graphics" },
