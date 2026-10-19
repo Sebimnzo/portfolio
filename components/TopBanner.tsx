@@ -37,14 +37,22 @@ export default function TopBanner() {
     else v.play().catch(() => {});
 
     // Al cruzar el corte de 767 px (girar el teléfono, achicar la ventana)
-    // se carga la otra versión.
+    // se carga la otra versión. El evento "resize" es un respaldo para los
+    // navegadores que no avisan el cambio de la media query.
     const mobile = window.matchMedia(MOBILE);
+    let wasMobile = mobile.matches;
     const swap = () => {
+      if (mobile.matches === wasMobile) return;
+      wasMobile = mobile.matches;
       v.load();
       if (!reduce.matches) v.play().catch(() => {});
     };
     mobile.addEventListener("change", swap);
-    return () => mobile.removeEventListener("change", swap);
+    window.addEventListener("resize", swap);
+    return () => {
+      mobile.removeEventListener("change", swap);
+      window.removeEventListener("resize", swap);
+    };
   }, []);
 
   return (
