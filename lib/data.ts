@@ -286,18 +286,6 @@ export const projects: Project[] = [
     poster: "/trabajos/grupo-briones.jpg",
   },
   {
-    slug: "pedisy-presentacion",
-    fair: true,
-    title: "Pedisy — Video de presentación",
-    category: "Motion Graphics",
-    description:
-      "Video de presentación de Pedisy, sistema de gestión para restaurantes: punto de venta, cocina, stock y pedidos online.",
-    youtubeId: "BYRux6lw8WA",
-    orientation: "horizontal",
-    // Cuadro de los 5,6 s, cuando ya se ve completa la primera frase.
-    poster: "/trabajos/pedisy-presentacion-v2.jpg",
-  },
-  {
     slug: "goodly-fit-crm",
     fair: true,
     title: "Goodly Fit — CRM para gimnasios",

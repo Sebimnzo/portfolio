@@ -85,7 +85,6 @@ export const services: Service[] = [
     projects: [
       "cocchiola-insumos",
       "grupo-briones",
-      "pedisy-presentacion",
       "goodly-fit-crm",
       "goodly-fit-app",
       "goodly-fit-anuncios",
@@ -376,7 +375,6 @@ export const services: Service[] = [
       },
     ],
     projects: [
-      "pedisy-presentacion",
       "maraldi-logo-animation",
       "komasa-logo-animation",
       "magnetic-impulsa-saas-agency",
