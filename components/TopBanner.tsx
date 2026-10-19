@@ -6,10 +6,24 @@ import { useEffect, useRef } from "react";
 // una sola versión según el ancho (1800×200 en escritorio, 1080×360 hasta
 // 767 px), WebM primero y MP4 de respaldo. Mientras carga, y con "reducir
 // movimiento", se ve el póster quieto (estilos en globals.css, .top-banner).
+// En compu (desde 768 px) queda fijo arriba junto con el menú; su alto se
+// publica en --banner-h para que el menú se pegue justo debajo.
 const MOBILE = "(max-width: 767px)";
 
 export default function TopBanner() {
   const video = useRef<HTMLVideoElement>(null);
+  const box = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    const root = document.documentElement;
+    const sync = () => root.style.setProperty("--banner-h", `${el.offsetHeight}px`);
+    sync();
+    const ro = new ResizeObserver(sync);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     const v = video.current;
@@ -35,6 +49,7 @@ export default function TopBanner() {
 
   return (
     <div
+      ref={box}
       className="top-banner"
       role="img"
       aria-label="Mansalva: pantallas LED, videowalls, animación 3D y loops sin corte. Nada se queda quieto."
