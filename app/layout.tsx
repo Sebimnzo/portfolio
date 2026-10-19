@@ -38,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="es"
       className={`${archivo.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-blanco text-grafito">
+      <body className="min-h-full flex flex-col text-grafito">
         <a href="#main" className="skip-link">
           Saltar al contenido
         </a>

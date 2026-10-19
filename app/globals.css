@@ -34,7 +34,6 @@
 }
 
 body {
-  background: var(--blanco);
   color: var(--grafito);
   font-family: var(--font-archivo), Arial, Helvetica, sans-serif;
   line-height: 1.35;
@@ -42,6 +41,41 @@ body {
 
 html {
   color-scheme: light;
+  background: var(--blanco);
+}
+
+/* Fondo de la página: degradé de blanco a humo con un brillo azul tenue y,
+   encima, una grilla de puntos como los LEDs de una pantalla vista de cerca.
+   Los puntos se ven hacia los bordes y casi desaparecen en el centro para no
+   ensuciar la lectura. Fijos: el contenido se desliza por encima. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+body::before {
+  background:
+    radial-gradient(ellipse 55% 45% at 90% -8%, rgb(0 91 219 / 0.09), transparent 70%),
+    radial-gradient(ellipse 45% 40% at -8% 108%, rgb(91 155 255 / 0.1), transparent 70%),
+    linear-gradient(180deg, var(--blanco) 0%, var(--humo) 100%);
+}
+body::after {
+  background-image: radial-gradient(circle, rgb(41 45 51 / 0.16) 0.9px, transparent 1.25px);
+  background-size: 7px 7px;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, transparent 22%, #000 95%);
+}
+
+/* La misma grilla de puntos sobre las secciones oscuras. */
+.textura-oscura {
+  background-color: var(--grafito);
+  background-image:
+    radial-gradient(circle, rgb(184 195 210 / 0.09) 0.9px, transparent 1.25px),
+    radial-gradient(ellipse 60% 70% at 100% 0%, rgb(0 91 219 / 0.16), transparent 70%),
+    linear-gradient(180deg, var(--grafito), var(--noche));
+  background-size: 7px 7px, auto, auto;
 }
 
 ::selection {

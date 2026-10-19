@@ -32,7 +32,7 @@ export default function Services() {
   const { founder } = site;
 
   return (
-    <section id="servicios" className="scroll-mt-24 bg-grafito text-blanco">
+    <section id="servicios" className="textura-oscura scroll-mt-24 text-blanco">
       {/* En escritorio la foto del fundador ocupa toda la columna izquierda y se
           recorta para medir lo mismo que el texto y los servicios de la derecha. */}
       <div className="mx-auto grid max-w-[1552px] grid-cols-1 gap-x-12 gap-y-10 px-5 py-9 sm:px-12 lg:grid-cols-[356px_1fr] lg:py-14">
