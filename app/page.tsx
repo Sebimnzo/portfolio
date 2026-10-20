@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import HomeVideo from "@/components/HomeVideo";
 import Hero from "@/components/Hero";
 import Works from "@/components/Works";
 import Stands from "@/components/Stands";
@@ -17,6 +18,7 @@ export default function Home() {
       <StructuredData />
       <Header />
       <main id="main" className="flex-1">
+        <HomeVideo />
         <Hero />
         <Works />
         <Stands />
