@@ -22,11 +22,11 @@ export const guides: Guide[] = [
   {
     slug: "resolucion-pantalla-led",
     path: "/guias/resolucion-pantalla-led",
-    title: "Resolución de una pantalla LED: cómo calcularla según el pixel pitch",
-    seoTitle: "Resolución de pantalla LED y pixel pitch: calculadora y tabla — Mansalva",
-    description: "Cómo calcular la resolución de una pantalla LED a partir del tamaño y el pixel pitch, con calculadora, tabla de pitch y distancia de visión.",
+    title: "Qué pixel pitch elegir para tu stand y cómo calcular la resolución de la pantalla LED",
+    seoTitle: "Pixel pitch para stands: qué elegir y calculadora — Mansalva",
+    description: "Qué es el pixel pitch, cuál conviene para un stand según la distancia del público y cómo calcular la resolución de la pantalla LED. Con calculadora y tabla.",
     published: "2026-10-14",
-    updated: "2026-10-14",
+    updated: "2026-10-20",
     readingMinutes: 4,
     category: "Pantallas LED",
   },
@@ -147,7 +147,7 @@ export const guides: Guide[] = [
     seoTitle: "Formato de video para pantalla LED de stand — Mansalva",
     description: "¿El proveedor te pide el video para la pantalla LED del stand? Resolución, MP4 con H.264, fps, bitrate y loop sin corte, en una tabla lista para usar.",
     published: "2026-10-15",
-    updated: "2026-10-15",
+    updated: "2026-10-20",
     readingMinutes: 8,
     category: "Pantallas LED",
   },
@@ -235,7 +235,7 @@ export const guides: Guide[] = [
     seoTitle: "Video para stand de feria: qué pedir — Mansalva",
     description: "El video para stand de feria se gana o se pierde en el pedido. Mirá el brief de 5 puntos que tenés que mandar antes de que alguien empiece a animar.",
     published: "2026-10-16",
-    updated: "2026-10-16",
+    updated: "2026-10-20",
     readingMinutes: 8,
     category: "Video para stands",
   },
@@ -257,7 +257,7 @@ export const guides: Guide[] = [
     seoTitle: "Videos para ferias de negocios que frenan gente — Mansalva",
     description: "Un video para ferias de negocios no es un institucional. Mirá qué cambia en formato, ritmo y objetivo, y qué pedir para que tu pantalla frene gente.",
     published: "2026-10-15",
-    updated: "2026-10-15",
+    updated: "2026-10-20",
     readingMinutes: 8,
     category: "Video para stands",
   },
@@ -275,8 +275,7 @@ export const guides: Guide[] = [
 ];
 
 // Orden de las categorías en la home.
-// Orden de la home: primero el dolor del expositor, después la pantalla y el video, al final los formatos.
-export const guideCategories = ["Stands de feria", "Pantallas LED", "Video para stands", "Videowalls", "Tótems"];
+export const guideCategories = ["Pantallas LED", "Videowalls", "Tótems", "Video para stands", "Stands de feria"];
 
 export function getGuide(slug: string): Guide {
   const guide = guides.find((g) => g.slug === slug);

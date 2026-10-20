@@ -20,11 +20,11 @@ ARTICLES = ROOT.parent / "mansalva-serp-engine" / "output" / "articles"
 LED_GUIDE = {
     "slug": "resolucion-pantalla-led",
     "path": "/guias/resolucion-pantalla-led",
-    "title": "Resolución de una pantalla LED: cómo calcularla según el pixel pitch",
-    "seoTitle": "Resolución de pantalla LED y pixel pitch: calculadora y tabla — Mansalva",
-    "description": "Cómo calcular la resolución de una pantalla LED a partir del tamaño y el pixel pitch, con calculadora, tabla de pitch y distancia de visión.",
+    "title": "Qué pixel pitch elegir para tu stand y cómo calcular la resolución de la pantalla LED",
+    "seoTitle": "Pixel pitch para stands: qué elegir y calculadora — Mansalva",
+    "description": "Qué es el pixel pitch, cuál conviene para un stand según la distancia del público y cómo calcular la resolución de la pantalla LED. Con calculadora y tabla.",
     "published": "2026-10-14",
-    "updated": "2026-10-14",
+    "updated": "2026-10-20",
     "readingMinutes": 4,
     "category": "Pantallas LED",
 }

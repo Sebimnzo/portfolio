@@ -136,6 +136,7 @@ export default function VideosParaFeriasDeNegociosGuide() {
               <li><strong>Formato de entrega.</strong> El códec y el contenedor que acepta el reproductor de la pantalla, confirmados con el proveedor.</li>
               <li><strong>Plazo.</strong> La fecha en que el archivo tiene que estar probado en la pantalla, no la fecha de la feria.</li>
             </ul>
+            <p className={body}>Cada punto de ese brief, con el mail listo para mandar, está en <Link href="/guias/video-para-stand-de-feria" className="text-azul underline underline-offset-2 hover:text-cobalto">qué pedir cuando encargás el video para tu stand de feria</Link>.</p>
             <p className={body}>El institucional no se tira. Pasa a la tablet del vendedor, para el visitante que ya frenó y quiere saber más. Ahí sí alguien lo mira entero.</p>
             <p className={body}><strong>El video corporativo sirve para la charla. El loop sirve para que la charla empiece.</strong></p>
             <p className={body}>El jueves, último día, Hernán no cambia la pantalla. Ya es tarde. Pero vuelve a la oficina con un brief en vez de una queja.</p>

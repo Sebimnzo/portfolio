@@ -19,9 +19,12 @@ export default function LedGuide() {
       guide={guide}
       intro={
         <p className={body}>
-          Una pantalla LED no tiene una resolución estándar como un monitor. Depende de dos datos:
-          cuánto mide y qué <strong>pixel pitch</strong> tiene. Si el video no se anima a esa medida
-          exacta, el reproductor lo reescala y los textos finos se ven borrosos o cortados.
+          El <strong>pixel pitch</strong> es la distancia, en milímetros, entre el centro de un LED y
+          el del vecino. En un stand de feria define dos cosas: desde qué distancia la pantalla se ve
+          nítida y cuántos píxeles tiene el video que hay que animar. Una pantalla LED no tiene una
+          resolución estándar como un monitor: depende de cuánto mide y de su pitch. Si el video no se
+          anima a esa medida exacta, el reproductor lo reescala y los textos finos se ven borrosos o
+          cortados.
         </p>
       }
     >
@@ -38,6 +41,13 @@ export default function LedGuide() {
               ancho y 2000 ÷ 2,5 = <strong>800 px</strong> de alto. Ese es el tamaño del lienzo que hay
               que animar: 2000 × 800 px, una proporción de 5:2 que no tiene nada que ver con el 16:9 de
               un video común.
+            </p>
+            <p className={body}>
+              Si ya te pasó que un video en 4K se viera deformado en la LED, en la guía de{" "}
+              <Link href="/guias/resolucion-de-pantalla-led-para-stand" className="font-medium text-azul underline underline-offset-2 hover:text-cobalto">
+                resolución de pantalla LED para stand
+              </Link>{" "}
+              está por qué pasa y cómo evitarlo.
             </p>
           </section>
 
@@ -78,7 +88,7 @@ export default function LedGuide() {
           </section>
 
           <section className="flex flex-col gap-4">
-            <h2 className={h2}>Distancia de visión</h2>
+            <h2 className={h2}>Qué pitch elegir para un stand</h2>
             <p className={body}>
               El pitch también dice desde qué distancia se ve bien la pantalla. La regla práctica: la
               distancia mínima en metros es parecida al pitch en milímetros. Una P2,5 se ve limpia desde
@@ -86,7 +96,12 @@ export default function LedGuide() {
               conviene que el público esté al doble o al triple de esa distancia.
             </p>
             <p className={body}>
-              En un stand eso define el diseño: si la gente pasa a 3 m, los textos tienen que ser grandes
+              En un stand, mirá a qué distancia pasa la gente. Si camina a 2 o 3 m de la pantalla, buscá
+              un pitch de 2,5 mm o menos; con P1,9 o P1,5 se ve más limpio de cerca, pero cuesta más. Si
+              la pantalla va alta, sobre el stand, y se mira desde 6 m o más, un P3,9 alcanza.
+            </p>
+            <p className={body}>
+              El pitch también define el diseño: si la gente pasa a 3 m, los textos tienen que ser grandes
               y pocos, y el mensaje tiene que entenderse en los 10 a 30 segundos que dura el loop.
             </p>
           </section>

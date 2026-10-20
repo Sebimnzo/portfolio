@@ -75,7 +75,7 @@ export default function VideoParaStandDeFeriaGuide() {
                 </tbody>
               </table>
             </div>
-            <p className={body}>El institucional no está mal. Está en el lugar equivocado. Para el stand, Gonzalo necesitaba un activo que trabaje en el pasillo, no un resumen de la empresa.</p>
+            <p className={body}>El institucional no está mal. Está en el lugar equivocado. Para el stand, Gonzalo necesitaba un activo que trabaje en el pasillo, no un resumen de la empresa. Si no sabés qué hacer con el institucional que ya tenés, en la guía de <Link href="/guias/videos-para-ferias-de-negocios" className="text-azul underline underline-offset-2 hover:text-cobalto">videos para ferias de negocios</Link> está dónde sí te sirve.</p>
           </section>
           <section className="flex flex-col gap-4">
             <h2 className={h2}>El productor no sabía nada de la pantalla, y Gonzalo tampoco</h2>
