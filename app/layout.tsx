@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  // El iPhone convierte en teléfono cualquier número largo ("3840 × 2160");
+  // en la web no hay teléfonos escritos: el contacto va por mail y WhatsApp.
+  formatDetection: { telephone: false },
   other: {
     "theme-color": "#ffffff",
   },

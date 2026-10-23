@@ -43,8 +43,9 @@ export default function BriefForm() {
   }
 
   const label = "flex flex-col gap-2 text-sm font-medium";
+  // 16 px: con menos, el iPhone agranda la página al tocar el campo.
   const input =
-    "min-h-12 rounded border border-linea bg-blanco px-3 py-2.5 text-[15px] font-normal focus-visible:border-azul focus-visible:outline-none";
+    "min-h-12 rounded border border-linea bg-blanco px-3 py-2.5 text-base font-normal focus-visible:border-azul focus-visible:outline-none";
 
   return (
     <form ref={form} onSubmit={byEmail} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -73,7 +74,7 @@ export default function BriefForm() {
       </label>
       <label className={label} htmlFor={`${id}-piezas`}>
         Cantidad de piezas
-        <input id={`${id}-piezas`} name="piezas" inputMode="numeric" placeholder="Ej.: 3 loops" className={input} />
+        <input id={`${id}-piezas`} name="piezas" inputMode="numeric" placeholder="Ej.: 3" className={input} />
       </label>
       <label className={`${label} sm:col-span-2`} htmlFor={`${id}-detalle`}>
         Contanos la idea

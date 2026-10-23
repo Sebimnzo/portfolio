@@ -98,7 +98,7 @@ export default async function ServicePage({ params }: PageProps<"/[servicio]">) 
                   <li key={c.url} className="flex gap-2">
                     {i < crumbs.length - 1 ? (
                       <>
-                        <Link href={c.url.replace(site.url, "") || "/"} className="hover:text-azul">
+                        <Link href={c.url.replace(site.url, "") || "/"} className="-mx-1.5 -my-4 px-1.5 py-4 hover:text-azul">
                           {c.name}
                         </Link>
                         <span aria-hidden>/</span>

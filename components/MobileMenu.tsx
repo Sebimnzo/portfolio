@@ -31,10 +31,11 @@ export default function MobileMenu({ links }: { links: { href: string; label: st
           className={`h-[2px] w-6 bg-grafito transition-transform ${open ? "-translate-y-[4px] -rotate-45" : ""}`}
         />
       </button>
+      {/* Con el celular acostado no entra entero: se desplaza adentro en vez de quedar cortado. */}
       <ul
         id="menu-movil"
         hidden={!open}
-        className="absolute inset-x-0 top-full border-b border-linea bg-blanco px-5 pb-4"
+        className="absolute inset-x-0 top-full max-h-[calc(100svh-var(--banner-h,0px)-4rem)] overflow-y-auto overscroll-contain border-b border-linea bg-blanco px-5 pb-4 sm:max-h-[calc(100svh-var(--banner-h,0px)-88px)]"
       >
         {links.map((link) => (
           <li key={link.href} className="border-t border-linea first:border-t-0">

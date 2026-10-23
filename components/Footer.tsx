@@ -11,22 +11,22 @@ export default function Footer() {
         className="mx-auto flex max-w-[1552px] flex-wrap gap-x-6 px-5 pt-6 text-[13px] text-gris sm:px-12"
       >
         {services.map((s) => (
-          <Link key={s.slug} href={`/${s.slug}`} className="min-h-12 content-center hover:text-azul">
+          <Link key={s.slug} href={`/${s.slug}`} className="min-h-12 min-w-11 content-center hover:text-azul">
             {s.label}
           </Link>
         ))}
-        <Link href="/#guias" className="min-h-12 content-center hover:text-azul">
+        <Link href="/#guias" className="min-h-12 min-w-11 content-center hover:text-azul">
           Guías
         </Link>
       </nav>
       <div className="mx-auto grid max-w-[1552px] grid-cols-2 items-center gap-4 px-5 pb-7 pt-[22px] sm:flex sm:justify-between sm:px-12">
-        <Wordmark className="text-[26px]" />
+        <Wordmark className="text-[22px] min-[360px]:text-[26px]" />
         <p className="justify-self-end text-[13px] text-gris">{site.domain}</p>
         <a
           href={site.linkedin}
           target="_blank"
           rel="noreferrer"
-          className="text-sm font-medium transition-colors hover:text-azul"
+          className="min-h-12 content-center text-sm font-medium transition-colors hover:text-azul"
         >
           LinkedIn <span aria-hidden>→</span>
         </a>

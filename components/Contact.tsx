@@ -12,7 +12,7 @@ export default function Contact() {
           <p className="max-w-[46ch] text-[15px] leading-[1.5] text-gris">{site.contactText}</p>
           <a
             href={`mailto:${site.email}`}
-            className="break-all text-[clamp(1.125rem,2vw,22px)] text-azul hover:text-cobalto"
+            className="-my-2.5 break-all py-2.5 text-[clamp(1.125rem,2vw,22px)] text-azul hover:text-cobalto"
           >
             {site.email} <span aria-hidden>→</span>
           </a>

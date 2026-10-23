@@ -239,15 +239,30 @@ summary:focus-visible {
     display: none;
   }
 }
-/* En compu el banner queda fijo: los saltos a cada sección (#trabajos, etc.)
-   descuentan su alto para que el título no quede tapado. */
-@media (min-width: 768px) {
+/* Alto del banner antes de que lo mida TopBanner.tsx (sale de su proporción),
+   para que el menú y el video de la home no salten al cargar. */
+:root {
+  --banner-h: calc(100vw / 18);
+}
+@media (max-width: 767px) {
+  :root {
+    --banner-h: calc(100vw / 6);
+  }
+}
+/* En compu el banner queda fijo y el menú se pega debajo: los saltos a cada
+   sección (#trabajos, etc.) descuentan su alto para que el título no quede
+   tapado. En pantallas bajas (celular o tablet acostados) no queda fijo, para
+   no ocupar media pantalla. */
+@media (min-width: 768px) and (min-height: 600px) {
   .top-banner {
     position: sticky;
     top: 0;
     z-index: 50;
   }
+  .site-header {
+    top: var(--banner-h);
+  }
   html {
-    scroll-padding-top: var(--banner-h, 0px);
+    scroll-padding-top: var(--banner-h);
   }
 }

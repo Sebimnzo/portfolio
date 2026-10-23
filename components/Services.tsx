@@ -14,7 +14,7 @@ function Item({ title, text, href }: { title: string; text: string; href?: strin
       <div className="tilt-rotate border-t border-linea-oscura pt-[18px] transition-colors [--tilt:7deg] group-hover/item:border-azul-claro">
         <h3 className="text-[19px] font-extrabold text-blanco">
           {href ? (
-            <Link href={href} className="hover:text-azul-claro">
+            <Link href={href} className="-my-3 inline-block py-3 hover:text-azul-claro">
               {title} <span aria-hidden className="text-azul-claro">→</span>
             </Link>
           ) : (
@@ -87,7 +87,7 @@ export default function Services() {
               href={founder.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-azul-claro hover:underline"
+              className="-my-3.5 inline-block py-3.5 text-xs text-azul-claro hover:underline"
             >
               Conoceme en LinkedIn <span aria-hidden>→</span>
             </a>
@@ -133,7 +133,7 @@ export default function Services() {
                 <p className="font-medium">¿No sabés qué formato necesitás?</p>
                 <a
                   href={`mailto:${site.email}?subject=${encodeURIComponent("Quiero contarles una idea")}`}
-                  className="mt-3 inline-block text-[15px] text-azul-claro hover:underline"
+                  className="-mb-3 inline-block py-3 text-[15px] text-azul-claro hover:underline"
                 >
                   Contanos tu idea y lo pensamos juntos <span aria-hidden>→</span>
                 </a>

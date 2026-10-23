@@ -267,7 +267,7 @@ export default function Works() {
                   <span className="line-clamp-2 text-[13px] font-extrabold leading-[1.15] sm:text-[15px] lg:text-[17px]">
                     {project.title}
                   </span>
-                  <span className="line-clamp-2 max-w-[46ch] text-[11px] leading-[1.35] text-blanco/80 sm:text-xs lg:text-[13px]">
+                  <span className="line-clamp-2 max-w-[46ch] text-xs leading-[1.35] text-blanco/80 lg:text-[13px]">
                     {project.description}
                   </span>
                 </span>

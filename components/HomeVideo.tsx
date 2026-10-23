@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { slowConnection } from "@/lib/connection";
 
 // Video principal de la home: «Mansalva · qué hacemos» (55 s, 16:9, con voz).
 // Arranca solo y en silencio (los navegadores no dejan autoplay con sonido) y
 // en loop. «Activar sonido» lo vuelve al principio con audio y sin loop. Con
-// "reducir movimiento" no arranca solo: queda el póster con un botón de play.
+// "reducir movimiento" o conexión lenta no arranca solo: queda el póster con un
+// botón de play.
 // Va en 16:9 sin recortar, porque tiene textos en pantalla: ocupa el ancho
 // completo salvo que no entre en el alto de la pantalla (debajo del banner y el
 // menú fijos); ahí se achica y se centra para que se vea entero con su botón.
@@ -23,8 +25,9 @@ export default function HomeVideo() {
     // React no siempre escribe el atributo muted en el HTML del servidor.
     v.muted = true;
     v.defaultMuted = true;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- depende de una preferencia del sistema que no existe en el servidor
+    // Con conexión lenta tampoco arranca solo: son 7 MB que la persona no pidió.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || slowConnection()) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- depende del sistema y la conexión, que no existen en el servidor
       setMode("idle");
       return;
     }
@@ -70,6 +73,8 @@ export default function HomeVideo() {
             muted
             loop
             playsInline
+            // "metadata" y no "none": así el navegador baja el video de a poco
+            // mientras se ve, y no varios MB de golpe al arrancar.
             preload="metadata"
             poster={`${SRC}_poster_v14.jpg`}
             onEnded={() => setMode("ended")}

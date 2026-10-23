@@ -28,6 +28,8 @@ export default function VideoModal({
       if (cancelled || !playerRef.current) return;
       player = new YT.Player(playerRef.current, {
         videoId: project.youtubeId,
+        // Versión de YouTube que no guarda cookies de seguimiento en quien mira.
+        host: "https://www.youtube-nocookie.com",
         playerVars: { autoplay: 1, playsinline: 1, cc_load_policy: 0 },
         events: {
           onReady: (event) => {
@@ -65,11 +67,13 @@ export default function VideoModal({
           >
             Cerrar <span aria-hidden>✕</span>
           </button>
+          {/* El video se achica también por el alto (deja 160 px para "Cerrar" y el
+              texto), así con el celular acostado todo entra en la pantalla. */}
           <div
             className={`overflow-hidden rounded-[18px] bg-grafito ${
               vertical
-                ? "aspect-[9/16] h-[min(80vh,860px)] max-w-[92vw]"
-                : "aspect-video w-[min(92vw,1100px)]"
+                ? "aspect-[9/16] h-[min(80svh,860px,100svh_-_160px,92vw*16/9)] max-w-[92vw]"
+                : "aspect-video w-[min(92vw,1100px,(100svh_-_160px)*16/9)]"
             }`}
           >
             {/* La IFrame API reemplaza este div por el iframe del reproductor */}

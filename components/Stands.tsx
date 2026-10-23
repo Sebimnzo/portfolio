@@ -124,7 +124,7 @@ export default function Stands() {
               </svg>
               <div>
                 <h3 className="text-[19px] font-extrabold leading-[1.15]">
-                  <Link href={pageFor[format.shape]} className="transition-colors hover:text-azul">
+                  <Link href={pageFor[format.shape]} className="-my-3 inline-block py-3 transition-colors hover:text-azul">
                     {format.name} <span aria-hidden className="text-azul">→</span>
                   </Link>
                 </h3>
