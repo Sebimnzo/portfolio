@@ -79,6 +79,7 @@
 .rev .tc b { color: #fff; font-weight: 600; }
 .rev .linea { position: relative; height: 44px; margin-top: 10px; background: #151b24; border-radius: 6px; cursor: pointer; user-select: none; touch-action: none; overflow: hidden; }
 .rev .esc { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--rev-escenario-linea); font-size: 12px; color: #8c96a5; padding: 4px 5px; white-space: nowrap; overflow: hidden; }
+@media (max-width: 640px) { .rev .esc { font-size: 10px; padding: 4px 2px; } }   /* que «11.1» entre en el celular */
 .rev .esc.act { background: rgba(79, 142, 247, 0.18); color: #fff; }
 .rev .marca { position: absolute; bottom: 5px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: var(--azul-claro); }
 .rev .marca.hecha { background: #4cc28a; }

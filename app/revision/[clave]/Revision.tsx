@@ -12,7 +12,7 @@ import type { Nota, Pieza } from "@/lib/revision";
 const T = {
   es: {
     otro: "English", cargando: "Cargando el video…", sinVideo: "Todavía no hay un video para revisar.", errVideo: "No se pudo cargar el video. Recargá la página.",
-    guiaCorre: "Tocá el video para <b>pausar</b>.", guiaPausa: "Tocá el punto del cuadro que querés cambiar.", guiaNota: "Escribí qué cambiarías y guardá la nota.",
+    guiaInicio: "Dale <b>play</b> y pausá donde quieras cambiar algo.", guiaCorre: "Tocá el video para <b>pausar</b>.", guiaPausa: "Tocá el punto del cuadro que querés cambiar.", guiaNota: "Escribí qué cambiarías y guardá la nota.",
     escena: "Escena", cuadro: "cuadro", notas: "Notas", abiertas: (n: number) => `${n} ${n === 1 ? "abierta" : "abiertas"}`, resueltas: (n: number) => `${n} ${n === 1 ? "resuelta" : "resueltas"}`,
     vacio: "Todavía no hay notas. Pausá el video y tocá el cuadro para dejar la primera.",
     placeholder: "Qué cambiarías en este cuadro", guardar: "Guardar nota", cancelar: "Cancelar", guardando: "Guardando…", guardada: "Guardada",
@@ -24,7 +24,7 @@ const T = {
   },
   en: {
     otro: "Español", cargando: "Loading the video…", sinVideo: "There is no video to review yet.", errVideo: "The video did not load. Reload the page.",
-    guiaCorre: "Tap the video to <b>pause</b>.", guiaPausa: "Tap the spot in the frame you want changed.", guiaNota: "Write what you would change and save the note.",
+    guiaInicio: "Press <b>play</b> and pause wherever you want something changed.", guiaCorre: "Tap the video to <b>pause</b>.", guiaPausa: "Tap the spot in the frame you want changed.", guiaNota: "Write what you would change and save the note.",
     escena: "Scene", cuadro: "frame", notas: "Notes", abiertas: (n: number) => `${n} open`, resueltas: (n: number) => `${n} resolved`,
     vacio: "No notes yet. Pause the video and tap the frame to leave the first one.",
     placeholder: "What would you change in this frame?", guardar: "Save note", cancelar: "Cancel", guardando: "Saving…", guardada: "Saved",
@@ -62,7 +62,7 @@ function iniciar(raiz: HTMLElement, clave: string, pieza: Pieza) {
   let nombre = leerLS("rev_nombre") || "";
   let autorId = leerLS("rev_autor");
   if (!autorId) { autorId = Math.random().toString(36).slice(2, 12); escribirLS("rev_autor", autorId); }
-  let escribiendo = 0, vivo = true;
+  let escribiendo = 0, vivo = true, yaCorrio = false;
 
   const escenas = () => (info && info.escenas?.length ? info.escenas : [{ n: "1", t: 0 }]);
   const escenaDe = (f: number) => { const s = f / FPS; let e = escenas()[0].n; for (const x of escenas()) if (s >= x.t) e = x.n; return e; };
@@ -118,6 +118,7 @@ function iniciar(raiz: HTMLElement, clave: string, pieza: Pieza) {
   $("bEscSig").onclick = () => saltarEscena(1);
 
   escuchar(v, "play", () => {
+    yaCorrio = true;
     $("icoPlay").innerHTML = '<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>'; capa.classList.add("corre"); guia();
     const tick = () => {
       if (v.paused) return;
@@ -283,7 +284,8 @@ function iniciar(raiz: HTMLElement, clave: string, pieza: Pieza) {
   }
 
   function guia() {
-    $("guia").innerHTML = borrador ? t().guiaNota : !v.paused ? t().guiaCorre : t().guiaPausa;
+    // Hasta que el video corre una vez (o se mueve de cuadro), la primera indicación es darle play.
+    $("guia").innerHTML = borrador ? t().guiaNota : !v.paused ? t().guiaCorre : !yaCorrio && frame === 0 ? t().guiaInicio : t().guiaPausa;
   }
 
   /* ---------- datos ---------- */
