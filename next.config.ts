@@ -8,6 +8,8 @@ const csp = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https://i.ytimg.com",
   "font-src 'self'",
+  // Videos de las páginas de revisión (/revision/…), en el almacenamiento de Vercel.
+  "media-src 'self' https://*.public.blob.vercel-storage.com",
   "connect-src 'self'",
   "frame-src https://www.youtube.com https://www.youtube-nocookie.com",
   "object-src 'none'",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { slowConnection } from "@/lib/connection";
 
 // Banner animado de arriba de todo: loop de 13,6 s sin audio. El navegador elige
@@ -13,6 +14,8 @@ import { slowConnection } from "@/lib/connection";
 const MOBILE = "(max-width: 767px)";
 
 export default function TopBanner() {
+  // Las páginas de revisión para clientes (/revision/…) van sin banner.
+  const oculto = usePathname()?.startsWith("/revision/") ?? false;
   const video = useRef<HTMLVideoElement>(null);
   const box = useRef<HTMLDivElement>(null);
 
@@ -63,6 +66,8 @@ export default function TopBanner() {
       window.removeEventListener("resize", swap);
     };
   }, []);
+
+  if (oculto) return null;
 
   return (
     <div
