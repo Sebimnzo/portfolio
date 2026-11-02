@@ -138,6 +138,10 @@ function iniciar(raiz: HTMLElement, clave: string, pieza: Pieza) {
     if (!info) { v.removeAttribute("src"); $("aviso").textContent = t().sinVideo; return; }
     FPS = info.fps || 60; total = Math.max(1, Math.round((info.duracion || 1) * FPS));
     $("titulo").textContent = info.titulo || pieza.titulo || "";
+    // el marco toma la forma del video (verticales 9:16) y arranca con sonido si la pieza lo tiene
+    const anc = info.ancho || 1920, alt = info.alto || 1080, marco = $("marco");
+    marco.style.aspectRatio = `${anc} / ${alt}`; marco.style.width = `min(100%, calc((100vh - 230px) * ${anc / alt}))`;
+    v.muted = !info.audio; iconoSonido();
     if (v.getAttribute("src") !== info.video) { $("aviso").textContent = t().cargando; v.src = info.video; frame = 0; }
     armarLinea(); pintar(); listar(); guia();
     traerNotas();
@@ -291,7 +295,7 @@ function iniciar(raiz: HTMLElement, clave: string, pieza: Pieza) {
   /* ---------- datos ---------- */
   function armarSelector() {
     const S = $("selVersion") as HTMLSelectElement, ids = Object.keys(versiones).sort((a, b) => (versiones[a].orden || 0) - (versiones[b].orden || 0));
-    S.innerHTML = ""; ids.forEach((id) => { const o = document.createElement("option"); o.value = id; o.textContent = id; S.appendChild(o); });
+    S.innerHTML = ""; ids.forEach((id) => { const o = document.createElement("option"); o.value = id; o.textContent = versiones[id].etiqueta || id; S.appendChild(o); });
     S.hidden = ids.length < 2; if (verSel) S.value = verSel;
   }
   async function traerNotas() {
@@ -357,7 +361,7 @@ export default function Revision({ clave, pieza }: { clave: string; pieza: Pieza
 
       <div className="stagewrap">
         <div className="stage">
-          <div className="marco">
+          <div className="marco" id="marco">
             <video id="v" preload="auto" muted playsInline />
             <div className="capa" id="capa" />
             <div className="aviso" id="aviso" />

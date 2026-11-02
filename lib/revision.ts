@@ -11,6 +11,8 @@ const SCRIPT_URL =
 
 export type Version = {
   titulo?: string;
+  etiqueta?: string;
+  audio?: boolean;
   video: string;
   fps: number;
   ancho: number;
