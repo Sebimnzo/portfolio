@@ -5,7 +5,7 @@
 // (app/api/revision/route.ts y la página), así el navegador del cliente nunca
 // sale de mansalvadesign.com. Sin una clave que exista en la hoja «piezas», el
 // script no devuelve ni guarda nada.
-const SCRIPT_URL =
+export const SCRIPT_URL =
   process.env.REVISION_SCRIPT_URL ??
   "https://script.google.com/macros/s/AKfycbx8M-k0vaUFJ4ZO9GCdn5Rkl1D0vhqna9C8_smvPhdW5yVGFk22o578PNfM4hT3mNtiBQ/exec";
 

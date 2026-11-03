@@ -14,8 +14,8 @@ import { slowConnection } from "@/lib/connection";
 const MOBILE = "(max-width: 767px)";
 
 export default function TopBanner() {
-  // Las páginas de revisión para clientes (/revision/…) van sin banner.
-  const oculto = usePathname()?.startsWith("/revision/") ?? false;
+  // Las páginas privadas para clientes (/revision/…, /entregas/…) van sin banner.
+  const oculto = /^\/(revision|entregas)\//.test(usePathname() ?? "");
   const video = useRef<HTMLVideoElement>(null);
   const box = useRef<HTMLDivElement>(null);
 

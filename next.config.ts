@@ -19,6 +19,12 @@ const csp = [
   "upgrade-insecure-requests",
 ].join("; ");
 
+// Las páginas de entregas (/entregas/…) muestran miniaturas y el reproductor de
+// Drive; el resto del sitio sigue sin poder cargarlos.
+const cspEntregas = csp
+  .replace("img-src 'self' data: https://i.ytimg.com", "img-src 'self' data: https://lh3.googleusercontent.com")
+  .replace("frame-src https://www.youtube.com https://www.youtube-nocookie.com", "frame-src https://drive.google.com");
+
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   // Vercel agrega "Access-Control-Allow-Origin: *" por defecto; se limita al
@@ -44,7 +50,18 @@ const nextConfig: NextConfig = {
     ],
   },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      {
+        source: "/entregas/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          ...(process.env.NODE_ENV === "production"
+            ? [{ key: "Content-Security-Policy", value: cspEntregas }]
+            : []),
+        ],
+      },
+    ];
   },
   // Las direcciones *.vercel.app de producción muestran el mismo sitio:
   // redirigen al dominio para que Google no indexe una copia. Las vistas
