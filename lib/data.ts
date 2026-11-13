@@ -4,10 +4,10 @@ export const site = {
   domain: "mansalvadesign.com",
   role: "Estudio de motion graphics",
   // Título grande del inicio (gráfico). El <h1> con la búsqueda es heroTitle.
-  claim: "Que tu stand se vea primero.",
+  claim: "Que te vean primero.",
   heroLabel: "Motion graphics / Argentina",
   // Es el <h1> de la página: la búsqueda principal del sitio.
-  heroTitle: "Un estudio que hace videos para stands de feria.",
+  heroTitle: "Un estudio que hace videos y experiencias para stands de feria, y clips para podcasts.",
   tagline:
     "Diseñamos y animamos lo que va en las pantallas LED, tótems y videowalls de tu stand, para que quien pasa entienda en segundos qué ofrecés.",
   seoTitle: "Mansalva — Videos para stands de feria y motion graphics",
@@ -16,7 +16,7 @@ export const site = {
     "Hacemos videos para stands de feria: contenido para pantallas LED, tótems y videowalls, loops sin sonido y animación 3D. Estudio en Argentina.",
   // Fecha del último cambio de contenido (lastmod del sitemap). Actualizarla
   // a mano solo cuando cambia el contenido, no en cada deploy.
-  updated: "2026-10-16",
+  updated: "2026-11-12",
   worksTitle: "Mirá lo que ya hicimos.",
   // Bajadas de sección: el título es de marca, la bajada lleva la búsqueda.
   worksIntro:
