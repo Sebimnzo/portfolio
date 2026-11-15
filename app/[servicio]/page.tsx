@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProjectGrid from "@/components/ProjectGrid";
-import { projects, site } from "@/lib/data";
+import { projects, shareImage, site } from "@/lib/data";
 import { ledGuide } from "@/lib/guides";
 import { serviceBySlug, services } from "@/lib/services";
 
@@ -30,7 +30,9 @@ export async function generateMetadata({ params }: PageProps<"/[servicio]">): Pr
       siteName: site.name,
       locale: "es_AR",
       type: "website",
+      images: [shareImage],
     },
+    twitter: { card: "summary_large_image", images: [shareImage.url] },
   };
 }
 

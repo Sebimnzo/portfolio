@@ -426,3 +426,12 @@ export const projects: Project[] = [
     orientation: "vertical",
   },
 ];
+
+// Imagen para compartir por defecto (app/opengraph-image.tsx). Las páginas internas
+// definen su propio openGraph y eso reemplaza al del layout, así que la repiten.
+export const shareImage = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: `${site.name}: ${site.claim}`,
+};

@@ -15,7 +15,7 @@ export default function Footer() {
             {s.label}
           </Link>
         ))}
-        <Link href="/#guias" className="min-h-12 min-w-11 content-center hover:text-azul">
+        <Link href="/guias" className="min-h-12 min-w-11 content-center hover:text-azul">
           Guías
         </Link>
       </nav>

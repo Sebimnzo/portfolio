@@ -22,7 +22,7 @@ export const services: Service[] = [
   {
     slug: "videos-para-stands",
     label: "Videos para stands",
-    seoTitle: "Videos para stands de feria: pantallas LED, videowalls y tótems — Mansalva",
+    seoTitle: "Videos para stands de feria y pantallas LED — Mansalva",
     description:
       "Diseñamos y animamos videos para stands de feria a la medida exacta de cada pantalla: LED, videowalls y tótems. Loops silenciosos de 10 a 30 s. Argentina.",
     h1: "Videos para stands de feria",
@@ -150,7 +150,7 @@ export const services: Service[] = [
     slug: "animacion-videowall",
     parent: "videos-para-stands",
     label: "Videowalls",
-    seoTitle: "Animación para videowall: contenido para mosaicos de monitores — Mansalva",
+    seoTitle: "Animación para videowall: mosaicos de monitores — Mansalva",
     description:
       "Animación para videowall: un lienzo único repartido entre los monitores, sin textos cortados por los marcos. Entrega por salida o lienzo completo.",
     h1: "Animación para videowall",
@@ -253,7 +253,7 @@ export const services: Service[] = [
     slug: "animacion-3d-producto",
     parent: "videos-para-stands",
     label: "Animación 3D",
-    seoTitle: "Animación 3D de productos, máquinas y procesos para stands — Mansalva",
+    seoTitle: "Animación 3D de productos y máquinas para stands — Mansalva",
     description:
       "Animación 3D para mostrar lo que no entra en el stand: un producto por dentro, una máquina funcionando o un proceso completo en pocos segundos.",
     h1: "Animación 3D de productos y procesos",
@@ -315,7 +315,7 @@ export const services: Service[] = [
   {
     slug: "motion-graphics",
     label: "Motion graphics",
-    seoTitle: "Productora de motion graphics: logos animados, reels y VSL — Mansalva",
+    seoTitle: "Productora de motion graphics: logos, reels y VSL — Mansalva",
     description:
       "Estudio de animación y motion graphics en Argentina: logos animados, videos para redes, videos de venta (VSL) para landings y animación web.",
     h1: "Motion graphics para marcas",

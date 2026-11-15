@@ -1,24 +1,25 @@
 import Link from "next/link";
 import { guideCategories, guides } from "@/lib/guides";
 
-// Sección Guías de la home: una ficha por tema en una grilla (número grande,
+// Índice de guías (página /guias; antes era una sección de la home): una ficha por tema en una grilla (número grande,
 // nombre y cantidad), plegada. Al tocarla se despliegan sus guías con título,
 // bajada y minutos de lectura. Fichas con borde para que no se confunda con las
 // filas del FAQ. Usa <details> nativo: los enlaces quedan en el HTML aunque
 // estén plegados, así Google los rastrea. La lista vive en lib/guides.ts.
-export default function Guides() {
+export default function Guides({ asH1 = false }: { asH1?: boolean }) {
+  const Heading = asH1 ? "h1" : "h2";
   const groups = guideCategories
     .map((category) => ({ category, items: guides.filter((g) => g.category === category) }))
     .filter((group) => group.items.length > 0);
 
   return (
-    <section id="guias" aria-labelledby="guias-title" className="scroll-mt-24 border-t border-linea">
+    <section id="guias" aria-labelledby="guias-title" className="scroll-mt-24">
       <div className="mx-auto grid max-w-[1552px] grid-cols-1 gap-8 px-5 py-14 sm:px-12 lg:grid-cols-[380px_1fr] lg:gap-12">
         <div className="flex flex-col gap-4 lg:sticky lg:top-28 lg:self-start">
           <p className="font-medium text-[11px] uppercase tracking-wide text-gris">Guías / Ferias y pantallas</p>
-          <h2 id="guias-title" className="text-[clamp(1.75rem,4vw,38px)] font-extrabold leading-[1.05]">
+          <Heading id="guias-title" className="text-[clamp(1.75rem,4vw,38px)] font-extrabold leading-[1.05]">
             Lo que conviene saber antes de la feria.
-          </h2>
+          </Heading>
           <p className="max-w-[40ch] text-[15px] leading-[1.5] text-gris">
             Qué pedirle al proveedor de la pantalla, cuánto tiene que durar el loop y por qué la gente
             sigue de largo. Escritas para quien arma el stand, no para técnicos. {guides.length} guías en{" "}

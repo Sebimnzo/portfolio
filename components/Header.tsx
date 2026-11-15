@@ -8,7 +8,7 @@ const links = [
   { href: "/#paquetes", label: "Paquetes" },
   { href: "/#servicios", label: "Servicios" },
   { href: "/#estudio", label: "Estudio" },
-  { href: "/#guias", label: "Guías" },
+  { href: "/guias", label: "Guías" },
 ];
 
 export default function Header() {

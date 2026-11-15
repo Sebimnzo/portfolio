@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/data";
+import { shareImage, site } from "@/lib/data";
 
 // Guías publicadas: cada una tiene su página en app/guias/<slug>, y la lista
 // alimenta la sección Guías de la home, el sitemap y llms.txt.
@@ -24,7 +24,7 @@ export const guides: Guide[] = [
     path: "/guias/resolucion-pantalla-led",
     title: "Qué pixel pitch elegir para tu stand y cómo calcular la resolución de la pantalla LED",
     seoTitle: "Pixel pitch para stands: qué elegir y calculadora — Mansalva",
-    description: "Qué es el pixel pitch, cuál conviene para un stand según la distancia del público y cómo calcular la resolución de la pantalla LED. Con calculadora y tabla.",
+    description: "Qué es el pixel pitch, cuál conviene en un stand según la distancia del público y cómo calcular la resolución de la pantalla LED. Con calculadora.",
     published: "2026-10-14",
     updated: "2026-10-20",
     readingMinutes: 4,
@@ -297,7 +297,9 @@ export const guideMetadata = (guide: Guide): Metadata => ({
     siteName: site.name,
     locale: "es_AR",
     type: "article",
+    images: [shareImage],
   },
+  twitter: { card: "summary_large_image", images: [shareImage.url] },
 });
 
 export const guideJsonLd = (guide: Guide) => ({
