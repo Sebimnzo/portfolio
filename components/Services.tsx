@@ -126,7 +126,13 @@ export default function Services() {
                   key={s.name}
                   title={s.name}
                   text={s.text}
-                  href={s.name === "Stands de feria" ? "/videos-para-stands" : "/motion-graphics"}
+                  href={
+                    s.name === "Stands de feria"
+                      ? "/videos-para-stands"
+                      : s.name === "Clips y tráilers para podcasts"
+                        ? "/clips-para-podcasts"
+                        : "/motion-graphics"
+                  }
                 />
               ))}
               <div className="border-t border-linea-oscura pt-[18px]">

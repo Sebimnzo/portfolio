@@ -7,7 +7,7 @@ import { services } from "@/lib/services";
 export const dynamic = "force-static";
 
 const work = (p: Project) =>
-  `- [${p.title}](https://www.youtube.com/watch?v=${p.youtubeId}): ${p.category}, video ${p.orientation}`;
+  `- [${p.title}](${p.videoSrc ? `${site.url}${p.videoSrc}` : `https://www.youtube.com/watch?v=${p.youtubeId}`}): ${p.category}, video ${p.orientation}`;
 
 export function GET() {
   const body = [

@@ -7,9 +7,9 @@ export const site = {
   claim: "Que te vean primero.",
   heroLabel: "Motion graphics / Argentina",
   // Es el <h1> de la página: la búsqueda principal del sitio.
-  heroTitle: "Un estudio que hace videos y experiencias para stands de feria, y clips para podcasts.",
+  heroTitle: "Un estudio de video y motion para marcas y podcasts.",
   tagline:
-    "Diseñamos y animamos lo que va en las pantallas LED, tótems y videowalls de tu stand, para que quien pasa entienda en segundos qué ofrecés.",
+    "Editamos y animamos clips, tráilers, logos y videos de producto para que quien mira entienda en segundos qué ofrecés.",
   seoTitle: "Mansalva — Videos para stands de feria y motion graphics",
   // Meta description: hasta 155 caracteres para que Google no la corte.
   description:
@@ -17,10 +17,10 @@ export const site = {
   // Fecha del último cambio de contenido (lastmod del sitemap). Actualizarla
   // a mano solo cuando cambia el contenido, no en cada deploy.
   updated: "2026-11-12",
-  worksTitle: "Mirá lo que ya hicimos.",
+  worksTitle: "Trabajos seleccionados.",
   // Bajadas de sección: el título es de marca, la bajada lleva la búsqueda.
   worksIntro:
-    "Videos que ya se vieron en ferias y stands. En «Otros trabajos» hay reels, videos para landings y contenido para redes.",
+    "Reels, clips y animaciones hechos a la medida de cada cliente.",
   studioLabel: "Mansalva / Desde Argentina",
   studioTitle: "Primero el mensaje, después la animación.",
   // Un párrafo por elemento. Las fechas coinciden con LinkedIn: edición freelance
@@ -46,16 +46,12 @@ export const site = {
     "Que quien pase por tu stand entienda qué hacés antes de seguir de largo.",
   services: [
     {
-      name: "Stands de feria",
-      text: "Videos para las pantallas LED, tótems y videowalls de tu stand.",
-    },
-    {
-      name: "Animación web",
-      text: "Animaciones para tu sitio que ayudan a entender el producto.",
-    },
-    {
       name: "Video para redes",
       text: "Edición de reels y videos cortos, con subtítulos y gráficos.",
+    },
+    {
+      name: "Clips y tráilers para podcasts",
+      text: "Del episodio entero sacamos clips verticales y un tráiler que invita a escucharlo.",
     },
     {
       name: "Videos de venta (VSL)",
@@ -64,6 +60,14 @@ export const site = {
     {
       name: "Logos animados",
       text: "Tu logo en movimiento, para cerrar videos, presentaciones y pantallas.",
+    },
+    {
+      name: "Animación web",
+      text: "Animaciones para tu sitio que ayudan a entender el producto.",
+    },
+    {
+      name: "Stands de feria",
+      text: "Videos para las pantallas LED, tótems y videowalls de tu stand.",
     },
   ],
   personality: [
@@ -80,10 +84,10 @@ export const site = {
       text: "Pocos elementos y bien resueltos. Lo que no ayuda a entender, se saca.",
     },
   ],
-  standsLabel: "Pantallas / Tótems / Videowalls",
-  standsTitle: "Videos a la medida de cada pantalla de tu stand.",
+  standsLabel: "También / Pantallas y tótems",
+  standsTitle: "Si tu video va en una pantalla, lo hacemos a su medida.",
   standsText:
-    "Una pantalla LED, un tótem y un videowall no se miran igual: cambian la medida, la distancia y el ruido alrededor. Lo resolvemos antes de animar.",
+    "Para ferias y locales. Una pantalla LED, un tótem y un videowall no se miran igual: cambian la medida, la distancia y el ruido alrededor. Lo resolvemos antes de animar.",
   // `shape` elige el dibujo que muestra la proporción real de cada soporte.
   standFormats: [
     {
@@ -117,7 +121,7 @@ export const site = {
       text: "Mostramos lo que no entra en el stand: un producto por dentro, una máquina funcionando o un proceso completo en pocos segundos.",
     },
   ],
-  faqTitle: "Preguntas frecuentes sobre videos para stands",
+  faqTitle: "Preguntas frecuentes",
   // También se publican como datos estructurados FAQPage (ver StructuredData).
   faq: [
     {
@@ -147,7 +151,7 @@ export const site = {
   ],
   contactHeadline: "Hagamos que se note.",
   contactText:
-    "Contanos para qué feria es, qué pantallas vas a tener y para cuándo lo necesitás. Te respondemos con una propuesta.",
+    "Contanos qué querés mostrar, dónde se va a ver y para cuándo lo necesitás. Te respondemos con una propuesta.",
   email: "manzo@mansalvadesign.com",
   whatsapp: "5493794232631",
   // Página de empresa en LinkedIn (la del fundador está en founder.linkedin).
@@ -179,8 +183,8 @@ export const site = {
 // que están las medidas de la pantalla y el material de la marca.
 export const packagesSection = {
   label: "Paquetes",
-  title: "Tres paquetes cerrados para cotizar rápido.",
-  text: "Si armás stands o representás a una marca, elegí el paquete y pedí la cotización: cada uno tiene duración, formato y plazo definidos. Se cotiza por pieza, y cada versión extra (otra medida, otro idioma u otra duración) se suma aparte.",
+  title: "Paquetes para pantallas, para cotizar rápido.",
+  text: "Para pantallas de ferias y locales, elegí el paquete y pedí la cotización: cada uno tiene duración, formato y plazo definidos. Se cotiza por pieza, y cada versión extra (otra medida, otro idioma u otra duración) se suma aparte.",
   note: "Los plazos son en días hábiles y corren desde que tenemos las medidas de la pantalla y el material de la marca.",
 };
 
@@ -253,6 +257,9 @@ export type Project = {
   // Portada propia en /public (ej. un cuadro del comienzo del video). Si no
   // hay, se usa la miniatura de YouTube.
   poster?: string;
+  // Video alojado en el sitio (en /public). Si lo tiene, se reproduce con <video>
+  // y youtubeId queda vacío.
+  videoSrc?: string;
 };
 
 // Portada de un trabajo: la propia si tiene, si no la de YouTube (9:16 para
@@ -262,6 +269,19 @@ export const thumbnailOf = (p: Project) =>
   `https://i.ytimg.com/vi/${p.youtubeId}/${p.orientation === "vertical" ? "oardefault" : "maxresdefault"}.jpg`;
 
 export const projects: Project[] = [
+  {
+    slug: "rapiboy-stand",
+    fair: true,
+    title: "Rapiboy — Logística y delivery",
+    category: "Motion Graphics",
+    detail: "Stand de feria",
+    description:
+      "Video para el stand de Rapiboy, plataforma de logística y delivery: cuánto pesa el costo de envío y cómo lo resuelven sus repartidores.",
+    youtubeId: "",
+    videoSrc: "/trabajos/rapiboy-stand.mp4",
+    poster: "/trabajos/rapiboy-stand.jpg",
+    orientation: "horizontal",
+  },
   {
     slug: "cocchiola-insumos",
     fair: true,
@@ -350,14 +370,6 @@ export const projects: Project[] = [
     description: "Animación de logo para Komasa, empresa argentina de bombas eléctricas.",
     youtubeId: "tIO3pqG1DdU",
     orientation: "horizontal",
-  },
-  {
-    slug: "julian-architecture-consultant",
-    title: "Julián — Consultor de arquitectura",
-    category: "Reel",
-    description: "Video de contenido para redes para Julián, consultor de arquitectos.",
-    youtubeId: "GJBmOvtedcc",
-    orientation: "vertical",
   },
   {
     slug: "yajaira-podcast-trailer",

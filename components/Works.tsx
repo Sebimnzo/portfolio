@@ -17,15 +17,9 @@ const MAX_GROW = 0.24; // escala extra en el borde
 // las copias son idénticas). Así siempre está llena de punta a punta.
 const LOOP_MIN = 4;
 
-// Primero lo hecho para ferias (lo que el estudio ofrece); el resto, aparte.
-const groups = [
-  { key: "feria", label: "Ferias y stands", items: projects.filter((p) => p.fair) },
-  { key: "otros", label: "Otros trabajos", items: projects.filter((p) => !p.fair) },
-] as const;
-type Group = (typeof groups)[number]["key"];
+// Todos los trabajos juntos, en el orden de lib/data.ts.
 
 export default function Works() {
-  const [group, setGroup] = useState<Group>("feria");
   const [active, setActive] = useState(0);
   // Posición de la tarjeta centrada dentro de la franja (incluye las copias).
   const slot = useRef(0);
@@ -40,7 +34,7 @@ export default function Works() {
   // Arrastre con mouse: posición inicial y si ya se movió lo suficiente para no contar como clic.
   const drag = useRef<{ x: number; left: number; moved: boolean } | null>(null);
 
-  const visible = groups.find((g) => g.key === group)!.items;
+  const visible = projects;
   const n = visible.length;
   const loop = n >= LOOP_MIN;
   const cards = loop ? [...visible, ...visible, ...visible] : visible;
@@ -116,7 +110,7 @@ export default function Works() {
       cancelAnimationFrame(frame.current);
       window.clearTimeout(idle.current);
     };
-  }, [layout, onScroll, centerOn, loop, n, group]);
+  }, [layout, onScroll, centerOn, loop, n]);
 
   // Lleva el trabajo i al centro, usando la copia más cercana a la actual.
   function goTo(i: number) {
@@ -131,11 +125,6 @@ export default function Works() {
     const k = (target.current ?? slot.current) + delta;
     if (loop) centerOn(Math.max(0, Math.min(k, 3 * n - 1)), true);
     else goTo(active + delta);
-  }
-
-  function selectGroup(key: Group) {
-    setGroup(key);
-    setActive(0);
   }
 
   function onCardClick(k: number) {
@@ -183,29 +172,8 @@ export default function Works() {
             <p className="max-w-[60ch] text-[15px] leading-[1.45] text-gris">{site.worksIntro}</p>
           </div>
           <p className="font-medium text-[11px] uppercase tracking-wide text-gris">
-            {n} {n === 1 ? "proyecto" : "proyectos"} / {group === "feria" ? "para stands" : "otros formatos"}
+            {n} {n === 1 ? "proyecto" : "proyectos"}
           </p>
-        </div>
-
-        <div className="no-scrollbar flex overflow-x-auto border-b border-linea">
-          {groups.map((tab) => {
-            const selected = group === tab.key;
-            return (
-              <button
-                key={tab.key}
-                type="button"
-                aria-pressed={selected}
-                onClick={() => selectGroup(tab.key)}
-                className={`-mb-px min-h-12 shrink-0 whitespace-nowrap border-b-2 px-4 py-3 text-sm transition-colors sm:px-6 ${
-                  selected
-                    ? "border-azul font-semibold text-azul"
-                    : "border-transparent text-gris hover:text-grafito"
-                }`}
-              >
-                {tab.label} · {tab.items.length}
-              </button>
-            );
-          })}
         </div>
       </div>
 

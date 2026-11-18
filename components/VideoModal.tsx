@@ -24,6 +24,13 @@ export default function VideoModal({
 
     let player: YouTubePlayer | undefined;
     let cancelled = false;
+    // Trabajos con el archivo en el sitio (videoSrc): se reproducen con <video>, sin YouTube.
+    if (project.videoSrc) {
+      return () => {
+        document.documentElement.style.overflow = "";
+        if (dialog.open) dialog.close();
+      };
+    }
     loadYouTubeApi().then((YT) => {
       if (cancelled || !playerRef.current) return;
       player = new YT.Player(playerRef.current, {
@@ -76,8 +83,20 @@ export default function VideoModal({
                 : "aspect-video w-[min(92vw,1100px,(100svh_-_160px)*16/9)]"
             }`}
           >
-            {/* La IFrame API reemplaza este div por el iframe del reproductor */}
-            <div key={project.youtubeId} ref={playerRef} className="h-full w-full" />
+            {project.videoSrc ? (
+              <video
+                key={project.videoSrc}
+                src={project.videoSrc}
+                poster={project.poster}
+                controls
+                autoPlay
+                playsInline
+                className="h-full w-full"
+              />
+            ) : (
+              /* La IFrame API reemplaza este div por el iframe del reproductor */
+              <div key={project.youtubeId} ref={playerRef} className="h-full w-full" />
+            )}
           </div>
           {/* Mismo texto y jerarquía que sobre la tarjeta del carrusel */}
           <div className="flex flex-col gap-1 self-start text-blanco">
