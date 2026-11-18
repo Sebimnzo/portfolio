@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { packages, packagesSection, site } from "@/lib/data";
 
-// Paquetes cerrados (sin precio): cada uno con su pantalla dibujada en la
-// proporción real, lo que incluye, el plazo y un pedido de cotización por WhatsApp.
+// Paquetes cerrados (sin precio): cada uno con su formato dibujado, lo que
+// incluye, el plazo y un pedido de cotización por WhatsApp.
 const stroke = {
   fill: "none",
   stroke: "currentColor",
@@ -11,31 +12,43 @@ const stroke = {
 } as const;
 
 const shapes: Record<string, ReactNode> = {
+  vertical: (
+    <>
+      <rect x="45" y="1" width="30" height="53.3" rx="2" {...stroke} />
+      <path d="M56 22v10l9-5z" {...stroke} />
+    </>
+  ),
+  wide: (
+    <>
+      <rect x="9" y="8" width="102" height="57.4" rx="2" {...stroke} />
+      <path d="M54 26v22l19-11z" {...stroke} />
+    </>
+  ),
+  social: (
+    <>
+      <rect x="18" y="1" width="30" height="53.3" rx="2" {...stroke} />
+      <rect x="58" y="12" width="30" height="53.3" rx="2" {...stroke} />
+      <rect x="94" y="1" width="22" height="39" rx="2" {...stroke} />
+    </>
+  ),
+  motion: (
+    <>
+      <circle cx="42" cy="34" r="26" {...stroke} />
+      <rect x="56" y="12" width="44" height="44" {...stroke} />
+    </>
+  ),
+  web: (
+    <>
+      <rect x="9" y="4" width="102" height="60" rx="2" {...stroke} />
+      <path d="M9 16h102" {...stroke} />
+      <path d="M54 28v22l19-11z" {...stroke} />
+    </>
+  ),
   totem: (
     <>
-      <rect x="43" y="1" width="34" height="60" {...stroke} />
-      <path d="M60 61v5M50 66.5h20" {...stroke} />
-    </>
-  ),
-  led: (
-    <>
-      <defs>
-        <pattern id="pack-led-pitch" width="4" height="4" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="0.7" fill="var(--gris)" />
-        </pattern>
-      </defs>
-      <rect x="2" y="17.7" width="116" height="32.6" fill="url(#pack-led-pitch)" />
-      <rect x="2" y="17.7" width="116" height="32.6" {...stroke} />
-    </>
-  ),
-  // LED 32:9 arriba, videowall de 2 monitores abajo y un tótem al costado.
-  multi: (
-    <>
-      <rect x="2" y="6" width="78" height="22" {...stroke} />
-      <rect x="2" y="36" width="38" height="21.4" {...stroke} />
-      <rect x="42" y="36" width="38" height="21.4" {...stroke} />
-      <rect x="90" y="4" width="28" height="50" {...stroke} />
-      <path d="M104 54v5M97 59.5h14" {...stroke} />
+      <rect x="2" y="12" width="70" height="40" {...stroke} />
+      <rect x="86" y="1" width="30" height="54" {...stroke} />
+      <path d="M101 55v6M92 61.5h18" {...stroke} />
     </>
   ),
 };
@@ -45,7 +58,7 @@ const quoteLink = (p: (typeof packages)[number]) =>
     [
       `Hola, quiero cotizar el paquete «${p.name}» (${p.spec}).`,
       "",
-      "Feria y fecha:",
+      "Para cuándo lo necesitás:",
       "Cantidad de piezas:",
       "Versiones extra (otra medida, idioma o duración):",
     ].join("\n")
@@ -66,7 +79,7 @@ export default function Packages() {
           <p className="mt-4 text-[17px] leading-[1.45] text-gris">{packagesSection.text}</p>
         </div>
 
-        <ul className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
           {packages.map((p) => (
             <li key={p.slug} className="flex flex-col border-t border-grafito pt-6">
               <svg aria-hidden viewBox="0 0 120 68" overflow="visible" className="h-16 w-[113px] text-grafito">
@@ -86,6 +99,10 @@ export default function Packages() {
               </ul>
 
               <dl className="mt-auto pt-6 text-sm">
+                <div className="flex justify-between gap-4 border-t border-linea py-2.5">
+                  <dt className="text-gris">Precio</dt>
+                  <dd className="text-right font-medium">Pedí presupuesto</dd>
+                </div>
                 <div className="flex justify-between gap-4 border-t border-linea py-2.5">
                   <dt className="text-gris">Plazo</dt>
                   <dd className="text-right font-medium">{p.standard}</dd>
@@ -107,6 +124,11 @@ export default function Packages() {
                 <span aria-hidden className="h-[3px] w-8 bg-azul" />
                 Cotizar este paquete <span aria-hidden>→</span>
               </a>
+              {p.see && (
+                <Link href={p.see.href} className="inline-flex min-h-12 items-center text-sm font-medium hover:text-azul">
+                  {p.see.label} <span aria-hidden>&nbsp;→</span>
+                </Link>
+              )}
             </li>
           ))}
         </ul>

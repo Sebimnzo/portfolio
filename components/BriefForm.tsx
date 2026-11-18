@@ -3,7 +3,15 @@
 import { useId, useRef, type FormEvent } from "react";
 import { site } from "@/lib/data";
 
-const screens = ["Pantalla LED", "Videowall", "Tótem digital", "Varias pantallas", "Todavía no sé"];
+const kinds = [
+  "Clips para podcast",
+  "Tráiler de podcast",
+  "Videos para redes o anuncios",
+  "Motion o logo animado",
+  "Video de venta (VSL)",
+  "Video para stand o pantalla",
+  "Todavía no sé",
+];
 
 // Brief para pedir propuesta. No guarda nada: arma un mail o un WhatsApp con
 // las respuestas y lo abre en la app de la persona.
@@ -21,9 +29,9 @@ export default function BriefForm() {
       "Hola, quiero pedir una propuesta.",
       "",
       line("Nombre / empresa", "nombre"),
-      line("Feria y fecha", "feria"),
-      line("Tipo de pantalla", "pantalla"),
-      line("Medidas o resolución", "medidas"),
+      line("Qué necesito", "tipo"),
+      line("Para cuándo", "fecha"),
+      line("Dónde se va a ver", "lugar"),
       line("Cantidad de piezas", "piezas"),
       line("Detalle", "detalle"),
     ]
@@ -53,24 +61,24 @@ export default function BriefForm() {
         Nombre o empresa
         <input id={`${id}-nombre`} name="nombre" required autoComplete="organization" className={input} />
       </label>
-      <label className={label} htmlFor={`${id}-feria`}>
-        Feria y fecha
-        <input id={`${id}-feria`} name="feria" placeholder="Ej.: Expoagro, marzo" className={input} />
-      </label>
-      <label className={label} htmlFor={`${id}-pantalla`}>
-        Tipo de pantalla
-        <select id={`${id}-pantalla`} name="pantalla" defaultValue="" className={input}>
+      <label className={label} htmlFor={`${id}-tipo`}>
+        Qué necesitás
+        <select id={`${id}-tipo`} name="tipo" defaultValue="" className={input}>
           <option value="" disabled>
             Elegí una opción
           </option>
-          {screens.map((s) => (
+          {kinds.map((s) => (
             <option key={s}>{s}</option>
           ))}
         </select>
       </label>
-      <label className={label} htmlFor={`${id}-medidas`}>
-        Medidas o resolución
-        <input id={`${id}-medidas`} name="medidas" placeholder="Ej.: 5 × 2 m, pitch 2,5" className={input} />
+      <label className={label} htmlFor={`${id}-fecha`}>
+        Para cuándo
+        <input id={`${id}-fecha`} name="fecha" placeholder="Ej.: fin de mes" className={input} />
+      </label>
+      <label className={label} htmlFor={`${id}-lugar`}>
+        Dónde se va a ver
+        <input id={`${id}-lugar`} name="lugar" placeholder="Ej.: Instagram, mi web, una pantalla" className={input} />
       </label>
       <label className={label} htmlFor={`${id}-piezas`}>
         Cantidad de piezas

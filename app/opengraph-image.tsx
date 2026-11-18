@@ -33,7 +33,7 @@ export default async function OpengraphImage() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20, fontSize: 24, color: "#69717c" }}>
           <div style={{ width: 48, height: 5, background: "#005bdb" }} />
-          VIDEOS PARA STANDS DE FERIA · PANTALLAS LED · VIDEOWALLS
+          VIDEO Y MOTION PARA MARCAS Y PODCASTS
         </div>
         <div
           style={{

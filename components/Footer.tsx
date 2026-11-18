@@ -10,7 +10,10 @@ export default function Footer() {
         aria-label="Servicios"
         className="mx-auto flex max-w-[1552px] flex-wrap gap-x-6 px-5 pt-6 text-[13px] text-gris sm:px-12"
       >
-        {services.map((s) => (
+        <Link href="/clips-para-podcasts" className="min-h-12 min-w-11 content-center hover:text-azul">
+          Clips para podcasts
+        </Link>
+        {[...services].sort((a, b) => (a.slug === "motion-graphics" ? -1 : b.slug === "motion-graphics" ? 1 : 0)).map((s) => (
           <Link key={s.slug} href={`/${s.slug}`} className="min-h-12 min-w-11 content-center hover:text-azul">
             {s.label}
           </Link>

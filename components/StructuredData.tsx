@@ -22,9 +22,11 @@ const jsonLd = {
       address: { "@type": "PostalAddress", addressCountry: "AR" },
       founder: { "@id": id("fundador") },
       knowsAbout: [
+        "Clips y tráilers para podcasts",
+        "Videos para redes y anuncios",
+        "Motion graphics",
         "Videos para stands de feria",
         ...site.standFormats.map((f) => f.name),
-        "Motion graphics",
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",

@@ -10,10 +10,10 @@ export const site = {
   heroTitle: "Un estudio de video y motion para marcas y podcasts.",
   tagline:
     "Editamos y animamos clips, tráilers, logos y videos de producto para que quien mira entienda en segundos qué ofrecés.",
-  seoTitle: "Mansalva — Videos para stands de feria y motion graphics",
+  seoTitle: "Mansalva — Video y motion para marcas y podcasts",
   // Meta description: hasta 155 caracteres para que Google no la corte.
   description:
-    "Hacemos videos para stands de feria: contenido para pantallas LED, tótems y videowalls, loops sin sonido y animación 3D. Estudio en Argentina.",
+    "Estudio de video y motion de Argentina: clips y tráilers para podcasts, videos para redes y anuncios, logos animados y videos para stands.",
   // Fecha del último cambio de contenido (lastmod del sitemap). Actualizarla
   // a mano solo cuando cambia el contenido, no en cada deploy.
   updated: "2026-11-12",
@@ -26,7 +26,7 @@ export const site = {
   // Un párrafo por elemento. Las fechas coinciden con LinkedIn: edición freelance
   // desde feb. 2024, Mansalva fundada en mar. 2025.
   studioText: [
-    "Somos un estudio de diseño y animación de Argentina. Editamos y animamos videos desde 2024, y en 2025 nació Mansalva, enfocada en stands de feria.",
+    "Somos un estudio de diseño y animación de Argentina. Editamos y animamos videos desde 2024, y en 2025 nació Mansalva.",
     "Antes de animar definimos qué tiene que entender quien mira, dónde va la atención y qué sobra.",
   ],
   // Rubros con los que ya trabajamos: se muestran como etiquetas al lado del texto.
@@ -43,7 +43,7 @@ export const site = {
     "Artistas musicales",
   ],
   purpose:
-    "Que quien pase por tu stand entienda qué hacés antes de seguir de largo.",
+    "Que quien te mire entienda qué hacés antes de seguir de largo.",
   services: [
     {
       name: "Video para redes",
@@ -125,6 +125,30 @@ export const site = {
   // También se publican como datos estructurados FAQPage (ver StructuredData).
   faq: [
     {
+      q: "¿Qué tipos de video hacen?",
+      a: "Clips y tráilers para podcasts, videos para redes y anuncios, videos de venta para landings, logos animados, animación para webs y videos para stands de feria. Cada uno tiene su paquete más arriba y su pedido de presupuesto.",
+    },
+    {
+      q: "¿Cómo son los clips para podcasts?",
+      a: "Del episodio entero sacamos clips verticales de menos de 90 segundos. Arrancan con la frase que engancha, llevan subtítulos y cierran con el logo del programa. Hay ejemplos en la página de clips para podcasts.",
+    },
+    {
+      q: "¿Cuánto cuesta?",
+      a: "Se cotiza por pieza, y cada versión extra (otra medida, otro idioma u otra duración) se suma aparte. Contanos qué necesitás por WhatsApp, por mail o con el brief y te respondemos con una propuesta.",
+    },
+    {
+      q: "¿Cuánto tardan?",
+      a: "El plazo lo acordamos antes de empezar y corre desde que tenemos tu material. Para un loop de stand, por ejemplo, son 7 días hábiles, o 3 en la versión express.",
+    },
+    {
+      q: "¿En qué formato entregan los archivos?",
+      a: "En MP4 a la resolución y los cuadros por segundo del lugar donde se va a ver, sea una red, una web o una pantalla. Si necesitás otro códec, como ProRes, lo entregamos así.",
+    },
+  ],
+  // Preguntas de stands: ya no se muestran en el inicio (la página no es solo
+  // para stands). Quedan para llms.txt.
+  standFaq: [
+    {
       q: "¿Qué resolución tiene que tener un video para una pantalla LED de stand?",
       a: "La que resulta de dividir el ancho y el alto de la pantalla, en milímetros, por su pixel pitch. Una pantalla de 5 × 2 m con pitch de 2,5 mm tiene 2000 × 800 px. Antes de animar le pedimos el mapa de píxeles al proveedor de la pantalla y trabajamos a esa medida exacta.",
     },
@@ -178,59 +202,105 @@ export const site = {
   },
 };
 
-// Paquetes cerrados para cotizar sin llamada (sin precio publicado: se cotiza
-// por pieza y por versión extra). Los plazos son en días hábiles y corren desde
-// que están las medidas de la pantalla y el material de la marca.
+// Paquetes cerrados para pedir presupuesto sin llamada. No hay precios
+// publicados: se cotiza por pieza y por versión extra. Los plazos son en días
+// hábiles; donde no hay uno fijo se acuerda antes de empezar.
 export const packagesSection = {
   label: "Paquetes",
-  title: "Paquetes para pantallas, para cotizar rápido.",
-  text: "Para pantallas de ferias y locales, elegí el paquete y pedí la cotización: cada uno tiene duración, formato y plazo definidos. Se cotiza por pieza, y cada versión extra (otra medida, otro idioma u otra duración) se suma aparte.",
-  note: "Los plazos son en días hábiles y corren desde que tenemos las medidas de la pantalla y el material de la marca.",
+  title: "Paquetes para cotizar rápido.",
+  text: "Elegí el que se parece a lo que necesitás y pedí el presupuesto. Se cotiza por pieza, y cada versión extra (otra medida, otro idioma u otra duración) se suma aparte.",
+  note: "Los plazos corren desde que tenemos tu material y las medidas del lugar donde se va a ver.",
 };
 
 export const packages = [
   {
-    slug: "loop-totem",
-    shape: "totem",
-    name: "Loop para tótem",
-    spec: "15 s · vertical 9:16 · 1080 × 1920 px",
-    text: "Una pieza vertical para tótem digital, pensada para leerse de cerca y al pasar.",
+    slug: "clips-podcasts",
+    shape: "vertical",
+    name: "Clips para podcasts",
+    spec: "Vertical 9:16 · menos de 90 s",
+    text: "Del episodio entero sacamos clips verticales para redes.",
     includes: [
-      "Guion y cuadros clave antes de animar",
-      "Animación en loop sin corte y sin sonido",
-      "MP4 listo para cargar en el tótem",
+      "Arrancan con la frase que engancha",
+      "Subtítulos en cada clip",
+      "Logo del programa al final",
     ],
-    standard: "7 días hábiles",
-    express: "3 días hábiles",
+    standard: "Se acuerda antes de empezar",
+    express: null,
+    see: { label: "Ver clips", href: "/clips-para-podcasts" },
   },
   {
-    slug: "loop-led",
-    shape: "led",
-    name: "Loop para pantalla LED",
-    spec: "20 a 30 s · a la resolución exacta de la pantalla",
-    text: "Una pieza para la pantalla LED del stand, animada al píxel según su tamaño y su pitch.",
+    slug: "trailer-podcast",
+    shape: "wide",
+    name: "Tráiler de podcast",
+    spec: "Un video corto del programa",
+    text: "Un video que presenta el podcast y invita a escucharlo.",
+    includes: [
+      "Montaje con los mejores momentos del programa",
+      "Música, gráficos y logo del podcast",
+    ],
+    standard: "Se acuerda antes de empezar",
+    express: null,
+    see: { label: "Ver tráiler", href: "/clips-para-podcasts#trailer" },
+  },
+  {
+    slug: "redes-anuncios",
+    shape: "social",
+    name: "Videos para redes y anuncios",
+    spec: "Reels y videos cortos · vertical 9:16",
+    text: "Edición de reels, videos cortos y anuncios con subtítulos y gráficos.",
+    includes: [
+      "Edición y cortes de tu material",
+      "Subtítulos y gráficos animados",
+      "Archivo listo para subir",
+    ],
+    standard: "Se acuerda antes de empezar",
+    express: null,
+    see: null,
+  },
+  {
+    slug: "motion-logos",
+    shape: "motion",
+    name: "Motion graphics y logos animados",
+    spec: "Logos, productos y explicaciones",
+    text: "Tu logo o tu producto en movimiento, para cerrar videos o explicar algo en pocos segundos.",
+    includes: [
+      "Cuadros clave antes de animar",
+      "Animación a la medida de tu marca",
+      "Archivo listo para donde se va a ver",
+    ],
+    standard: "Se acuerda antes de empezar",
+    express: null,
+    see: null,
+  },
+  {
+    slug: "video-de-venta",
+    shape: "web",
+    name: "Video de venta (VSL)",
+    spec: "Para tu landing",
+    text: "Un video que presenta tu oferta y lleva a la persona a escribirte o comprar.",
+    includes: [
+      "Guion de la oferta",
+      "Edición con gráficos y subtítulos",
+      "Llamada a la acción al final",
+    ],
+    standard: "Se acuerda antes de empezar",
+    express: null,
+    see: null,
+  },
+  {
+    slug: "stands-pantallas",
+    shape: "totem",
+    name: "Videos para stands y pantallas",
+    spec: "LED, tótems y videowalls · loops sin sonido",
+    text: "Piezas animadas a la medida exacta de cada pantalla, para ferias y locales.",
     includes: [
       "Trabajo con el mapa de píxeles del proveedor",
       "Animación en loop sin corte y sin sonido",
-      "Archivo con el códec y los cuadros por segundo que pida el procesador",
+      "Archivo con el códec que pida el procesador",
     ],
-    standard: "7 días hábiles",
+    standard: "7 días hábiles por loop",
     express: "3 días hábiles",
-  },
-  {
-    slug: "set-multipantalla",
-    shape: "multi",
-    name: "Set multipantalla",
-    spec: "LED, tótems y videowalls en el mismo stand",
-    text: "Una idea repartida en todas las pantallas, para que el stand se vea como una sola cosa y no como pantallas compitiendo.",
-    includes: [
-      "Una pieza por pantalla, a la medida de cada una",
-      "Piezas sincronizadas o pensadas para verse juntas",
-      "Entrega por salida o en un lienzo único, según el reproductor",
-    ],
-    // Depende de cuántas pantallas sean: no hay plazo fijo ni express.
-    standard: "A convenir según la cantidad de pantallas",
-    express: null,
+    see: { label: "Ver stands", href: "/#stands" },
   },
 ] as const;
 
@@ -240,6 +310,7 @@ export const categories = [
   { key: "Reel", label: "Reels" },
   { key: "Landing Page", label: "Landing page" },
   { key: "Podcast", label: "Podcast" },
+  { key: "Tráiler", label: "Tráiler" },
   { key: "Longform", label: "Longform" },
 ] as const;
 
