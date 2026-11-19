@@ -3,7 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProjectGrid from "@/components/ProjectGrid";
-import { shareImage, site, type Project } from "@/lib/data";
+import { projects, shareImage, site, type Project } from "@/lib/data";
 
 // Página para mandar por link a quien tiene un podcast y pide ejemplos.
 // Está fuera del menú, de la home y del sitemap a propósito: se comparte a mano.
@@ -41,24 +41,15 @@ const clip = (file: string, guest: string, line: string): Project => ({
   orientation: "vertical",
 });
 
-// Tráiler de Yajaira (podcast de España): va aparte de los clips, en su propia categoría.
-const trailers: Project[] = [
-  {
-    slug: "yajaira-trailer",
-    title: "Yajaira",
-    category: "Tráiler",
-    description: "Tráiler del podcast Yajaira, de España: 52 segundos con los mejores momentos del programa.",
-    youtubeId: "",
-    videoSrc: "/clips/yajaira-trailer.mp4",
-    poster: "/clips/yajaira-trailer.jpg",
-    orientation: "vertical",
-  },
-];
+// Tráiler de Yajaira (podcast de España), el mismo video que está en los trabajos de la home (YouTube).
+// Va aparte de los clips, en su propia categoría.
+const trailers: Project[] = [{ ...projects.find((p) => p.slug === "yajaira-podcast-trailer")!, category: "Tráiler" }];
 
 const items: Project[] = [
   clip("silvio-velo", "Silvio Velo", "Una pasión que se veía dentro y fuera de la cancha."),
   clip("martin-garcia-1", "Martín García", "Los primeros minutos después del trasplante."),
   clip("fer-de-dios", "Fer De Dios", "El momento en que se dio cuenta para qué estaba."),
+  clip("yajaira-clip", "Yajaira", "Un clip del podcast Yajaira, de España, con imágenes de lo que va nombrando."),
 ];
 
 export default function ClipsParaPodcasts() {
