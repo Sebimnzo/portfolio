@@ -356,11 +356,10 @@ export const projects: Project[] = [
   },
   {
     slug: "jbl-concepto",
-    title: "JBL: anuncio de concepto con inteligencia artificial",
+    title: "JBL: anuncio con inteligencia artificial",
     category: "Anuncio",
-    detail: "Concepto",
     description:
-      "Anuncio de concepto para auriculares JBL, hecho con inteligencia artificial y con guion propio. Un chico se pone los auriculares y la calle pasa a segundo plano.",
+      "Anuncio para auriculares JBL, hecho con inteligencia artificial y con guion propio. Un chico se pone los auriculares y la calle pasa a segundo plano.",
     youtubeId: "",
     videoSrc: "/trabajos/jbl-anuncio-ia-v2.mp4",
     poster: "/trabajos/jbl-anuncio-ia-v2.jpg",
@@ -368,11 +367,10 @@ export const projects: Project[] = [
   },
   {
     slug: "rhodesia-concepto",
-    title: "Rhodesia: anuncio de concepto con inteligencia artificial",
+    title: "Rhodesia: anuncio con inteligencia artificial",
     category: "Anuncio",
-    detail: "Concepto",
     description:
-      "Anuncio de concepto para la oblea Rhodesia, hecho con inteligencia artificial y con guion propio. Una mano levanta la oblea del escritorio y la abre. Después llega el primer mordisco.",
+      "Anuncio para la oblea Rhodesia, hecho con inteligencia artificial y con guion propio. Una mano levanta la oblea del escritorio y la abre. Después llega el primer mordisco.",
     youtubeId: "",
     videoSrc: "/trabajos/rhodesia-anuncio-ia-v2.mp4",
     poster: "/trabajos/rhodesia-anuncio-ia-v2.jpg",
