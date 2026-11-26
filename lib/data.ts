@@ -16,7 +16,7 @@ export const site = {
     "Estudio de video y motion de Argentina: clips y tráilers para podcasts, videos para redes y anuncios, logos animados y videos para stands.",
   // Fecha del último cambio de contenido (lastmod del sitemap). Actualizarla
   // a mano solo cuando cambia el contenido, no en cada deploy.
-  updated: "2026-11-12",
+  updated: "2026-11-26",
   worksTitle: "Trabajos seleccionados.",
   // Bajadas de sección: el título es de marca, la bajada lleva la búsqueda.
   worksIntro:
@@ -312,6 +312,7 @@ export const categories = [
   { key: "Podcast", label: "Podcast" },
   { key: "Tráiler", label: "Tráiler" },
   { key: "Longform", label: "Longform" },
+  { key: "Anuncio", label: "Anuncio" },
 ] as const;
 
 export type Project = {
@@ -351,6 +352,30 @@ export const projects: Project[] = [
     youtubeId: "",
     videoSrc: "/trabajos/rapiboy-stand.mp4",
     poster: "/trabajos/rapiboy-stand.jpg",
+    orientation: "horizontal",
+  },
+  {
+    slug: "jbl-concepto",
+    title: "JBL: anuncio de concepto con inteligencia artificial",
+    category: "Anuncio",
+    detail: "Concepto",
+    description:
+      "Anuncio de concepto para auriculares JBL, hecho con inteligencia artificial y con guion propio. Un chico se pone los auriculares y la calle pasa a segundo plano.",
+    youtubeId: "",
+    videoSrc: "/trabajos/jbl-anuncio-ia-v2.mp4",
+    poster: "/trabajos/jbl-anuncio-ia-v2.jpg",
+    orientation: "vertical",
+  },
+  {
+    slug: "rhodesia-concepto",
+    title: "Rhodesia: anuncio de concepto con inteligencia artificial",
+    category: "Anuncio",
+    detail: "Concepto",
+    description:
+      "Anuncio de concepto para la oblea Rhodesia, hecho con inteligencia artificial y con guion propio. Una mano levanta la oblea del escritorio y la abre. Después llega el primer mordisco.",
+    youtubeId: "",
+    videoSrc: "/trabajos/rhodesia-anuncio-ia-v2.mp4",
+    poster: "/trabajos/rhodesia-anuncio-ia-v2.jpg",
     orientation: "horizontal",
   },
   {
